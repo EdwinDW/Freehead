@@ -289,6 +289,8 @@ switch($_SESSION['locale'])
 			'LOCALE_CASTSECONDS'	=>	' сек.',
 			'LOCALE_MANA'			=>	'Мана: ',
 			'LOCALE_UNIT'			=>	' ед.',
+			'LOCALE_ITEM_LEVEL'		=> 	'Уровень предмета:',
+			'LOCALE_SELLPRICE'		=>	'Продается за:',
 		));
 		break;
 
@@ -580,6 +582,8 @@ switch($_SESSION['locale'])
 			'LOCALE_CASTSECONDS'	=>	' sec.',
 			'LOCALE_MANA'			=>	'Mana: ',
 			'LOCALE_UNIT'			=>	' units',
+			'LOCALE_ITEM_LEVEL'		=> 	'Nivel de objeto:',
+			'LOCALE_SELLPRICE'		=>	'Se vende por:',
 		));
 		break;
 	// --- FRENCH LOCALE ---
@@ -870,6 +874,8 @@ switch($_SESSION['locale'])
 			'LOCALE_CASTSECONDS'	=>	' sec.',
 			'LOCALE_MANA'			=>	'Mana: ',
 			'LOCALE_UNIT'			=>	' units',
+			'LOCALE_ITEM_LEVEL'		=> 	'Niveau dobjet:',
+			'LOCALE_SELLPRICE'		=>	'Vendu pour:',
 		));
 		break;
 	// --- ENGLISH default LOCALE ---
@@ -1160,6 +1166,8 @@ switch($_SESSION['locale'])
 			'LOCALE_CASTSECONDS'	=>	' sec.',
 			'LOCALE_MANA'			=>	'Mana: ',
 			'LOCALE_UNIT'			=>	' units',
+			'LOCALE_ITEM_LEVEL'		=> 	'Item Level:',
+			'LOCALE_SELLPRICE'		=>	'Sell price:',
 		));
 		break;
 }
