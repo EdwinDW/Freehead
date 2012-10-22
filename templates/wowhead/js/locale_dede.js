@@ -795,13 +795,13 @@ var mn_database=[
 	[2,"Sets","?itemsets"/*,mn_itemSets*/],
 	[4,"NPCs","?npcs",mn_npcs],
 	[3,"Quests","?quests",mn_quests],
-	//[6,"Gebiete","/?zones",mn_zones],
+	[6,"Gebiete","/?zones",mn_zones],
 	[1,"Zauber","?spells",mn_spells],
 	[9,"Erfolge","?achievements",mn_achievements],
 	[5,"Objekte","?objects",mn_objects],
 	[7,"Fraktionen","?factions",mn_factions],
-	//[10,"Titel","/?titles",mn_titles],
-	//[8,"Begleiter","/?pets",mn_pets],
+	[10,"Titel","/?titles",mn_titles],
+	[8,"Begleiter","/?pets",mn_pets],
 	[11,"Weltereignisse","?events"/*,mn_holidays*/]
 ];
 var mn_tools=[

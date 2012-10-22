@@ -795,13 +795,13 @@ var mn_database=[
 	[2,"Комплекты","?itemsets"/*,mn_itemSets*/],
 	[4,"НИП","?npcs",mn_npcs],
 	[3,"Задания","?quests",mn_quests],
-	//[6,"Местности","?zones",mn_zones],
+	[6,"Местности","?zones",mn_zones],
 	[1,"Заклинания","?spells",mn_spells],
 	[9,"Достижения","?achievements",mn_achievements],
 	[5,"Объекты","?objects",mn_objects],
 	[7,"Фракции","?factions",mn_factions],
-	//[10,"Звания","?titles",mn_titles],
-	//[8,"Питомцы","?pets",mn_pets],
+	[10,"Звания","?titles",mn_titles],
+	[8,"Питомцы","?pets",mn_pets],
 	[11,"Игровые События","?events"/*,mn_holidays*/]
 ];
 var mn_tools=[

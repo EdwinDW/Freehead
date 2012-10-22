@@ -795,13 +795,13 @@ var mn_database=[
 	[2,"Item Sets","?itemsets"/*,mn_itemSets*/],
 	[4,"NPCs","?npcs",mn_npcs],
 	[3,"Quests","?quests",mn_quests],
-	//[6,"Zones","?zones",mn_zones],
+	[6,"Zones","?zones",mn_zones],
 	[1,"Spells","?spells",mn_spells],
 	[9,"Achievements","?achievements",mn_achievements],
 	[5,"Objects","?objects",mn_objects],
 	[7,"Factions","?factions",mn_factions],
-	//[10,"Titles","?titles",mn_titles],
-	//[8,"Hunter Pets","?pets",mn_pets],
+	[10,"Titles","?titles",mn_titles],
+	[8,"Hunter Pets","?pets",mn_pets],
 	[11,"World Events","?events"/*,mn_holidays*/]
 ];
 var mn_tools=[

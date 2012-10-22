@@ -790,8 +790,9 @@ function g_initHeaderMenus() {
         if (j != -1) {
             d = d.substr(0, j)
         }
-        c.menu = [[0, "Spanish", (g_locale.id != 6 ? "?locale=6" : null)], [0, "English", (g_locale.id != 0 ? "?locale=0" : null)]];
-        c.menu.rightAligned = 1;
+        //c.menu = [[0, "Deutsch", (g_locale.id != 3 ? d.replace(g, "de") : null)], [0, "English", (g_locale.id != 0 ? d.replace(g, "www") : null)], [0, "Espa" + String.fromCharCode(241) + "ol", (g_locale.id != 6 ? d.replace(g, "es") : null)], [0, "Fran" + String.fromCharCode(231) + "ais", (g_locale.id != 2 ? d.replace(g, "fr") : null)], [0, String.fromCharCode(1056, 1091, 1089, 1089, 1082, 1080, 1081), (g_locale.id != 7 ? d.replace(g, "ru") : null)]];
+		c.menu = [[0, "Deutsch", (g_locale.id != 3 ? "?locale=3" : null)], [0, "English", (g_locale.id != 0 ? "?locale=0" : null)], [0, "Fran" + String.fromCharCode(231) + "ais", (g_locale.id != 2 ? "?locale=2" : null)], [0, String.fromCharCode(1056, 1091, 1089, 1089, 1082, 1080, 1081), (g_locale.id != 8 ? "?locale=8" : null)]];
+		c.menu.rightAligned = 1;
         if (g_locale.id != 25) {
             c.menu[{6: 0,0: 1}[g_locale.id]].checked = 1
         }
@@ -4161,7 +4162,7 @@ Listview.funcBox = {createSimpleCol: function(c, d, a, b) {
         if (a > 0) {
             return g_zones[a]
         } else {
-            return g_quest_sorts[a]
+            return g_quest_sorts[ - a]
         }
     },getFactionCategory: function(b, a) {
         if (b) {
@@ -4181,7 +4182,7 @@ Listview.funcBox = {createSimpleCol: function(c, d, a, b) {
         }
         return null
     },coReport: function(c, d, f) {
-        if (!g_user.id || !g_contact_reasons[f]) {
+        if (!g_user.id || !g_report_reasons[f]) {
             return
         }
         var a = "";
@@ -4203,9 +4204,9 @@ Listview.funcBox = {createSimpleCol: function(c, d, a, b) {
             this.parentNode.replaceChild(b, this)
         }
     },coReportClick: function(b, a, c) {
-        this.menu = [[2, g_contact_reasons[2], Listview.funcBox.coReport.bind(this, a, b, 2)], [1, g_contact_reasons[1], Listview.funcBox.coReport.bind(this, a, b, 1)], [3, g_contact_reasons[3], Listview.funcBox.coReport.bind(this, a, b, 3)], [4, g_contact_reasons[4], Listview.funcBox.coReport.bind(this, a, b, 4)]];
-        if (a == 1 && b.op && typeof g_pageInfo != "undefined" && !g_pageInfo.sticky) {
-            this.menu.splice(3, 0, [0, g_contact_reasons[0], Listview.funcBox.coReport.bind(this, a, b, 0)])
+        this.menu = [[2, g_report_reasons[2], Listview.funcBox.coReport.bind(this, a, b, 2)], [1, g_report_reasons[1], Listview.funcBox.coReport.bind(this, a, b, 1)], [3, g_report_reasons[3], Listview.funcBox.coReport.bind(this, a, b, 3)], [4, g_report_reasons[4], Listview.funcBox.coReport.bind(this, a, b, 4)]];
+		if (a == 1 && b.op && typeof g_pageInfo != "undefined" && !g_pageInfo.sticky) {
+            this.menu.splice(3, 0, [0, g_report_reasons[0], Listview.funcBox.coReport.bind(this, a, b, 0)])
         }
         (Menu.showAtCursor.bind(this, c))()
     },coGetColor: function(c, a) {
@@ -4577,6 +4578,9 @@ Listview.funcBox = {createSimpleCol: function(c, d, a, b) {
         }
     },coReply: function(b) {
         document.forms.addcomment.elements.replyto.value = b.replyTo;
+        var a = ge("gjkdlfgkjh436");
+        gE(a, "span")[0].innerHTML = b.user;
+        a.style.display = "";
         co_addYourComment()
     },coValidate: function(a, c) {
         c |= 0;
@@ -4630,6 +4634,10 @@ Listview.funcBox = {createSimpleCol: function(c, d, a, b) {
             }
             Listview.funcBox.coFormatDate(b.childNodes[3], d, c);
             var a = "";
+            if (f.rating != NULL) 
+            {
+            	a += LANG.lvcomment_patch1 + g_getPatchVersion(c) + LANG.lvcomment_patch2
+            }
             if (e[1] > 1) {
                 a += LANG.dash + sprintf(LANG.lvcomment_nedits, e[1])
             }
@@ -5918,6 +5926,7 @@ Listview.templates = {faction: {sort: [1],nItemsPerPage: -1,searchable: 1,filtra
             Listview.funcBox.coFormatDate(a, F, s);
             a.style.cursor = "pointer";
             ae(w, a);
+            ae(w, ct(LANG.lvcomment_patch1 + g_getPatchVersion(s) + LANG.lvcomment_patch2));
             ae(H, w);
             m.className = "comment-body" + Listview.funcBox.coGetColor(t);
             if (t.indent) {
@@ -7021,6 +7030,17 @@ function() {
                 }
             }
         }
+        /*
+        var P = "";
+        if (!g_dev) {
+        	if (e == i) {
+        		P += "http://profiller.wowhead.com"
+        	} else {
+        		P += "http://" + g_getDomainFromLocale(X) + ".wowhead.com"
+        	}
+        }
+        P += "?" + p[W][1] + "=" + S + "&power" + R;
+        */
         var P = "ajax.php?" + p[W][1] + "=" + S + "&power" + R;
         g_ajaxIshRequest(P)
     }
@@ -8343,4 +8363,6 @@ var Ads = {dimensions: {leaderboard: [728, 90],skyscraper: [160, 600],medrect: [
             }
             Ads.hidden = []
         }
-    }};
+    }
+};
+DomContentLoaded.addEvent(Ads.install);

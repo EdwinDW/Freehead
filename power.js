@@ -1772,7 +1772,7 @@ function () {
 		 * g_getDomainFromLocale(X) + ".wowhead.com" } } P += "?" + p[W][1] +
 		 * "=" + S + "&power" + R;
 		 */
-		var P = "http://db.freedomwow.ru/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
+		var P = "http://localhost/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
 		g_ajaxIshRequest(P)
 	}
 	function N(R, S) {
@@ -1915,14 +1915,14 @@ function () {
 	};
 	K()
 	
-	var g_locale = { id: 6, name: 'eses' };
+	var g_locale = { id: 8, name: 'ruru' };
 	var _head = document.getElementsByTagName('head') [0];
 	var _link = document.createElement('link');
 	var _script = document.createElement('script');
 	_link.rel = "stylesheet";
 	_link.setAttribute("type","text/css");
-	_link.href = "http://db.freedomwow.ru/templates/wowhead/css/power.css";
-	_script.setAttribute("src","http://db.freedomwow.ru/templates/wowhead/js/locale_ruru.js");
+	_link.href = "http://localhost/templates/wowhead/css/power.css";
+	_script.setAttribute("src","http://localhost/templates/wowhead/js/locale_ruru.js");
 	_script.setAttribute("type","text/javascript");
 	
 	_head.appendChild(_link);
