@@ -20,7 +20,7 @@
     <div class="top">
      <div id="toplinks" class="toplinks">{if $user} {#Greetings#}, <a href="?user={$user.name}">{$user.name}</a>|<a href="?account=signout">{#Sign_out#}</a>{else}<a href="?account=signin">{#Sign_in#}</a> |<a href="?account=signup">{#Sign_up#}</a>        {/if}
 | <a href="#" id="toplinks-feedback" class="icon-email">{#Feedback#}</a> <br>
-{#Language#}: <a href="/?locale=8">Русский</a> |  <a href="/locale=0">English</a> |  <a href="/locale=2">Français</a> |  <a href="/locale=3">Deutsch</a> <br> 
+{#Language#}: <a href="/?locale=8">Русский</a> |  <a href="/?locale=0">English</a> |  <a href="/?locale=2">Français</a> |  <a href="/?locale=3">Deutsch</a> <br> 
        <script type="text/javascript">g_initHeaderMenus()</script>
      </div>
     </div>
