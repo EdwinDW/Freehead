@@ -94,6 +94,7 @@ $types = array(
 	6 => array('spell',		$tableprefix.'spell',	'spellID'		),
 	7 => array('zone',		$tableprefix.'zones',	'areatableID'	),
 	8 => array('faction',	$tableprefix.'factions','factionID'		),
+	9 => array('zone',		$tableprefix.'zones','entry'			),
 );
 
 // Отношения со фракциями

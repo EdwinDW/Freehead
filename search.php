@@ -111,6 +111,38 @@ if(!$found = load_cache(SEARCH, $cache_key))
 	foreach($rows as $row)
 		$found['npc'][] = creatureinfo2($row);
 
+
+	// Ищем зоны:
+	if($_SESSION['locale']>0)
+	{
+		$m = $DB->selectCol('
+				SELECT mapID
+				FROM aowow_zones
+				WHERE
+					name_loc?d LIKE ?
+				LIMIT '.$AoWoWconf["limit"].'
+			',
+			$_SESSION['locale'], $nsearch,
+			$_SESSION['locale'], $nsearch
+		);
+	}
+	$rows = $DB->select('
+				SELECT z.?#
+				{, l.name_loc?d AS `name_loc`}
+			FROM aowow_zones z
+			LIMIT '.$AoWoWconf["limit"].'
+		',
+
+		$zones_cols[0],
+		($m)? $_SESSION['locale']: DBSIMPLE_SKIP,
+		($m)? 1: DBSIMPLE_SKIP,
+		$nsearch, $nsearch,
+		($m)? $m: DBSIMPLE_SKIP
+	);
+	unset($m);
+	foreach($rows as $row)
+		$found['zone'][] = zoinesinfo2($row);
+		
 	// Ищем объекты
 	if($_SESSION['locale']>0)
 	{
