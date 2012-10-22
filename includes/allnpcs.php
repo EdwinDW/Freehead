@@ -73,7 +73,7 @@ function creatureinfo2 ( $Row )
             break;
     }
     
-    $x .=  "".LOCALE_LVL."  {$level} {$type}{$rank}";
+    $x .=  "".LOCALE_LVL." {$level} {$type}{$rank}";
     $x .= "</td></tr></table>";
     
     $creature ['tooltip'] = $x;
