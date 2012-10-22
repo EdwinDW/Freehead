@@ -1772,7 +1772,7 @@ function () {
 		 * g_getDomainFromLocale(X) + ".wowhead.com" } } P += "?" + p[W][1] +
 		 * "=" + S + "&power" + R;
 		 */
-		var P = "http://localhost/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
+		var P = "http://base.freedomwow.ru/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
 		g_ajaxIshRequest(P)
 	}
 	function N(R, S) {
@@ -1921,8 +1921,8 @@ function () {
 	var _script = document.createElement('script');
 	_link.rel = "stylesheet";
 	_link.setAttribute("type","text/css");
-	_link.href = "http://localhost/templates/wowhead/css/power.css";
-	_script.setAttribute("src","http://localhost/templates/wowhead/js/locale_ruru.js");
+	_link.href = "http://base.freedomwow.ru/templates/wowhead/css/power.css";
+	_script.setAttribute("src","http://base.freedomwow.ru/templates/wowhead/js/locale_ruru.js");
 	_script.setAttribute("type","text/javascript");
 	
 	_head.appendChild(_link);
