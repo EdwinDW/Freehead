@@ -12,10 +12,12 @@ TrinityCore database World of Warcraft 3.3.5 (build 12340)
 Форма заполнения заявки в разделе Issues:
 
 OS:
+Apache:
 PHP:
 MySQL:
 APC/eAcc:     (yes/no)
 Rev Hash:
+DB Rev:
   
   
 -------------English Description---------------
@@ -32,7 +34,9 @@ If you change the php, tpl, js, conf files yourself, please do not write to me a
 Complete application form for the Issues sector:
 
 OS:
+Apache:
 PHP:
 MySQL:
-APC / eAcc: (yes / no)
+APC/eAcc:     (yes/no)
 Rev Hash:
+DB Rev:
