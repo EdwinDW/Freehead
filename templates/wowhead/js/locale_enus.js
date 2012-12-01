@@ -2548,6 +2548,7 @@ var LANG={
 	tab_starts:"Starts",
 	tab_startsquest:"Starts quest",
 	tab_submitascreenshot:"Submit a screenshot",
+	tab_submityourdata:"Send your data",
 	tab_summonedby:"Summoned by",
 	tab_talents:"Talents",
 	tab_tameable:"Tameable",

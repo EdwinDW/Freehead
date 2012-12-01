@@ -42,18 +42,18 @@
 
 <div id="tab-submit-your-data" style="display: none">
 
-  <p><b>Freedom DB Client</b> (клиент Freedom DB) — небольшое приложение, с помощью которого вы можете обновить данные на сайте, а так же воспользоваться дополнительными возможностями! &nbsp;</p>
+  <p><b>{#Send_data_client_name#}</b> {#Send_data_desc#} &nbsp;</p>
   <div class="pad2"></div>
-  <p>Клиент Freedom DB делает две вещи: &nbsp;</p>
+  <p>{#Send_data_start_list#} &nbsp;</p>
 
   <ol>
-  <li><div>Он устанавливает и обновляет аддон <b>Freedom Looter</b>, который собирает данные, пока вы играете! &nbsp;</div></li>
-  <li><div>Он загружает <b>собранные данные</b> на FreedomWoW, обновляя базу данных! &nbsp;</div></li>
+  <li><div>{#Send_data_list_one#} &nbsp;</div></li>
+  <li><div>{#Send_data_list_two#} &nbsp;</div></li>
   </ol>
 
-  <p>Вы также можете использовать Freedom DB Client, чтобы просматривать выученные рецепты, выполненные задания, собранные ездовые животные и спутники и полученные звания!&nbsp;</p>
+  <p>{#Send_data_ps#}&nbsp;</p>
   <div class="pad2"></div>
-  <p>Чего же вы ждете? <a href="/client">Скачайте клиент Freedom DB </a>.&nbsp;</p>
+  <p>{#Send_data_download#} <a href="/client">{#Send_data_client_name_download#}</a>.&nbsp;</p>
 
 </div>
 

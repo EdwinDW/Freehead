@@ -68,7 +68,7 @@
 							'ff71d5ff',
 						{/if}
 						'item:{$item.entry}:0:0:0:0:0:0:0:0', '{$item.name|replace:'"':'\\\\&quot;'}')">
-					<em><b><i>Link</i></b><span>Для игры</span></em></a>
+					<em><b><i>Link</i></b><span>{#Game_link#}</span></em></a>
 					<a href="javascript:;" class="button-red" onclick="this.blur(); g_getBBCodeLink(
 						{if $item.quality==0}
 							'#9d9d9d',
@@ -92,11 +92,11 @@
 							'#71d5ff',
 						{/if}
 						'{$item.entry}', '{$item.name|replace:'"':'\\&quot;'}')">
-					<em><b><i>Link</i></b><span>Для форума</span></em></a>
-					<a href="javascript:;" id="dsgndslgn464d" class="button-red" onclick="this.blur(); ModelViewer.show({ldelim} type:{$page.type}, typeId:{$item.entry}, displayId:{$item.displayid}, slot:{$item.type}{rdelim})"><em><b><i>Посмотреть в 3D</i></b><span>Посмотреть в 3D</span></em></a>
+					<em><b><i>Link</i></b><span>{#Forum_link#}</span></em></a>
+					<a href="javascript:;" id="dsgndslgn464d" class="button-red" onclick="this.blur(); ModelViewer.show({ldelim} type:{$page.type}, typeId:{$item.entry}, displayId:{$item.displayid}, slot:{$item.type}{rdelim})"><em><b><i>{#3D_viewer#}</i></b><span>{#3D_viewer#}</span></em></a>
 
 					{/strip}
-					<a href="http://ru.wowhead.com/?{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
+					<a href="http://www.wowhead.com/?{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
 					<h1>{$item.name}</h1>
 
 					<div id="icon{$item.entry}-generic" style="float: left"></div>

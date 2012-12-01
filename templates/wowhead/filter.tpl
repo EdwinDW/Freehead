@@ -15,7 +15,7 @@
 <form action="" method="get" name="fi" onsubmit="return fi_submit(this)" onreset="return fi_reset(this)">
 <input type="hidden" name="items" value="filter" />
 <div class="rightpanel">
-<div style="float: left">{#Quality#}: </div><small><a href="javascript:;" onclick="document.forms['fi'].elements['qu[]'].selectedIndex = -1; return false" onmousedown="return false">очистить</a></small>
+<div style="float: left">{#Quality#}: </div><small><a href="javascript:;" onclick="document.forms['fi'].elements['qu[]'].selectedIndex = -1; return false" onmousedown="return false">{#Clear_filter#}</a></small>
 <div class="clear"></div>
 <select name="qu[]" size="8" multiple="multiple" class="rightselect" style="background-color: #181818">
 <option value="0" class="q0">{#Poor#}</option>
@@ -30,7 +30,7 @@
 </div>
 
 <div class="rightpanel2">
-<div style="float: left">{#Slot#}: </div><small><a href="javascript:;" onclick="document.forms['fi'].elements['sl[]'].selectedIndex = -1; return false" onmousedown="return false">clear</a></small>
+<div style="float: left">{#Slot#}: </div><small><a href="javascript:;" onclick="document.forms['fi'].elements['sl[]'].selectedIndex = -1; return false" onmousedown="return false">{#Clear_filter#}</a></small>
 <div class="clear"></div>
 <select name="sl[]" size="7" multiple="multiple" class="rightselect">
 <option value="16">{#Back#}</option>
@@ -104,7 +104,7 @@
     <input type="radio" name="gb" value="1" id="gb-slot" /><label for="gb-slot">{#Slot#}</label>
     <input type="radio" name="gb" value="2" id="gb-level" /><label for="gb-level">{#Level#}</label>
     <input type="radio" name="gb" value="3" id="gb-source" /><label for="gb-source">{#Source#}</label>
-</div><div class="clear"></div><div class="beta"><input type="checkbox" name="eb" value="1" >{#Exclude_pandaria#}</div><div class="padded"></div><input type="submit" value="Применить фильтр" />
+</div><div class="clear"></div><div class="beta"><input type="checkbox" name="eb" value="1" >{#Exclude_pandaria#}</div><div class="padded"></div><input type="submit" value="{#Apply_filter#}" />
 
 <input type="hidden" name="upg" />
 

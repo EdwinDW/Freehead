@@ -2543,6 +2543,7 @@ var LANG={
 	tab_starts:"Débute",
 	tab_startsquest:"[Starts quest]",
 	tab_submitascreenshot:"Envoyer une capture d'écran",
+	tab_submityourdata:"Envoyer des données",
 	tab_summonedby:"Invoqué par",
 	tab_talents:"Talents",
 	tab_tameable:"Domptables",

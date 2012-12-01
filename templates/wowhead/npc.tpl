@@ -39,7 +39,7 @@
 {if $npc.armor > 0}
 						<li><div>{#Armor#}: {$npc.armor}</div></li>
 {/if} 
-<tr><th id="infobox-">Изображения</th></tr>
+<tr><th id="infobox-">{#Screenshots_tab#}</th></tr>
 <tr><td><div class="infobox-spacer"></div><div id="infobox-sticky-ss"></div></td></tr>
 					</ul>
 				</td></tr>

@@ -2544,6 +2544,7 @@ var LANG={
 	tab_starts:"Startet Quests",
 	tab_startsquest:"Startet Quest",
 	tab_submitascreenshot:"Einen Screenshot einsenden",
+	tab_submityourdata:"Daten senden",
 	tab_summonedby:"Beschwört von",
 	tab_talents:"Talente",
 	tab_tameable:"Zähmbare",
