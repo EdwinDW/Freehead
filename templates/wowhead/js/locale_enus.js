@@ -795,13 +795,13 @@ var mn_database=[
 	[2,"Item Sets","?itemsets"/*,mn_itemSets*/],
 	[4,"NPCs","?npcs",mn_npcs],
 	[3,"Quests","?quests",mn_quests],
-	[6,"Zones","?zones",mn_zones],
+	//[6,"Zones","?zones",mn_zones],
 	[1,"Spells","?spells",mn_spells],
 	[9,"Achievements","?achievements",mn_achievements],
 	[5,"Objects","?objects",mn_objects],
 	[7,"Factions","?factions",mn_factions],
-	[10,"Titles","?titles",mn_titles],
-	[8,"Hunter Pets","?pets",mn_pets],
+	//[10,"Titles","?titles",mn_titles],
+	//[8,"Hunter Pets","?pets",mn_pets],
 	[11,"World Events","?events"/*,mn_holidays*/]
 ];
 var mn_tools=[
@@ -841,26 +841,26 @@ var mn_tools=[
 		[10,"2.4.2","?patchnotes=2.4.2"],
 		[11,"2.4.0","?patchnotes=2.4.0"]
 	]],
-	[8,"Utilities",,[
+	*/[8,"Utilities",,[
 		[,"Database"],
-		[0,"Latest Additions","?latest-additions"],
-		[1,"Latest Articles","?latest-articles"],
-		[2,"Latest Comments","?latest-comments"],
-		[3,"Latest Screenshots","?latest-screenshots"],
-		[9,"New Items in Patch",,[
+		/* [0,"Latest Additions","?latest-additions"],
+		[1,"Latest Articles","?latest-articles"], */
+		[2,"Latest Comments","?latest=comments"],
+		[3,"Latest Screenshots","?latest=screenshots"],
+		/*[9,"New Items in Patch",,[
 			[2,"3.3","?new-items=3.3"],
 			[1,"3.2","?new-items=3.2"],
 			[0,"3.1","?new-items=3.1"]
 		]],
 		[4,"Random Page","?random"],
 		[5,"Unrated Comments","?unrated-comments"],
-		[,"Forums"],
-		[6,"Latest Replies","?latest-replies"],
-		[7,"Latest Topics","?latest-topics"],
-		[8,"Unanswered Topics","?unanswered-topics"]
-	]]*/
-	[31,"Latest screenshots","?latest=screenshots"],
-	[30,"Latest Comments","?latest=comments"]
+		*/[,"Forums"],
+		[6,"Latest Replies","https://github.com/darki73/Freehead/docs/Forum_EN"],
+		[7,"Latest Topics","https://github.com/darki73/Freehead/docs/Forum_EN"],
+		[8,"Unanswered Topics","https://github.com/darki73/Freehead/docs/Forum_EN"]
+	]],
+	[,"Useful info"]
+	[32,"Developers Website","https://github.com/darki73"],
 ];
 var mn_forums=[
 	[0,"WoW General"],

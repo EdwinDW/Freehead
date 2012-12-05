@@ -96,7 +96,8 @@
 					<a href="javascript:;" id="dsgndslgn464d" class="button-red" onclick="this.blur(); ModelViewer.show({ldelim} type:{$page.type}, typeId:{$item.entry}, displayId:{$item.displayid}, slot:{$item.type}{rdelim})"><em><b><i>{#3D_viewer#}</i></b><span>{#3D_viewer#}</span></em></a>
 
 					{/strip}
-					<a href="http://www.wowhead.com/?{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
+					
+					<a href="http://{if $locale == 8}ru{elseif $locale == 0}www{elseif $locale == 6}es{/if}.wowhead.com/{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
 					<h1>{$item.name}</h1>
 
 					<div id="icon{$item.entry}-generic" style="float: left"></div>

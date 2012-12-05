@@ -841,25 +841,26 @@ var mn_tools=[
 		[10,"2.4.2","?patchnotes=2.4.2"],
 		[11,"2.4.0","?patchnotes=2.4.0"]
 	]],
-	[8,"Utilitaires",,[
+	*/[8,"Utilitaires",,[
 		[,"Base de données"],
-		[0,"Derniers ajouts","?latest-additions"],
-		[1,"Derniers articles","?latest-articles"],
-		[2,"Derniers commentaires","?latest-comments"],
-		[3,"Dernières captures d'écran","?latest-screenshots"],
-		[9,"Nouveaux objets dans la mise à jour",,[
+		/*[0,"Derniers ajouts","?latest-additions"],
+		[1,"Derniers articles","?latest-articles"], */
+		[2,"Derniers commentaires","?latest=comments"],
+		[3,"Dernières captures d'écran","?latest=screenshots"],
+		/* [9,"Nouveaux objets dans la mise à jour",,[
 			[2,"3.3","?new-items=3.3"],
 			[1,"3.2","?new-items=3.2"],
 			[0,"3.1","?new-items=3.1"]
 		]],
 		[4,"Page au hasard","?random"],
 		[5,"[Unrated Comments]","?unrated-comments"],
-		[,"Forum"],
-		[6,"Dernières réponses","?latest-replies"],
-		[7,"Derniers sujets","?latest-topics"],
-		[8,"Sujets sans réponse","?unanswered-topics"]
-	]]*/
-	[30,"Derniers commentaires","?latest=comments"]
+		*/ [,"Forum"],
+		[6,"Dernières réponses","https://github.com/darki73/Freehead/docs/Forum_FR"],
+		[7,"Derniers sujets","https://github.com/darki73/Freehead/docs/Forum_FR"],
+		[8,"Sujets sans réponse","https://github.com/darki73/Freehead/docs/Forum_FR"]
+	]],
+	[,"Utile"]
+	[32,"Développeurs Website","htts://github.com/darki73"]
 ];
 var mn_forums=[
 	[0,"WoW en général"],

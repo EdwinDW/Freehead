@@ -795,13 +795,13 @@ var mn_database=[
 	[2,"Комплекты","?itemsets"/*,mn_itemSets*/],
 	[4,"НИП","?npcs",mn_npcs],
 	[3,"Задания","?quests",mn_quests],
-	[6,"Местности","?zones",mn_zones],
+	/* [6,"Местности","?zones",mn_zones], */
 	[1,"Заклинания","?spells",mn_spells],
 	[9,"Достижения","?achievements",mn_achievements],
 	[5,"Объекты","?objects",mn_objects],
 	[7,"Фракции","?factions",mn_factions],
-	[10,"Звания","?titles",mn_titles],
-	[8,"Питомцы","?pets",mn_pets],
+	/*[10,"Звания","?titles",mn_titles],
+	[8,"Питомцы","?pets",mn_pets],*/
 	[11,"Игровые События","?events"/*,mn_holidays*/]
 ];
 var mn_tools=[
@@ -841,25 +841,28 @@ var mn_tools=[
 		[10,"2.4.2","?patchnotes=2.4.2"],
 		[11,"2.4.0","?patchnotes=2.4.0"]
 	]],
+	*/
 	[8,"Дополнительно",,[
 		[,"База данных"],
-		[0,"Новые добавления","?latest-additions"],
-		[1,"Новые статьи","?latest-articles"],
+		/* [0,"Новые добавления","?latest-additions"],
+		[1,"Новые статьи","?latest-articles"], */
 		[2,"Новые комментарии","?latest-comments"],
 		[3,"Новые изображения","?latest-screenshots"],
-		[9,"Новые предметы обновления",,[
+		/* [9,"Новые предметы обновления",,[
 			[2,"3.3","?new-items=3.3"],
 			[1,"3.2","?new-items=3.2"],
 			[0,"3.1","?new-items=3.1"]
 		]],
 		[4,"Случайная страница","?random"],
 		[5,"Комментарии без оценки","?unrated-comments"],
+		*/
 		[,"Форум"],
-		[6,"Новые ответы","?latest-replies"],
-		[7,"Новые темы","?latest-topics"],
-		[8,"Темы без ответа","?unanswered-topics"]
-	]]*/
-	[30,"Новые комментарии","?latest=comments"]
+		[6,"Новые ответы","https://github.com/darki73/Freehead/docs/Forum_RU"],
+		[7,"Новые темы","https://github.com/darki73/Freehead/docs/Forum_RU"],
+		[8,"Темы без ответа","https://github.com/darki73/Freehead/docs/Forum_RU"]
+	]],
+	[,"Полезное"],
+	[32,"Сайт разработчика","https://github.com/darki73"]
 ];
 var mn_forums=[
 	[0,"Общие темы WoW"],
