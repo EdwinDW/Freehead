@@ -10,10 +10,10 @@ function array_random($arr, $num = 1) {
     return $num == 1 ? $r[0] : $r;
 }
 
-
-if($AoWoWconf['locale'] == 8)
+$locale = $this->_tpl_vars['locale'];
+if($locale == 8)
 { include('configs/phrases/ruru.php'); }
-elseif ($AoWoWconf['locale'] == 0)
+elseif ($locale == 0)
 { include('configs/phrases/enen.php'); }
 
 print_r(array_random($titlephrases));
