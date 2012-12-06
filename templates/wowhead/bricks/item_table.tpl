@@ -19,7 +19,7 @@
 new Listview(
 	{ldelim}template:'item',
 	id:'{$id}',
-	note:'{$num_item} {#Item_Found#}',
+	note:'{if $locale == 8}{#Item_Found_total#} {$num_item} {#Item_Found#} 300{#Item_Found_2#}{elseif $locale ==0} {$num_item} {#Item_Found_total#}300 {#Item_Found#}{/if}',
 	{if (isset($name))}name:LANG.tab_{$name},{/if}
 	{if (isset($tabsid))}tabs:{$tabsid},parent:'listview-generic',{/if}
 	extraCols:[

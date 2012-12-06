@@ -17,13 +17,15 @@
 		<div id="toptabs">
 			<div id="toptabs-inner">
 				<div id="toptabs-right">
-					<div id="toplinks" class="toplinks">{if $user}<a href="?user={$user.name}">{$user.name}</a>|<a href="?account=signout">{#Sign_out#}</a>{else}<a href="?account=signin">{#Sign_in#}</a>{/if}
-						|<a href="javascript:;" id="toptabs-menu-language">{#Language#} <small>&#9660;</small></a>
-						<script type="text/javascript">g_initHeaderMenus()</script>
-					</div>
+					
 				</div>
 				<div id="ptewhjkst46"></div>
+				<div align="right">{if $user}<a href="?user={$user.name}">{$user.name}</a> &nbsp; | &nbsp; <a href="?account=signout">{#Sign_out#}</a>{else}<a href="?account=signin">{#Sign_in#}</a>{/if}
+						 &nbsp; | &nbsp; <a href="/?feedback"><img src="/templates/wowhead/images/letter.png">{#Feedback#}</a> &nbsp; | &nbsp; <a href="javascript:;"  id="toptabs-menu-language">{#Language#} <small>&#9660;</small></a>
+						<script type="text/javascript">g_initHeaderMenus()</script>
+					</div>
 				<div class="clear"></div>
+				
 			</div>
 		</div>
 		<div id="topbar-right"><div><form action="."><a href="javascript:;"></a><input name="search" size="30" value="" id="oh2345v5ks" /></form></div></div>

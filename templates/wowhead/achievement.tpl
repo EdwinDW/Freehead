@@ -17,7 +17,7 @@
 					<tr><td>
 						<div class="infobox-spacer"></div>
 						<ul>
-							<li><div>{#Points#}: <span class="moneyachievement tip" onmouseover="Listview.funcBox.moneyAchievementOver(event)" onmousemove="Tooltip.cursorUpdate(event)" onmouseout="Tooltip.hide()">{$achievement.points}</span></div></li>
+							<li><div>{#Points#}: {if $achievement.points == 0} {#Feat_of_strength#} </div></li>{else} <span class="moneyachievement tip" onmouseover="Listview.funcBox.moneyAchievementOver(event)" onmousemove="Tooltip.cursorUpdate(event)" onmouseout="Tooltip.hide()"> {$achievement.points}&nbsp;</span></div></li>{/if}
 							<li><div>{#Side#}: {$achievement.side}</div></li>
 						</ul>
 					</td></tr>
@@ -50,7 +50,7 @@
 				<div class="text">
 
 					<div id="h1-icon-generic" class="h1-icon"></div>
-					<a href="http://www.wowhead.com/?{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
+					<a href="http://{if $locale == 8}ru{elseif $locale == 0}www{elseif $locale == 6}es{/if}.wowhead.com/{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
 					<h1 class="h1-icon">{$achievement.name}</h1>
 					<script type="text/javascript">
 					ge('h1-icon-generic').appendChild(Icon.create('{$achievement.iconname|escape:"javascript"}', 1));

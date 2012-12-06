@@ -6,6 +6,7 @@ ini_set('serialize_precision', 4);
 session_start();
 // Префикс
 $tableprefix = $AoWoWconf['mangos']['aowow'];
+$items_to_be_displayed = $AoWoWconf['limit'];
 
 $locales = array(
 	0 => 'enus',
@@ -95,6 +96,7 @@ $types = array(
 	7 => array('zone',		$tableprefix.'zones',	'areatableID'	),
 	8 => array('faction',	$tableprefix.'factions','factionID'		),
 	9 => array('zone',		$tableprefix.'zones','entry'			),
+	10 => array('title',	$tableprefix.'char_titles',	'id'	),
 );
 
 // Отношения со фракциями

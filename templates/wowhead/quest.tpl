@@ -11,15 +11,31 @@
 					g_initPath([0,3,{$quest.maincat},{$quest.category}]);
 				</script>
 
+				<script type="text/javascript">
+					{if isset($allitems)}{include			file='bricks/allitems_table.tpl'		data=$allitems			}{/if}
+					{if isset($allspells)}{include			file='bricks/allspells_table.tpl'		data=$allspells			}{/if}
+					{if isset($allachievements)}{include	file='bricks/allachievements_table.tpl'	data=$allachievements	}{/if}
+				</script>
+
 				<table class="infobox">
 					<tr><th>{#Quick_Facts#}</th></tr>
 					<tr><td>
 						<div class="infobox-spacer"></div>
 						<ul>
-							{if $quest.QuestLevel>0}<li><div>{#Level#}: {$quest.QuestLevel}</div></li>{/if}
+							{if $quest.Level>0}<li><div>{#Level#}: {$quest.Level}</div></li>{/if}
 							{if $quest.MinLevel>0}<li><div>{#Requires_level#}: {$quest.MinLevel}</div></li>{/if}
+							<li><div>{#Loremaster#}: <a href="/?zone={$quest.ZoneOrSort}">
+							{assign var=zone value=$quest.ZoneOrSort}
+							{php} 
+							mysql_select_db("world");
+							$zones = $this->_tpl_vars['zone'];
+							$loc = $this->_tpl_vars['locale'];
+							$result = mysql_query("SELECT name_loc$loc FROM aowow_zones WHERE areatableID='$zones'");
+							$row = mysql_fetch_row($result);
+							echo $row[0];
+							{/php}</a></li></div>
 							{if $quest.typename}<li><div>{#Type#}: {$quest.typename}</div></li>{/if}
-							{if isset($quest.side)}<li><div>{#Side#}: <span class="{if ($quest.side.side==1)}alliance{elseif ($quest.side.side==2)}horde{else}both{/if}-icon">{$quest.side.name}</span></div></li>{/if}
+							{if isset($quest.side)}<li><div>{#Side#}: <span class="{if ($quest.side.side==1)} alliance{elseif ($quest.side.side==2)}horde{else}both{/if}-icon">{$quest.side.name}</span></div></li>{/if}
 							{strip}{if isset($quest.LimitTime)}
 								<li><div>
 									{#Timer#}:
@@ -30,7 +46,7 @@
 							{/if}{/strip}
 							{strip}{if isset($quest.start)}
 								<li><div>
-									{#Start#}:
+									<img src="/templates/wowhead/images/quest_av.png">{#Start#}:
 									{section loop=$quest.start name=i}
 										{if $quest.start[i].side} <span class="{$quest.start[i].side}-icon">{/if}
 										<a href="?{$quest.start[i].type}={$quest.start[i].entry}"
@@ -42,11 +58,14 @@
 									{/section}
 								</div></li>
 							{/if}{/strip}
-							{if isset($quest.end)}<li><div>{#End#}: {section loop=$quest.end name=i}{if $quest.end[i].side}<span class="{$quest.start[i].side}-icon">{/if}<a href="?{$quest.end[i].type}={$quest.end[i].entry}">{$quest.end[i].name}</a>{if $quest.end[i].side}</span>{/if}{if $smarty.section.i.last}{else}, <br><span style="visibility: hidden;">{#End#}: </span>{/if}{/section}</div></li>{/if}
+							{if isset($quest.end)}<li><div><img src="/templates/wowhead/images/quest_end.png">{#End#}: {section loop=$quest.end name=i}{if $quest.end[i].side}<span class="{$quest.start[i].side}-icon">{/if}<a href="?{$quest.end[i].type}={$quest.end[i].entry}">{$quest.end[i].name}</a>{if $quest.end[i].side}</span>{/if}{if $smarty.section.i.last}{else}, <br><span style="visibility: hidden;">{#End#}: </span>{/if}{/section}</div></li>{/if}
 							{if isset($quest.reqskill)}<li><div>{#Skill#}: {$quest.reqskill.name} ({$quest.reqskill.value})</div></li>{/if}
 							{if isset($quest.reqclass)}<li><div>{#Class#}: {$quest.reqclass}</div></li>{/if}
 							{if isset($quest.Sharable)}<li><div>{#Sharable#}</div></li>{/if}
 							{if isset($quest.Daily)}<li><div>{#Daily#}</div></li>{elseif isset($quest.Repeatable)}<li><div>{#Repeatable#}</div></li>{/if}
+							<li><div>{#Difficulty#}: <font color="yellow">{$quest.MinLevel}</font>  <font color="green">{$quest.MinLevel+5}</font> 
+							<font color="grey">{$quest.MinLevel+15}</font></div></li>
+							<li><div>{#Added_in_patch#} {if $quest.WDBVerified == 5875}1.12.1{elseif $quest.WDBVerified == 6005}1.12.2{elseif $quest.WDBVerified == 8606}2.4.3{elseif $quest.WDBVerified == 9947}3.1.3{elseif $quest.WDBVerified == 10146}3.2.0{elseif $quest.WDBVerified == 10505}3.2.2a{elseif $quest.WDBVerified == 10571}3.3.0{elseif $quest.WDBVerified == 11159}3.3.0a{elseif $quest.WDBVerified == 11403}3.3.2{elseif $quest.WDBVerified == 11623}3.3.3{elseif $quest.WDBVerified == 11723}3.3.3a{elseif $quest.WDBVerified == 12340}3.3.5a{/if} </div></li>
 						</ul>
 					</td></tr>
 {strip}		{* Серия квестов *}
@@ -60,10 +79,10 @@
 								<tr>
 									<th>{$smarty.section.i.index+1}.</th>
 									<td>
-										{if ($quest.series[i].entry==$quest.entry)}
+										{if ($quest.series[i].Id==$quest.Id)}
 											<b>{$quest.series[i].Title}</b>
 										{else}
-											<div><a href="?quest={$quest.series[i].entry}">{$quest.series[i].Title}</a></div>
+											<div><a href="?quest={$quest.series[i].Id}">{$quest.series[i].Title}</a></div>
 										{/if}
 									</td>
 								</tr>
@@ -85,7 +104,7 @@
 							<ul>
 							{section name=i loop=$quest.req}
 								<li>
-									<div><a href="?quest={$quest.req[i].entry}">{$quest.req[i].Title}</a></div>
+									<div><a href="?quest={$quest.req[i].Id}">{$quest.req[i].Title}</a></div>
 								</li>
 							{/section}
 							</ul>
@@ -104,7 +123,7 @@
 							<ul>
 							{section name=i loop=$quest.reqone}
 								<li>
-									<div><a href="?quest={$quest.reqone[i].entry}">{$quest.reqone[i].Title}</a></div>
+									<div><a href="?quest={$quest.reqone[i].Id}">{$quest.reqone[i].Title}</a></div>
 								</li>
 							{/section}
 							</ul>
@@ -123,7 +142,7 @@
 							<ul>
 							{section name=i loop=$quest.enabledby}
 								<li>
-									<div><a href="?quest={$quest.enabledby[i].entry}">{$quest.enabledby[i].Title}</a></div>
+									<div><a href="?quest={$quest.enabledby[i].Id}">{$quest.enabledby[i].Title}</a></div>
 								</li>
 							{/section}
 							</ul>
@@ -180,10 +199,10 @@
 							<ul>
 							{section name=i loop=$quest.open}
 								<li>
-										{if ($quest.open[i].entry==$quest.entry)}
+										{if ($quest.open[i].Id==$quest.Id)}
 											<b>{$quest.open[i].Title}</b>
 										{else}
-											<div><a href="?quest={$quest.open[i].entry}">{$quest.open[i].Title}</a></div>
+											<div><a href="?quest={$quest.open[i].Id}">{$quest.open[i].Title}</a></div>
 										{/if}
 								</li>
 							{/section}
@@ -335,28 +354,28 @@
 {/if}
 {/if}
 
-{if isset($quest.SrcItem)}
+{if isset($quest.SourceItemId)}
 <div class="pad"></div>
 {#Provided_Item#}:
 <table class="iconlist">
 	<tr>
 		<th align="right" id="iconlist-icon-src"></th>
-		<td><span class="q1"><a href="?item={$quest.SrcItem.entry}">{$quest.SrcItem.name}</a></span></td>
+		<td><span class="q1"><a href="?item={$quest.SourceItemId.entry}">{$quest.SourceItemId.name}</a></span></td>
 	</tr>
 </table>
-<script type="text/javascript">ge('iconlist-icon-src').appendChild(g_items.createIcon({$quest.SrcItem.entry}, 0, {$quest.SrcItem.count}));</script>
+<script type="text/javascript">ge('iconlist-icon-src').appendChild(g_items.createIcon({$quest.SourceItemId.entry}, 0, {$quest.SourceItemId.count}));</script>
 {/if}
 
-{if isset($quest.SrcSpell) and $quest.SrcSpell}
+{if isset($quest.SourceSpellId) and $quest.SourceSpellId}
 <div class="pad"></div>
 {#The_following_spell_will_be_cast_on_you#}:
 <table class="icontab">
 	<tr>
 		<th align="right" id="icontab-icon-spl"></th>
-		<td><span class="q1"><a href="?spell={$quest.SrcSpell.entry}">{$quest.SrcSpell.name}</a></span></td>
+		<td><span class="q1"><a href="?spell={$quest.SourceSpellId.entry}">{$quest.SourceSpellId.name}</a></span></td>
 	</tr>
 </table>
-<script type="text/javascript">ge('icontab-icon-spl').appendChild(g_spells.createIcon({$quest.SrcSpell.entry}, 0, 0));</script>
+<script type="text/javascript">ge('icontab-icon-spl').appendChild(g_spells.createIcon({$quest.SourceSpellId.entry}, 0, 0));</script>
 {/if}
 
 {if $quest.Details}
@@ -505,9 +524,15 @@
 			<div id="listview-generic" class="listview"></div>
 			<script type="text/javascript">
 				var tabsRelated = new Tabs({ldelim}parent: ge('tabs-generic'){rdelim});
+                
 				{if isset($quest.mailrewards)}{include file='bricks/item_table.tpl' id='mail-rewards' tabsid='tabsRelated' data=$quest.mailrewards name='questrewards'}{/if}
+                
 				{if isset($quest.criteria_of)}{include	file='bricks/achievement_table.tpl'	id='criteria-of'	tabsid='tabsRelated'	data=$quest.criteria_of	name='criteriaof'}{/if}
+                
 				new Listview({ldelim}template: 'comment', id: 'comments', name: LANG.tab_comments, tabs: tabsRelated, parent: 'listview-generic', data: lv_comments{rdelim});
+                
+				new Listview({ldelim}template: 'screenshot', id: 'screenshots', name: LANG.tab_screenshots, tabs: tabsRelated, parent: 'listview-generic', data: lv_screenshots{rdelim});
+                
 				tabsRelated.flush();
 			</script>
 

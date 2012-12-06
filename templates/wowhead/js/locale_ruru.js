@@ -955,7 +955,7 @@ var mn_path=[
 	[0,"База данных",,mn_database],
 	[1,"Инструменты",,mn_tools],
 	//[3,"Сообщество",,mn_community],
-	//[2,"Дополнительно",,mn_more]
+	//[2,"Дополнительно",,mn_more],
 ];
 var g_contact_reasons={
 	1:"Общее",
