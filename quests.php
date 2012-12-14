@@ -9,6 +9,7 @@ $smarty->config_load($conf_file, 'quest');
 @list($Type, $ZoneOrSort) = extract_values($podrazdel);
 
 $cache_key = cache_key($Type, $ZoneOrSort);
+$request_limit = $AoWoWconf['limit'];
 
 if(!$quests = load_cache(QUEST_LISTING, $cache_key))
 {
@@ -82,6 +83,7 @@ $page = array(
 	'path' => path(0, 3, $Type, $ZoneOrSort) // TODO
 );
 
+$smarty->assign('request_limit', $request_limit);
 $smarty->assign('page', $page);
 $smarty->assign('quests',$quests);
 $smarty->assign('quests_tot',(is_array($quests_tot) ? $quests_tot[0]['quest_tot'] : $quests_tot));

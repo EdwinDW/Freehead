@@ -26,7 +26,9 @@
 {/if}
 
 			<div class="text">
-
+				<a href="javascript:;" class="button-red button-red-disabled"><em><b><i>{#Viewer_3D#}</i></b><span>{#Viewer_3D#}</span></em></a>
+				<a href="javascript:;" class="button-red button-red-disabled"><em><b><i>{#Compare#}</i></b><span>{#Compare#}</span></em></a>
+				<a href="javascript:;" class="button-red button-red-disabled"><em><b><i>{#Find_better#}...</i></b><span>{#Find_better#}...</span></em></a>
 				<a href="http://www.wowhead.com/?{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
 				<h1>{$object.name}</h1>
 

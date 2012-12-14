@@ -96,7 +96,7 @@
 						{/if}
 						'{$item.entry}', '{$item.name|replace:'"':'\\&quot;'}')">
 					<em><b><i>Link</i></b><span>{#Forum_link#}</span></em></a>
-					<a href="javascript:;" id="dsgndslgn464d" class="button-red" onclick="this.blur(); ModelViewer.show({ldelim} type:{$page.type}, typeId:{$item.entry}, displayId:{$item.displayid}, slot:{$item.type}{rdelim})"><em><b><i>{#3D_viewer#}</i></b><span>{#3D_viewer#}</span></em></a>
+					<a href="javascript:;" id="dsgndslgn464d" class="button-red" onclick="this.blur(); ModelViewer.show({ldelim} type: {$page.type}, typeId: {$item.entry}, displayId: {$item.displayid}, slot: {$item.type}{rdelim})"><em><b><i>{#Viewer_3D#}</i></b><span>{#Viewer_3D#}</span></em></a>
 
 					{/strip}
 					

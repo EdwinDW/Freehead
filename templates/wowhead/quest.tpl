@@ -37,6 +37,38 @@
 							{/php}</a></li></div>
 							{if $quest.typename}<li><div>{#Type#}: {$quest.typename}</div></li>{/if}
 							{if isset($quest.side)}<li><div>{#Side#}: <span class="{if ($quest.side.side==1)} alliance{elseif ($quest.side.side==2)}horde{else}both{/if}-icon">{$quest.side.name}</span></div></li>{/if}
+							{if $quest.RequiredClasses != 0}<li><div>{#Quest_classes#}: 
+							{if $quest.RequiredClasses == 35}
+							<img src="/images/icons/medium/class_warrior.jpg" width="5%"><font color="#CD853F">{#Class_warrior#}</font>,
+							<img src="/images/icons/medium/class_paladin.jpg" width="5%"><font color="#CD5C5C">{#Class_paladin#}</font>,
+							<img src="/images/icons/medium/class_deathknight.jpg" width="5%"><font color="#CD2626">{#Class_deathknight#}</font>
+{elseif $quest.RequiredClasses == 1}
+							<img src="/images/icons/medium/class_warrior.jpg" width="10%"><font color="">{#Class_warrior#}</font>
+{elseif $quest.RequiredClasses == 2}
+							<img src="/images/icons/medium/class_paladin.jpg" width="10%"><font color="">{#Class_paladin#}</font>
+{elseif $quest.RequiredClasses == 4}
+							<img src="/images/icons/medium/class_hunter.jpg" width="10%"><font color="">{#Class_hunter#}</font>
+{elseif $quest.RequiredClasses == 8}
+							<img src="/images/icons/medium/class_rogue.jpg" width="10%"><font color="">{#Class_rogue#}</font>
+{elseif $quest.RequiredClasses == 16}
+							<img src="/images/icons/medium/class_priest.jpg" width="10%"><font color="">{#Class_priest#}</font>
+{elseif $quest.RequiredClasses == 32}
+							<img src="/images/icons/medium/class_deathknight.jpg" width="10%"><font color="">{#Class_deathknight#}</font>
+{elseif $quest.RequiredClasses == 64}
+							<img src="/images/icons/medium/class_shaman.jpg" width="10%"><font color="">{#Class_shaman#}</font>
+{elseif $quest.RequiredClasses == 128}
+							<img src="/images/icons/medium/class_mage.jpg" width="10%"><font color="">{#Class_mage#}</font>
+{elseif $quest.RequiredClasses == 256}
+							<img src="/images/icons/medium/class_warlock.jpg" width="10%"><font color="">{#Class_warlock#}</font>
+{elseif $quest.RequiredClasses == 1024}
+							<img src="/images/icons/medium/class_druid.jpg" width="10%"><font color="">{#Class_druid#}</font>
+{elseif $quest.RequiredClasses == 1424}
+							<img src="/images/icons/medium/class_druid.jpg" width="5%"><font color="">{#Class_druid#}</font>,
+							<img src="/images/icons/medium/class_warlock.jpg" width="5%"><font color="">{#Class_warlock#}</font>,
+							<img src="/images/icons/medium/class_mage.jpg" width="5%"><font color="">{#Class_mage#}</font>,
+							<img src="/images/icons/medium/class_priest.jpg" width="5%"><font color="">{#Class_priest#}</font>
+							{/if}
+							{/if}
 							{strip}{if isset($quest.LimitTime)}
 								<li><div>
 									{#Timer#}:
