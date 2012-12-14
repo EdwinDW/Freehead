@@ -844,8 +844,8 @@ var mn_tools=[
 	*/
 	[8,"Utilities",,[
 		[,"Database"],
-		/* [0,"Latest Additions","?latest-additions"],
-		[1,"Latest Articles","?latest-articles"], */
+		/* [0,"Latest Additions","?latest=additions"],
+		[1,"Latest Articles","?latest=articles"], */
 		[2,"Latest Comments","?latest=comments"],
 		[3,"Latest Screenshots","?latest=screenshots"],
 		/*[9,"New Items in Patch",,[

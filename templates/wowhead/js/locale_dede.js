@@ -843,10 +843,10 @@ var mn_tools=[
 	]],
 	[8,"Hilfsmittel",,[
 		[,"Datenbank"],
-		[0,"Neueste Ergänzungen","/?latest-additions"],
-		[1,"Neueste Artikel","/?latest-articles"],
-		[2,"Neueste Kommentare","/?latest-comments"],
-		[3,"Neueste Screenshots","/?latest-screenshots"],
+		[0,"Neueste Ergänzungen","/?latest=additions"],
+		[1,"Neueste Artikel","/?latest=articles"],
+		[2,"Neueste Kommentare","/?latest=comments"],
+		[3,"Neueste Screenshots","/?latest=screenshots"],
 		[9,"Neue Gegenstände im Patch",,[
 			[2,"3.3","/?new-items=3.3"],
 			[1,"3.2","/?new-items=3.2"],
@@ -855,8 +855,8 @@ var mn_tools=[
 		[4,"Zufällige Seite","/?random"],
 		[5,"Nicht bewertete Kommentare","/?unrated-comments"],
 		[,"Foren"],
-		[6,"Neueste Antworten","/?latest-replies"],
-		[7,"Neueste Themen","/?latest-topics"],
+		[6,"Neueste Antworten","/?latest=replies"],
+		[7,"Neueste Themen","/?latest=topics"],
 		[8,"Unbeantwortete Themen","/?unanswered-topics"]
 	]]*/
 	[30,"Neueste Kommentare","?latest=comments"]

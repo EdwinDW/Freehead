@@ -843,8 +843,8 @@ var mn_tools=[
 	]],
 	*/[8,"Utilitaires",,[
 		[,"Base de données"],
-		/*[0,"Derniers ajouts","?latest-additions"],
-		[1,"Derniers articles","?latest-articles"], */
+		/*[0,"Derniers ajouts","?latest=additions"],
+		[1,"Derniers articles","?latest=articles"], */
 		[2,"Derniers commentaires","?latest=comments"],
 		[3,"Dernières captures d'écran","?latest=screenshots"],
 		/* [9,"Nouveaux objets dans la mise à jour",,[
