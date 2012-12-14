@@ -1568,7 +1568,9 @@ var g_quest_types={
 	41:"PvP",
 	82:"Weltereignis",
 	84:"Eskorte",
-	85:"Heroisch"
+	85:"Heroisch",
+	88:"Schlachtzug (10)",
+	89:"Schlachtzug (25)"
 };
 var g_sides={
 	1:"Allianz",

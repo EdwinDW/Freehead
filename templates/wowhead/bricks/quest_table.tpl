@@ -2,7 +2,7 @@
 	new Listview({ldelim}
 		template:'quest',
 		id:'{$id}',
-		note:'{$num_quest} {#Quest_Found#}',
+		note:'{if $locale == 8}{#Quest_Found_total#} {$num_quest} {#Quest_Found#} 300{#Quest_Found_2#}{elseif $locale ==0} {$num_quest} {#Quest_Found_total#}300 {#Quest_Found#}{/if}',
 		{if isset($name)}name:LANG.tab_{$name},{/if}
 		{if isset($tabsid)}tabs:{$tabsid},parent:'listview-generic',{/if}
 		data:[
@@ -11,7 +11,6 @@
 					id:'{$data[i].Id}',
 					name:'{$data[i].Title|escape:"quotes"}',
 					level:'{$data[i].Level}',
-					raid:'{$data[i].Raid}',
 					{if ($data[i].MinLevel)}
 						reqlevel:{$data[i].MinLevel},
 					{/if}
@@ -35,8 +34,8 @@
 					{if isset($data[i].xp)}
 						,xp:{$data[i].xp}
 					{/if}
-					{if isset($data[i].money)}
-						,money:{$data[i].money}
+					{if isset($data[i].RewardOrRequiredMoney)}
+						,money:{$data[i].RewardOrRequiredMoney}
 					{/if}
 					{if isset($data[i].category)}
 						,category:{$data[i].category}

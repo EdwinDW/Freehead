@@ -1574,7 +1574,9 @@ var g_quest_types={
 	41:"PvP",
 	82:"World Event",
 	84:"Escort",
-	85:"Heroic"
+	85:"Heroic",
+	88:"Raid (10)",
+	89:"Raid (25)"
 };
 var g_sides={
 	1:"Alliance",

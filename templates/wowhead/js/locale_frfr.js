@@ -1571,7 +1571,9 @@ var g_quest_types={
 	41:"JcJ",
 	82:"Événement mondial",
 	84:"Escorte",
-	85:"Héroïque"
+	85:"Héroïque",
+	88:"Raid (10)",
+	89:"Raid (25)"
 };
 var g_sides={
 	1:"Alliance",
