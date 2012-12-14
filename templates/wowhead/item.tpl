@@ -18,6 +18,8 @@
 					<tr><td>
 						<div class="infobox-spacer"></div>
 						<ul>
+							{* Трансмогрификация *}
+							<li><div>{if $item.quality <=4}{#Can_be_transm#}{elseif $item.quality >=5}{#Cannot_be_transm#}{/if}
 							{* Уровень вещи *}
 							{if $item.level}<li><div>{#level#}: {$item.level}</div></li>{/if}
 							{* Стоимость вещи *}
@@ -39,6 +41,7 @@
 							{/if}
 							{if isset($item.disenchantskill)}<li><div>{#Disenchantable#} (<span class="tip" onmouseover="Tooltip.showAtCursor(event, LANG.tooltip_reqenchanting, 0, 0, 'q')" onmousemove="Tooltip.cursorUpdate(event)" onmouseout="Tooltip.hide()">{$item.disenchantskill}</span>)</div></li>{/if}
 							{if isset($item.key)}<li><div>{#Can_be_placed_in_the_keyring#}</div></li>{/if}
+							<li><div>{#Added_in_patch#} {if $item.WDBVerified == 5875}1.12.1{elseif $item.WDBVerified == 6005}1.12.2{elseif $item.WDBVerified == 8606}2.4.3{elseif $item.WDBVerified == 9947}3.1.3{elseif $item.WDBVerified == 10146}3.2.0{elseif $item.WDBVerified == 10505}3.2.2a{elseif $item.WDBVerified == 10571}3.3.0{elseif $item.WDBVerified == 11159}3.3.0a{elseif $item.WDBVerified == 11403}3.3.2{elseif $item.WDBVerified == 11623}3.3.3{elseif $item.WDBVerified == 11723}3.3.3a{elseif $item.WDBVerified == 12340}3.3.5a{/if} </div></li>
 						</ul>
 					</td></tr>
 				</table>

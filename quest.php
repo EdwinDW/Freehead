@@ -585,7 +585,6 @@ $smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 
 // Данные о квесте
 $smarty->assign('quest', $quest);
-
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
 // Загружаем страницу

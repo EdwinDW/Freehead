@@ -1,3 +1,4 @@
+{if $user}
 <div class="text">
 <h2>{#Contributel#}</h2>
 </div>
@@ -66,4 +67,7 @@
 	tabsContribute.add(LANG.tab_submityourdata, {ldelim}id: 'submit-your-data'{rdelim});
 	tabsContribute.flush();
 </script>
+
 <div class="clear"></div>
+{else}
+{/if}

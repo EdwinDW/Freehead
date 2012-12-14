@@ -10,7 +10,8 @@
 				{ldelim}
 					id:'{$data[i].Id}',
 					name:'{$data[i].Title|escape:"quotes"}',
-					level:'{$data[i].QuestLevel}',
+					level:'{$data[i].Level}',
+					raid:'{$data[i].Raid}',
 					{if ($data[i].MinLevel)}
 						reqlevel:{$data[i].MinLevel},
 					{/if}
