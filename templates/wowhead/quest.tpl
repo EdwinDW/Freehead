@@ -387,7 +387,7 @@
 {/if}
 {/if}
 
-{if isset($quest.SourceItemId)}
+{if $quest.SourceItemId != 0}
 <div class="pad"></div>
 {#Provided_Item#}:
 <table class="iconlist">

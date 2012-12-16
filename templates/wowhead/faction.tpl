@@ -7,8 +7,8 @@
 			<div id="main-contents" class="main-contents">
 				<script type="text/javascript">
 					{include file='bricks/allcomments.tpl'}
-					{include file='bricks/allscreeshots.tpl'}
-					var g_pageInfo = {ldelim}type: {$page.type}, typeId: {$page.typeid}, name: '{$faction.name|escape:"quotes"}'{rdelim};
+					{include file='bricks/allscreenshots.tpl'}
+					var g_pageInfo = {ldelim}type: {$page.type}, typeId: {$page.typeid}, name: '{$itemset.name|escape:"quotes"}'{rdelim};
 					g_initPath({$page.path});
 				</script>
 				<table class="infobox">
@@ -26,22 +26,18 @@
 					{$faction.description1}
 					{if $faction.description1}<h1></h1>{/if}
 					{$faction.description2}
-					<div class="article-footer">Article ported from <a href="http://www.wowwiki.com/" target="_blank" class="q0">WoWWiki</a>&ndash; <a href="http://www.wowwiki.com/{$faction.name}" target="_blank" class="q0">Read more</a><br />Licensed under <a href="http://www.gnu.org/copyleft/fdl.html" target="_blank" class="q0">GFDL</a></div>
+					
 				<h2>{#Related#}</h2>
 				</div>
 				<div id="tabs-generic"></div>
 				<div id="listview-generic" class="listview"></div>
-				<script type="text/javascript">
+<script type="text/javascript">
 var tabsRelated = new Tabs({ldelim}parent: ge('tabs-generic'){rdelim});
-{if isset($faction.items)}{include			file='bricks/item_table.tpl'		id='items'			name='items'		tabsid='tabsRelated'	data=$faction.items			}{/if}
-{if isset($faction.npcs)}{include			file='bricks/creature_table.tpl'	id='npcs'			name='members'		tabsid='tabsRelated'	data=$faction.npcs			}{/if}
 {if isset($faction.quests)}{include			file='bricks/quest_table.tpl'		id='quests'			name='quests'		tabsid='tabsRelated'	data=$faction.quests		}{/if}
-{if isset($faction.criteria_of)}{include	file='bricks/achievement_table.tpl'	id='criteria-of'	name='criteriaof'	tabsid='tabsRelated'	data=$faction.criteria_of	}{/if}
 new Listview({ldelim}template: 'comment', id: 'comments', name: LANG.tab_comments, tabs: tabsRelated, parent: 'listview-generic', data: lv_comments{rdelim});
 new Listview({ldelim}template: 'screenshot', id: 'screenshots', name: LANG.tab_screenshots, tabs: tabsRelated, parent: 'listview-generic', data: lv_screenshots{rdelim});
 tabsRelated.flush();
-				</script>
-
+</script>
 				{include file='bricks/contribute.tpl'}
 
 				</div>

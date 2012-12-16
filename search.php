@@ -2,6 +2,7 @@
 
 // Необходима функция iteminfo
 require_once('includes/game.php');
+require_once('includes/allachievements.php');
 require_once('includes/allspells.php');
 require_once('includes/allquests.php');
 require_once('includes/allitems.php');
@@ -222,6 +223,18 @@ if(!$found = load_cache(SEARCH, $cache_key))
 	);
 	foreach($rows as $row)
 		$found['itemset'][] = itemsetinfo2($row);
+		
+	// Достижения
+	$rows = $DB->select('
+			SELECT *
+			FROM ?_achievement
+			WHERE name_loc'.$_SESSION['locale'].' LIKE ?
+			LIMIT '.$AoWoWconf["limit"].'
+		',
+		$nsearch
+	);
+	foreach($rows as $row)
+		$found['achievement'][] = achievementinfo2($row);
 
 	// Ищем спеллы
 	$rows = $DB->select('

@@ -6,6 +6,11 @@
 <div class="text" style="margin-right: 310px">
 	<div class="tabbed-contents" style="clear: none">
 		<div id="tab-add-your-comment" style="display: none">
+		{#Comment_add_data_1#}:<ul>
+		<li><div>{#Comment_add_data_2#}</div></li>
+		<li><div>{#Comment_add_data_3#}</div></li>
+		<li><div>{#Comment_add_data_4#}</div></li>
+		<li><div>{#Comment_add_data_5#}</div></li></ul>
 			<form name="addcomment" action="?comment=add&amp;type={$page.type}&amp;typeid={$page.typeid}" method="post" onsubmit="return co_validateForm(this)">
 				<div id="replybox-generic" style="display: none">
 					{#Replying_to_comment_by#} <span></span>. &nbsp;<a href="javascript:;" onclick="co_cancelReply()">{#Cancel#}</a>

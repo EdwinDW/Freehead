@@ -10,7 +10,7 @@
 			<div id="lv-achievements" class="listview"></div>
 
 			<script type="text/javascript">
-				{include file='bricks/achievement_table.tpl' data=$achievements.data id='achievements'}
+				{include file='bricks/achievement_table_list.tpl' data=$achievements.data id='achievements'}
 			</script>
 
 			<div class="clear"></div>
