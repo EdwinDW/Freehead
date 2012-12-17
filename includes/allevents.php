@@ -47,7 +47,7 @@ function event_find($conditions = NULL)
 	}
 	else
 	{
-		die("Unknown event_find condition");
+		header('Location: index.php');
 	}
 }
 
