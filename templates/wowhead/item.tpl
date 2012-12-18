@@ -114,6 +114,7 @@
 						ge('icon{$item.entry}-generic').appendChild(Icon.create('{$item.iconname}', 2, 0, 0, {$item.stackable}));
 						Tooltip.fix(ge('tooltip{$item.entry}-generic'), 1, 1);
 					</script>
+					
 					<h2>{#Related#}</h2>
 
 				</div>

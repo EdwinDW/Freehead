@@ -21,6 +21,7 @@
 								[{$data[i].itemrewards[j].entry},{$data[i].itemrewards[j].count}]
 								{if $smarty.section.j.last}{else},{/if}
 							{/section}
+							
 						]
 					{/if}
 					{if isset($data[i].itemchoices)}

@@ -2180,6 +2180,8 @@ var LANG={
 	req:"Req. ",
 	reputation:"Reputation",
 	rewards:"Rewards",
+	expirience:"Exp.",
+	money:"Money",
 	petfamily:"Pet family",
 	pieces:"Pieces",
 	points:"Points",

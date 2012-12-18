@@ -175,25 +175,25 @@ function classes($class)
 {
 	$tmp = '';
 	if($class & CLASS_WARRIOR)
-		$tmp = LOCALE_WARRIOR;
+		$tmp = '<font color="#CD853F">'.LOCALE_WARRIOR.'</font>';
 	if($class & CLASS_PALADIN)
-		if($tmp) $tmp = $tmp.', '.LOCALE_PALADIN; else $tmp = LOCALE_PALADIN;
+		if($tmp) $tmp = $tmp.', '.'<font color="#FF6699">'.LOCALE_PALADIN.'</font>'; else $tmp = '<font color="#FF6699">'.LOCALE_PALADIN.'</font>';
 	if($class & CLASS_HUNTER)
-		if($tmp) $tmp = $tmp.', '.LOCALE_HUNTER; else $tmp = LOCALE_HUNTER;
+		if($tmp) $tmp = $tmp.', '.'<font color="#33FF99">'.LOCALE_HUNTER.'</font>'; else $tmp = '<font color="#33FF99">'.LOCALE_HUNTER.'</font>';
 	if($class & CLASS_ROGUE)
-		if($tmp) $tmp = $tmp.', '.LOCALE_ROGUE; else $tmp = LOCALE_ROGUE;
+		if($tmp) $tmp = $tmp.', '.'<font color="#FFFF99">'.LOCALE_ROGUE.'</font>'; else $tmp = '<font color="#FFFF99">'.LOCALE_ROGUE.'</font>';
 	if($class & CLASS_PRIEST)
-		if($tmp) $tmp = $tmp.', '.LOCALE_PRIEST; else $tmp = LOCALE_PRIEST;
+		if($tmp) $tmp = $tmp.', '.'<font color="white">'.LOCALE_PRIEST.'</font>'; else $tmp = '<font color="white">'.LOCALE_PRIEST.'</font>';
 	if($class & CLASS_SHAMAN)
-		if($tmp) $tmp = $tmp.', '.LOCALE_SHAMAN; else $tmp = LOCALE_SHAMAN;
+		if($tmp) $tmp = $tmp.', '.'<font color="#1F1FFF">'.LOCALE_SHAMAN.'</font>'; else $tmp = '<font color="#1F1FFF">'.LOCALE_SHAMAN.'</font>';
 	if($class & CLASS_DEATH_KNIGHT)
-		if($tmp) $tmp = $tmp.', '.LOCALE_DEATH_KNIGHT; else $tmp = LOCALE_DEATH_KNIGHT;
+		if($tmp) $tmp = $tmp.', '.'<font color="#CD2626">'.LOCALE_DEATH_KNIGHT.'</font>'; else $tmp = '<font color="#CD2626">'.LOCALE_DEATH_KNIGHT.'</font>';
 	if($class & CLASS_MAGE)
-		if($tmp) $tmp = $tmp.', '.LOCALE_MAGE; else $tmp = LOCALE_MAGE;
+		if($tmp) $tmp = $tmp.', '.'<font color="#66FFFF">'.LOCALE_MAGE.'</font>'; else $tmp = '<font color="#66FFFF">'.LOCALE_MAGE.'</font>';
 	if($class & CLASS_WARLOCK)
-		if($tmp) $tmp = $tmp.', '.LOCALE_WARLOCK; else $tmp = LOCALE_WARLOCK;
+		if($tmp) $tmp = $tmp.', '.'<font color="#9933CC">'.LOCALE_WARLOCK.'</font>'; else $tmp = '<font color="#9933CC">'.LOCALE_WARLOCK.'</font>';
 	if($class & CLASS_DRUID)
-		if($tmp) $tmp = $tmp.', '.LOCALE_DRUID; else $tmp = LOCALE_DRUID;
+		if($tmp) $tmp = $tmp.', '.'<font color="#FF9933">'.LOCALE_DRUID.'</font>'; else $tmp = '<font color="#FF9933">'.LOCALE_DRUID.'</font>';
 	if($tmp == LOCALE_WARRIOR.', '.LOCALE_PALADIN.', '.LOCALE_HUNTER.', '.LOCALE_ROGUE
 		.', '.LOCALE_PRIEST.', '.LOCALE_SHAMAN.', '.LOCALE_DEATH_KNIGHT.', '.LOCALE_MAGE.', '.LOCALE_WARLOCK.', '.LOCALE_DRUID)
 		return;

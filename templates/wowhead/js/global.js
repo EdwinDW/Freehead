@@ -5421,7 +5421,8 @@ Listview.templates = {faction: {sort: [1],nItemsPerPage: -1,searchable: 1,filtra
                     }
                 },sortFunc: function(d, c, e) {
                     return strcmp(g_sides[d.side], g_sides[c.side])
-                }}, {id: "rewards",name: LANG.rewards,filtrable: 0,width: "25%",compute: function(b, g) {
+                }}, 
+				{id: "rewards",name: LANG.rewards,filtrable: 0,width: "25%",compute: function(b, g) {
                     var a = (b.itemchoices != null || b.itemrewards != null);
                     if (a) {
                         g.style.padding = "0";
@@ -5433,22 +5434,10 @@ Listview.templates = {faction: {sort: [1],nItemsPerPage: -1,searchable: 1,filtra
                             }
                         }
                         Listview.funcBox.createCenteredIcons(b.itemchoices, g, f);
-                        Listview.funcBox.createCenteredIcons(b.itemrewards, g, e)
-                    }
-                    if (b.xp > 0 || b.money > 0) {
-                        var c = ce("div");
-                        if (a) {
-                            c.style.padding = "4px"
-                        }
-                        if (b.xp > 0) {
-                            ae(c, ct(sprintf(LANG.lvquest_xp, b.xp) + (b.money > 0 ? " + " : "")))
-                        }
-                        if (b.money > 0) {
-                            Listview.funcBox.appendMoney(c, b.money)
-                        }
-                        ae(g, c)
-                    }
-                },getVisibleText: function(a) {
+                        Listview.funcBox.createCenteredIcons(b.itemrewards, g, e);
+                    }},
+
+				getVisibleText: function(a) {
                     var b = "";
                     if (a.itemchoices && a.itemchoices.length) {
                         b += " " + LANG.lvquest_pickone;
@@ -5463,8 +5452,16 @@ Listview.templates = {faction: {sort: [1],nItemsPerPage: -1,searchable: 1,filtra
                 },sortFunc: function(d, c, e) {
                     var g = (d.itemchoices != null ? d.itemchoices.length : 0) + (d.itemrewards != null ? d.itemrewards.length : 0);
                     var f = (c.itemchoices != null ? c.itemchoices.length : 0) + (c.itemrewards != null ? c.itemrewards.length : 0);
-                    return strcmp(g, f) || strcmp((d.xp | 0) + (d.money | 0), (c.xp | 0) + (c.money | 0))
-                }}, {id: "reputation",name: LANG.reputation,width: "14%",value: "id",hidden: true}, {id: "category",name: LANG.category,type: "text",width: "16%",compute: function(c, d) {
+                }}, 
+				{id: "expirience",name: LANG.expirience,tooltip: LANG.tooltip_expirience,width: "7%",value: "xp"},
+				{id: "money",name: LANG.money,tooltip: LANG.tooltip_moeny,width: "10%",compute: function(b, g) {
+				if (b.money > 0) {
+                        var c = ce("div");
+                        Listview.funcBox.appendMoney(c, b.money)
+						ae(c, ct(sprintf(b.money > 0 ? "  " : "")))
+						ae(g, c)
+				}}},
+				{id: "reputation",name: LANG.reputation,width: "14%",value: "id",hidden: true}, {id: "category",name: LANG.category,type: "text",width: "16%",compute: function(c, d) {
                     if (c.category != 0) {
                         d.className = "small q1";
                         var b = ce("a");

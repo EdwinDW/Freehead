@@ -242,7 +242,7 @@ switch($_SESSION['locale'])
 			'LOCALE_COOLDOWN'					=>	'Восстановление',
 			'LOCALE_COMBAT_RATING'				=>	'%s&nbsp;на&nbsp;yp.&nbsp;%d',
 			'LOCALE_SET_BONUS'					=>	'Набор',
-			'LOCALE_ITEM_LVL'					=>	'Уровень предмета: ',
+			'LOCALE_ITEM_LVL'					=>	'Уровень предмета ',
 			// sockets
 			'LOCALE_SOCKET_META'	=>	'Особое гнездо',
 			'LOCALE_SOCKET_RED'		=>	'Красное гнездо',
@@ -289,7 +289,7 @@ switch($_SESSION['locale'])
 			'LOCALE_CASTSECONDS'	=>	' сек.',
 			'LOCALE_MANA'			=>	'Мана: ',
 			'LOCALE_UNIT'			=>	' ед.',
-			'LOCALE_ITEM_LEVEL'		=> 	'Уровень предмета:',
+			'LOCALE_ITEM_LEVEL'		=> 	'Уровень предмета',
 			'LOCALE_SELLPRICE'		=>	'Продается за:',
 		));
 		break;
@@ -535,7 +535,7 @@ switch($_SESSION['locale'])
 			'LOCALE_COOLDOWN'						=>	'cooldown',
 			'LOCALE_COMBAT_RATING'					=>	'%s&nbsp;@&nbsp;L%d',
 			'LOCALE_SET_BONUS'						=>	'Set:',
-			'LOCALE_ITEM_LVL'						=>	'Item Level: ',
+			'LOCALE_ITEM_LVL'						=>	'Item Level ',
 			// sockets
 			'LOCALE_SOCKET_META'	=>	'Metasockel',
 			'LOCALE_SOCKET_RED'		=>	'Roter Sockel',
@@ -582,7 +582,7 @@ switch($_SESSION['locale'])
 			'LOCALE_CASTSECONDS'	=>	' sec.',
 			'LOCALE_MANA'			=>	'Mana: ',
 			'LOCALE_UNIT'			=>	' units',
-			'LOCALE_ITEM_LEVEL'		=> 	'Nivel de objeto:',
+			'LOCALE_ITEM_LEVEL'		=> 	'Nivel de objeto',
 			'LOCALE_SELLPRICE'		=>	'Se vende por:',
 		));
 		break;
@@ -827,7 +827,7 @@ switch($_SESSION['locale'])
 			'LOCALE_COOLDOWN'						=>	'cooldown',
 			'LOCALE_COMBAT_RATING'					=>	'%s&nbsp;au&nbsp;N%s',
 			'LOCALE_SET_BONUS'						=>	'Set:',
-			'LOCALE_ITEM_LVL'						=>	'Item Level: ',
+			'LOCALE_ITEM_LVL'						=>	'Item Level ',
 			// sockets
 			'LOCALE_SOCKET_META'	=>	'Méta-châsse',
 			'LOCALE_SOCKET_RED'		=>	'Châsse rouge',
@@ -874,7 +874,7 @@ switch($_SESSION['locale'])
 			'LOCALE_CASTSECONDS'	=>	' sec.',
 			'LOCALE_MANA'			=>	'Mana: ',
 			'LOCALE_UNIT'			=>	' units',
-			'LOCALE_ITEM_LEVEL'		=> 	'Niveau dobjet:',
+			'LOCALE_ITEM_LEVEL'		=> 	'Niveau dobjet',
 			'LOCALE_SELLPRICE'		=>	'Vendu pour:',
 		));
 		break;
@@ -1119,7 +1119,7 @@ switch($_SESSION['locale'])
 			'LOCALE_COOLDOWN'						=>	'cooldown',
 			'LOCALE_COMBAT_RATING'					=>	'%s&nbsp;@&nbsp;L%d',
 			'LOCALE_SET_BONUS'						=>	'Set:',
-			'LOCALE_ITEM_LVL'						=>	'Item Level: ',
+			'LOCALE_ITEM_LVL'						=>	'Item Level ',
 			// sockets
 			'LOCALE_SOCKET_META'	=>	'Meta Socket',
 			'LOCALE_SOCKET_RED'		=>	'Red Socket',
@@ -1166,7 +1166,7 @@ switch($_SESSION['locale'])
 			'LOCALE_CASTSECONDS'	=>	' sec.',
 			'LOCALE_MANA'			=>	'Mana: ',
 			'LOCALE_UNIT'			=>	' units',
-			'LOCALE_ITEM_LEVEL'		=> 	'Item Level:',
+			'LOCALE_ITEM_LEVEL'		=> 	'Item Level',
 			'LOCALE_SELLPRICE'		=>	'Sell price:',
 		));
 		break;

@@ -339,7 +339,12 @@ function render_item_tooltip(&$Row)
 	// Начальный тег таблицы
 	$x .= '<table><tr><td>';
 	// Название и цвет названия
-	$x .= '<b class="q'.$Row['quality'].'">'.localizedName($Row).'</b>';
+	$x .= '<b class="q'.$Row['quality'].'">'.localizedName($Row).'</b><br />';
+	
+	// Уровень вещи
+	if($Row['ItemLevel']!=0)
+    $x .= '<font color="gold">'.LOCALE_ITEM_LEVEL.' '.$Row['ItemLevel'].'</font>';
+
 	// Биндинг вещи
 	$x .= $bond[$Row['bonding']];
 
@@ -440,8 +445,6 @@ function render_item_tooltip(&$Row)
 	if(classes($Row['AllowableClass']))
 		$x .= LOCALE_CLASSES.': '.classes($Row['AllowableClass']).'<br />';
 
-    if($Row['ItemLevel']!=0)
-        $x .= LOCALE_ITEM_LEVEL.' '.$Row['ItemLevel'].'<br />';
 
 	// Требуемый уровень
 	if($Row['RequiredLevel']>1)

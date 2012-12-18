@@ -2174,6 +2174,8 @@ var LANG={
 	req:"Ben. ",
 	reputation:"Ruf",
 	rewards:"Belohnungen",
+	expirience:"Erf.",
+	money:"Geld",
 	petfamily:"Tierart",
 	pieces:"Teile",
 	points:"Punkte",

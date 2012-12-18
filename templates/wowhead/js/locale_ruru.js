@@ -2177,6 +2177,8 @@ var LANG={
 	req:"Треб. ",
 	reputation:"Репутация",
 	rewards:"Награды",
+	expirience:"Опыт",
+	money:"Деньги",
 	petfamily:"Порода питомцев",
 	pieces:"Части",
 	points:"Очки",
