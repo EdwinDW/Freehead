@@ -46,18 +46,8 @@
 		</script>
 
 <br>
-{if $news}
-		<div class="news">
-			<div class="news-list text">
-				<ul>
-{foreach from=$news item=item}
-					<li><div>{$item.text}</div></li>
-{/foreach}
-				</ul>
-			</div>
-		</div>
-{/if}
-		
+
+{include file="newsbox.tpl"}		
 
 	</div>
 	

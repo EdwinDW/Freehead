@@ -1,0 +1,6 @@
+div.announce {
+	border-radius: 9px; 
+	-moz-border-radius: 9px; 
+	-webkit-border-radius: 9px; 
+	border: 1px solid #000000;
+}
