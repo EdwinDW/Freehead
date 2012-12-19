@@ -32,6 +32,10 @@ class Smarty_AoWoW extends Smarty
 		$this->assign('app_name', $AoWoWconf['aowow']['name']);
 		// Ревизия
 		$this->assign('AOWOW_REVISION', AOWOW_REVISION);
+		// Последняя стабильная ревизия
+		$this->assign('AOWOW_LATEST_REVISION', AOWOW_LATEST_REVISION); 
+		// Generator
+		$this->assign('GENERATOR_TAG', GENERATOR_TAG);
 	}
 
 	function uDebug($name, $val = 'unset')
