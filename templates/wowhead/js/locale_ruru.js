@@ -804,6 +804,24 @@ var mn_database=[
 	[8,"Питомцы","?pets",mn_pets],*/
 	[11,"Игровые События","?events"/*,mn_holidays*/]
 ];
+var mn_news=[
+	[0,"Новости","/?news"],
+	//Удалите /* и */ если вы хотите добавить ссылки на новости ваших серверов
+	/*[1,"Сервер","",[
+		[,"x5"],
+		[1,"Server 1", ""],
+		[2,"Server 2", ""],
+		[,"x10"],
+		[3,"Server 3", ""],
+		[4,"Server 4", ""]
+	]],*/
+	// Измените ссылки на социальные сети по своему желанию
+	[,"Социальные сети"],
+	[1,"Facebook", 'http://facebook.com/'],
+	[2,"Вконтакте", 'http://vk.com/'],
+	[3,"Twitter", 'http://twitter.com/'],
+	[4,"Канал IRC", '/']
+];
 var mn_tools=[
 	[0,"Расчёт талантов","?talent",mn_talentCalc],
 	//[2,"Расчёт умений питомцев","?petcalc",mn_petCalc],
@@ -892,15 +910,6 @@ var mn_forums=[
 	[2,"Случайные темы"],
 	[1,"Отзывы о Wowhead"]
 ];
-var mn_community=[
-	[3,"Форум","?forums",mn_forums],
-	[7,"Новости / Блог","?blog"],
-	[1,"Конкурсы","?contests"],
-	[4,"Канал IRC","?irc"],
-	[,"Социальные сети"],
-	[6,"Facebook Page","http://facebook.com/Wowhead"],
-	[5,"Twitter Page","http://twitter.com/Wowhead"]
-];mn_community[5].otherImage=["http://static.wowhead.com/images/blog/share/services.gif","-32"];mn_community[6].otherImage=["http://static.wowhead.com/images/blog/share/services.gif","-128"];
 var mn_more=[
 	[,"О Wowhead"],
 	[0,"Контакты","?aboutus"],
@@ -955,6 +964,7 @@ var mn_more=[
 ];
 var mn_path=[
 	[0,"База данных",,mn_database],
+	[2,"Новости",,mn_news],
 	[1,"Инструменты",,mn_tools],
 	//[3,"Сообщество",,mn_community],
 	//[2,"Дополнительно",,mn_more],

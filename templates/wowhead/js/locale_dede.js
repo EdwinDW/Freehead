@@ -950,6 +950,7 @@ var mn_more=[
 ];
 var mn_path=[
 	[0,"Datenbank",,mn_database],
+	[4,"News",,mn_news],
 	[1,"Extras",,mn_tools],
 	[3,"Community",,mn_community],
 	[2,"Weiteres",,mn_more]

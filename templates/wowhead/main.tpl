@@ -56,6 +56,7 @@
 	<noscript><div id="noscript-bg"></div><div id="noscript-text"><b>{#js_err#}</div></noscript>
 	<script type="text/javascript">DomContentLoaded.now()</script>
 	
-	<center>{if $AOWOW_REVISION != $AOWOW_LATEST_REVISION}{#Update_availible#} {$AOWOW_LATEST_REVISION}{else}{/if}</center>
+	<center>{if $AOWOW_REVISION != $AOWOW_LATEST_REVISION}{#Update_availible#} {$AOWOW_LATEST_REVISION}<br>
+	{#Current_version#} {$AOWOW_REVISION}{else}{/if}</center>
 </body>
 </html>

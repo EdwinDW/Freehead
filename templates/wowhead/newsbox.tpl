@@ -29,13 +29,23 @@ $this->assign('bounty', $bounty);
 $this->assign('winterveil', $winterveil);
 {/php}
 {if in_array($holliday, $winterveil)}
-<div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-winterveil.png)" id="home-featuredbox">
+<div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-winterveil-{php} $number = rand(1,2); echo $number; $this->assign('winterveil_image_number', $number);{/php}.png)" id="home-featuredbox">
+{if $winterveil_image_number == 1}
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="/?event=2" title="{#Winter_veil#}" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
-<a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
+<a href="/quests" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
 </div>
+{else}
+{* Тут вы можете указать ссылки на нужные вам квесты (ну что бы подходило к картинке) *}
+<div class="home-featuredbox-links">
+<a href="/?event=2" title="{#Winter_veil#}" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
+<a href="/giveaway" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
+<var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
+</div>
+{/if}
 <div class="home-featuredbox-inner text" id="lkdngndfgndf52">
 {if $news}
 				<ul>

@@ -1,8 +1,9 @@
 <?php
 $revision_request = file_get_contents("http://freedomcore.ru/freehead/latest");
-define('AOWOW_REVISION', '12.0.1');
+$generator_request = file_get_contents("http://freedomcore.ru/freehead/generator");
+define('AOWOW_REVISION', '12.0.2');
 define('AOWOW_LATEST_REVISION', $revision_request);
-define('GENERATOR_TAG', 'FreedomHead Public Version 1.2');
+define('GENERATOR_TAG', $generator_request);
 require_once('configs/config.php');
 error_reporting(0);
 ini_set('serialize_precision', 4);

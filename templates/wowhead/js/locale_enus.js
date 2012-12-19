@@ -892,6 +892,24 @@ var mn_forums=[
 	[2,"Randomness"],
 	[1,"Wowhead Feedback"]
 ];
+var mn_news=[
+	[0,"News","/?news"],
+	//Delete /* and */ if you want to add forum links to your servers news
+	/*[1,"Server","",[
+		[,"x5"],
+		[1,"Server 1", ""],
+		[2,"Server 2", ""],
+		[,"x10"],
+		[3,"Server 3", ""],
+		[4,"Server 4", ""]
+	]],*/
+	// Edit link to social networks
+	[,"Social Networks"],
+	[1,"Facebook", 'http://facebook.com/'],
+	[2,"Vkontakte", 'http://vk.com/'],
+	[3,"Twitter", 'http://twitter.com/'],
+	[4,"IRC Channel", '/']
+];
 var mn_community=[
 	[3,"Forums","?forums",mn_forums],
 	[7,"News / Blog","?blog"],
@@ -956,6 +974,7 @@ var mn_more=[
 ];
 var mn_path=[
 	[0,"Database",,mn_database],
+	[2,"News",,mn_news],
 	[1,"Tools",,mn_tools],
 	//[3,"Community",,mn_community],
 	//[2,"More",,mn_more]
