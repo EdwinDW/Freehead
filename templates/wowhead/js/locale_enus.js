@@ -862,7 +862,9 @@ var mn_tools=[
 		[8,"Unanswered Topics","https://github.com/darki73/Freehead/docs/Forum_EN"]
 	]],
 	[,"Useful info"],
-	[32,"Developers Website","https://github.com/darki73"]
+	[32,"Developers Github","https://github.com/darki73"],
+	[33,"Developers Website","http://freedomcore.ru"],
+	[34,"Tooltips","/?powered"]
 ];
 var mn_forums=[
 	[0,"WoW General"],

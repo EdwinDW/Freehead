@@ -538,6 +538,7 @@ function render_item_tooltip(&$Row)
 		// Если требуется скилл
 		if($row['skillID'])
 		{
+			$x .= '<br />';
 			$name = $DB->selectCell('SELECT name_loc'.$_SESSION['locale'].' FROM ?_skill WHERE skillID=?d LIMIT 1', $row['skillID']);
 			$x .= LOCALE_REQUIRES.' <a href="?spells=11.'.$row['skillID'].'" class="q1">'.$name.'</a>';
 			if($row['skilllevel'])

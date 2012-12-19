@@ -859,7 +859,9 @@ var mn_tools=[
 		[7,"Neueste Themen","/?latest=topics"],
 		[8,"Unbeantwortete Themen","/?unanswered-topics"]
 	]]*/
-	[30,"Neueste Kommentare","?latest=comments"]
+	[32,"Developers Github","https://github.com/darki73"],
+	[33,"Developers Website","http://freedomcore.ru"],
+	[34,"Tooltips","/?powered"]
 ];
 var mn_forums=[
 	[0,"WoW Allgemein"],

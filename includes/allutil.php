@@ -1,6 +1,6 @@
 <?php
 $revision_request = file_get_contents("http://freedomcore.ru/freehead/latest");
-define('AOWOW_REVISION', 12);
+define('AOWOW_REVISION', 12.0.1);
 define('AOWOW_LATEST_REVISION', $revision_request);
 define('GENERATOR_TAG', 'FreedomHead Public Version 1.2');
 require_once('configs/config.php');

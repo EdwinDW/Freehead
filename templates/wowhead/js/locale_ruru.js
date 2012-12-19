@@ -862,7 +862,9 @@ var mn_tools=[
 		[8,"Темы без ответа","https://github.com/darki73/Freehead/docs/Forum_RU"]
 	]],
 	[,"Полезное"],
-	[32,"Сайт разработчика","https://github.com/darki73"]
+	[32,"Github разработчика","https://github.com/darki73"],
+	[33,"Сайт разработчика","http://freedomcore.ru"],
+	[34,"Tooltips","/?powered"]
 ];
 var mn_forums=[
 	[0,"Общие темы WoW"],
