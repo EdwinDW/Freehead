@@ -45,7 +45,8 @@
 			Menu.addButtons(ge('h43jv6jk346'), mn_path);
 		</script>
 
-<br>
+<br><br><br>
+<center>{#Tooltips_mainpage#}  <a href="/?powered">{#Tooltips_mainpage_more#}</a></center>
 
 {include file="newsbox.tpl"}		
 
