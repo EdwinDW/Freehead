@@ -136,6 +136,12 @@ switch($razdel)
 	case 'powered':
 		include 'powered.php';
 		break;
+	case 'titles':
+		include 'titles.php';
+		break;
+	case 'reputation':
+		include 'reputation.php';
+		break;
 	default:
 		include 'main.php';
 		break;

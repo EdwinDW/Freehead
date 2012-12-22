@@ -43,6 +43,9 @@ switch($_REQUEST['comment'])
             $_SERVER['REMOTE_ADDR']
 
 		);
+		$currdate = date('Y/m/d');
+		$username = $_SESSION['username'];
+		$addrep = mysql_query("INSERT INTO account_reputation (username, reputation, reason, date) VALUES ('$username', '1', '3', '$currdate')");
 
 		// рейтинг
 		if($_SESSION['userid'])

@@ -35,6 +35,9 @@ if($_REQUEST['account'] == 'signup' && isset($_POST['username']) && isset($_POST
 				$AoWoWconf['expansion'],
 				(isset($_SERVER["REMOTE_ADDR"]))? $_SERVER["REMOTE_ADDR"] : ''
 			);
+			$currdate = date('Y/m/d');
+			$username = $_POST['username'];
+			$addrep = mysql_query("INSERT INTO account_reputation (username, reputation, reason, date) VALUES ('$username', '100', '1', '$currdate')");
 			if($success > 0)
 				// Все отлично, авторизуем
 				$_REQUEST['account']='signin';

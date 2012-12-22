@@ -74,6 +74,9 @@ switch($_REQUEST['screenshot'])
 			$imageCheck[0],
 			$imageCheck[1]
 			);
+			$currdate = date('Y/m/d');
+			$username = $_SESSION['username'];
+			$addrep = mysql_query("INSERT INTO account_reputation (username, reputation, reason, date) VALUES ('$username', '5', '5', '$currdate')");
 		};
 		//screenshotfile
 		redirect($url);

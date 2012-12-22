@@ -20,7 +20,14 @@
 					
 				</div>
 				<div id="ptewhjkst46"></div>
-				<div align="right">{if $user}<a href="?user={$user.name}">{$user.name}</a> &nbsp; | &nbsp; <a href="?account=signout">{#Sign_out#}</a>{else}<a href="?account=signin">{#Sign_in#}</a>{/if}
+				<div align="right">{if $user}<a href="?user={$user.name}">{$user.name}</a> (<a href="/?reputation" style="color: rgb(0,255,0)">{assign var=username value=$user.name}{php}
+$username = $this->_tpl_vars['username'];
+mysql_select_db($rDB);
+$getrep = mysql_query("SELECT SUM(reputation) FROM account_reputation WHERE username='$username'");
+$getrep = mysql_fetch_row($getrep);
+$getrep = $getrep[0];
+echo $getrep;
+{/php}</a>) &nbsp; | &nbsp; <a href="?account=signout">{#Sign_out#}</a>{else}<a href="?account=signin">{#Sign_in#}</a>{/if}
 						 &nbsp; | &nbsp; <a href="/?feedback"><img src="/templates/wowhead/images/letter.png">{#Feedback#}</a> &nbsp; | &nbsp; <a href="javascript:;"  id="toptabs-menu-language">{#Language#} <small>&#9660;</small></a>
 						<script type="text/javascript">g_initHeaderMenus()</script>
 					</div>
