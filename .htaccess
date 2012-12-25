@@ -5,7 +5,6 @@ Order Deny,Allow
 <FilesMatch "^(index|ajax|opensearch).php$">
 	Allow from all
 </FilesMatch>
-# Запрет просмотра некоторых папок
 Options -Indexes
 # Поддержка UTF8
 DirectoryIndex index.php
@@ -15,3 +14,8 @@ AddDefaultCharset utf8
 	CharsetRecodeMultipartForms Off
 </IfModule>
 php_flag display_errors on
+AddType application/x-httpd-php .js
+AddHandler x-httpd-php5 .js
+<FilesMatch "\.(js|php)$">
+SetHandler application/x-httpd-php
+</FilesMatch>

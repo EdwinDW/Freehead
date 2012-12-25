@@ -1,3 +1,5 @@
+var pathname = "<?php echo $_SERVER['HTTP_HOST']; ?>";
+
 function $(c) {
 	if (arguments.length > 1) {
 		var b = [];
@@ -1109,7 +1111,7 @@ var Icon = {
 		if (b.indexOf("?") != -1) {
 			a.backgroundImage = "url(" + b + ")"
 		} else {
-			a.backgroundImage = "url(http://" + location.hostname + "/" + Icon.sizes[c] + "/" + b.toLowerCase() + ".jpg)"
+			a.backgroundImage = "url(http://" + pathname + "/" + Icon.sizes[c] + "/" + b.toLowerCase() + ".jpg)"
 		}
 		Icon.moveTexture(d, c, 0, 0)
 	},
@@ -1425,7 +1427,7 @@ var Tooltip = {
 	setIcon: function (a) {
 		Tooltip.prepare();
 		if (a) {
-			Tooltip.icon.style.backgroundImage = "url(http://" + location.hostname + "/images/icons/medium/" + a.toLowerCase() + ".jpg)";
+			Tooltip.icon.style.backgroundImage = "url(http://" + pathname + "/images/icons/medium/" + a.toLowerCase() + ".jpg)";
 			Tooltip.icon.style.visibility = "visible"
 		} else {
 			Tooltip.icon.style.backgroundImage = "none";
@@ -1776,7 +1778,8 @@ function () {
 		 * g_getDomainFromLocale(X) + ".wowhead.com" } } P += "?" + p[W][1] +
 		 * "=" + S + "&power" + R;
 		 */
-		var P = "http://" + location.hostname + "/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
+
+		var P = "http://" + pathname + "/ajax.php?" + p[W][1] + "=" + S + "&power" + R;
 		g_ajaxIshRequest(P)
 	}
 	function N(R, S) {
@@ -1925,8 +1928,8 @@ function () {
 	var _script = document.createElement('script');
 	_link.rel = "stylesheet";
 	_link.setAttribute("type","text/css");
-	_link.href = "http://" + location.hostname + "/templates/wowhead/css/power.css";
-	_script.setAttribute("src","http://" + location.hostname + "/templates/wowhead/js/locale_enus.js");
+	_link.href = "http://" + pathname + "/templates/wowhead/css/power.css";
+	_script.setAttribute("src","http://" + pathname + "/templates/wowhead/js/locale_enus.js");
 	_script.setAttribute("type","text/javascript");
 	
 	_head.appendChild(_link);
