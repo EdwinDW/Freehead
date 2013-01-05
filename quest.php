@@ -40,7 +40,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 			SELECT q.Id, q.Title
 				{, l.Title_loc?d as Title_loc}
 			FROM quest_template q
-				{LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ?d}
+				{LEFT JOIN (locales_quest l) ON l.Id=q.Id AND ?d}
 			WHERE q.NextQuestIdChain=?d
 			LIMIT 1
 			',
@@ -62,7 +62,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 			SELECT q.Id, q.Title, q.NextQuestIdChain
 				{, l.Title_loc?d as Title_loc}
 			FROM quest_template q
-				{LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ?}
+				{LEFT JOIN (locales_quest l) ON l.Id=q.Id AND ?}
 			WHERE q.Id=?d
 			LIMIT 1
 			',
@@ -90,7 +90,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 				SELECT q.Id, q.Title, q.NextQuestIdChain
 					{, l.Title_loc?d as Title_loc}
 				FROM quest_template q
-					{LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ?}
+					{LEFT JOIN (locales_quest l) ON l.Id=q.Id AND ?}
 				WHERE
 					(q.NextQuestId=?d AND q.ExclusiveGroup<0)
 					OR (q.Id=?d AND q.NextQuestIdChain<>?d)
@@ -108,7 +108,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 				SELECT q.Id, q.Title
 					{, l.Title_loc?d as Title_loc}
 				FROM quest_template q
-					{LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ?}
+					{LEFT JOIN (locales_quest l) ON l.Id=q.Id AND ?}
 				WHERE
 					(q.PrevQuestId=?d AND q.Id<>?d)
 					OR q.Id=?d
@@ -127,7 +127,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 				SELECT q.Id, q.Title
 					{, l.Title_loc?d as Title_loc}
 				FROM quest_template q
-					{LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ?}
+					{LEFT JOIN (locales_quest l) ON l.Id=q.Id AND ?}
 				WHERE
 					q.ExclusiveGroup=?d AND q.Id<>?d
 				LIMIT 20
@@ -145,7 +145,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 				SELECT q.Id, q.Title
 					{, l.Title_loc?d as Title_loc}
 				FROM quest_template q
-					{LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ?}
+					{LEFT JOIN (locales_quest l) ON l.Id=q.Id AND ?}
 				WHERE
 					q.ExclusiveGroup>0 AND q.NextQuestId=?d
 				LIMIT 20
@@ -163,7 +163,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 				SELECT q.Id, q.Title
 					{, l.Title_loc?d as Title_loc}
 				FROM quest_template q
-					{LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ?}
+					{LEFT JOIN (locales_quest l) ON l.Id=q.Id AND ?}
 				WHERE q.PrevQuestId=?d
 				LIMIT 20
 				',
@@ -181,7 +181,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 				SELECT q.Id, q.Title
 					{, l.Title_loc?d as Title_loc}
 				FROM quest_template q
-					{LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ?}
+					{LEFT JOIN (locales_quest l) ON l.Id=q.Id AND ?}
 				WHERE q.Id=?d
 				LIMIT 20
 				',

@@ -21,7 +21,7 @@ if(!$quests = load_cache(QUEST_LISTING, $cache_key))
 			, l.Title_loc?d AS Title_loc
 		}
 		FROM quest_template q
-		{ LEFT JOIN (locales_quest l) ON l.entry=q.Id AND ? }
+		{ LEFT JOIN (locales_quest l) ON l.Id=q.Id AND ? }
 		WHERE
 			1 = 1
 			{ AND ZoneOrSort = ? }

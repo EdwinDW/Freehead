@@ -1,7 +1,7 @@
 <?php
 $revision_request = file_get_contents("http://freedomcore.ru/freehead/latest");
 $generator_request = file_get_contents("http://freedomcore.ru/freehead/generator");
-define('AOWOW_REVISION', '12.1.1');
+define('AOWOW_REVISION', '12.1.2');
 define('AOWOW_LATEST_REVISION', $revision_request);
 define('GENERATOR_TAG', $generator_request);
 require_once('configs/config.php');
