@@ -18,6 +18,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+ini_set("memory_limit", "2500M");
+
   /// Convert DBC file content into a 2-dimentional array
   // $filename - name of the file
   // $format - format string, that contains 1 character for each field
@@ -75,7 +77,7 @@
     $unpackstr = substr($unpackstr, 1);
 
     // Optimizing unpack string: "x/x/x/x/x/x" => "x6"
-    while (preg_match("(x/)+x", $unpackstr, $r))
+    while (preg_match("/(x\\/)+x/", $unpackstr, $r))
       $unpackstr = substr_replace($unpackstr, 'x'.((strlen($r[0])+1)/2), strpos($unpackstr, $r[0]), strlen($r[0]));
 
     //echo "Unpack string for " . $filename . ": " . $unpackstr . "\n";
