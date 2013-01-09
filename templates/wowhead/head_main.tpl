@@ -23,7 +23,7 @@ print_r(array_random($titlephrases));
 	<meta name="copyright" content="FreedomHead 2012 <http://freedomcore.ru>">
 	<meta name="generator" content="{$GENERATOR_TAG}">
 	<link rel="SHORTCUT ICON" href="templates/wowhead/images/favicon.ico">
-
+	<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/global.css?{$AOWOW_REVISION}" />
 	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/locale_{$language}.css?{$AOWOW_REVISION}" />
 	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/home.css?{$AOWOW_REVISION}" />
