@@ -100,7 +100,7 @@ body.skin .home-search input {
 .home-search a {
 	display: block;
 	position: absolute;
-	right: -3px;
+	right: 8px;
 	top: 4px;
 	width: 24px;
 	height: 24px;
@@ -167,20 +167,6 @@ body.skin .home-oneliner {
 	line-height: 2em;
 }
 
-/*************/
-/* OVERRIDES */
-/*************/
-
-.toplinks {
-	background: black;
-	padding: 5px 2px;
-	position: absolute;
-	line-height: normal;
-	height: auto;
-	overflow: visible;
-	right: 0;
-	top: 0;
-}
 
 /********/
 /* MISC */

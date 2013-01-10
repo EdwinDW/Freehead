@@ -104,7 +104,10 @@
     <input type="radio" name="gb" value="1" id="gb-slot" /><label for="gb-slot">{#Slot#}</label>
     <input type="radio" name="gb" value="2" id="gb-level" /><label for="gb-level">{#Level#}</label>
     <input type="radio" name="gb" value="3" id="gb-source" /><label for="gb-source">{#Source#}</label>
-</div><div class="clear"></div><div class="beta"><input type="checkbox" name="eb" value="1" >{#Exclude_pandaria#}</div><div class="padded"></div><input type="submit" value="{#Apply_filter#}" />
+</div><div class="clear"></div>
+<div class="cata"><input type="checkbox" name="ec" value="1" >{#Exclude_cataclysm#}</div><div class="padded"></div>
+<div class="mop"><input type="checkbox" name="em" value="1" >{#Exclude_pandaria#}</div><div class="padded"></div><br>
+<input type="submit" value="{#Apply_filter#}" />
 
 <input type="hidden" name="upg" />
 

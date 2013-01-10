@@ -40,6 +40,9 @@ else
 		echo "<!-- Общий размер файла: ".strlen($Contents)." байт -->";	
 	}
 {/php}
+	<br>
+	<center><font size="2px"> <a href="/">{#Footer_about#}</a> |  <a href="/">{#Footer_faq#}</a> |  <a href="/">{#Footer_press#}</a> |  <a href="/">{#Footer_privacy#}</a> |  <a href="/">{#Footer_terms#}</a></font></center><br>
+	<center><font color="grey"><small>&copy; 2013 FreedomHead </small></font></center>
 	</div>
 </div>
 </div>
