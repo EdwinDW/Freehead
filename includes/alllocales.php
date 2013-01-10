@@ -290,6 +290,7 @@ switch($_SESSION['locale'])
 			'LOCALE_MANA'			=>	'Мана: ',
 			'LOCALE_UNIT'			=>	' ед.',
 			'LOCALE_ITEM_LEVEL'		=> 	'Уровень предмета',
+			'LOCALE_ITEM_HEROIC'	=> 	'Героический',
 			'LOCALE_SELLPRICE'		=>	'Продается за:',
 		));
 		break;
@@ -583,6 +584,7 @@ switch($_SESSION['locale'])
 			'LOCALE_MANA'			=>	'Mana: ',
 			'LOCALE_UNIT'			=>	' units',
 			'LOCALE_ITEM_LEVEL'		=> 	'Nivel de objeto',
+			'LOCALE_ITEM_HEROIC'	=> 	'Heroic',
 			'LOCALE_SELLPRICE'		=>	'Se vende por:',
 		));
 		break;
@@ -875,6 +877,7 @@ switch($_SESSION['locale'])
 			'LOCALE_MANA'			=>	'Mana: ',
 			'LOCALE_UNIT'			=>	' units',
 			'LOCALE_ITEM_LEVEL'		=> 	'Niveau dobjet',
+			'LOCALE_ITEM_HEROIC'	=> 	'Heroic',
 			'LOCALE_SELLPRICE'		=>	'Vendu pour:',
 		));
 		break;
@@ -1167,6 +1170,7 @@ switch($_SESSION['locale'])
 			'LOCALE_MANA'			=>	'Mana: ',
 			'LOCALE_UNIT'			=>	' units',
 			'LOCALE_ITEM_LEVEL'		=> 	'Item Level',
+			'LOCALE_ITEM_HEROIC'	=> 	'Heroic',
 			'LOCALE_SELLPRICE'		=>	'Sell price:',
 		));
 		break;
