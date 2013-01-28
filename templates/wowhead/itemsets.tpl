@@ -3,7 +3,6 @@
 		<div id="main">
 			<div id="main-precontents"></div>
 			<div id="main-contents" class="main-contents">
-			{include file='notifier.tpl'}
 			<br>
 				<script type="text/javascript">
 					g_initPath({$page.path});
