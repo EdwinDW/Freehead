@@ -882,7 +882,8 @@ var mn_tools=[
 	[,"Полезное"],
 	[32,"Github разработчика","https://github.com/darki73"],
 	[33,"Сайт разработчика","http://freedomcore.ru"],
-	[34,"Tooltips","/?powered"]
+	[34,"Tooltips","/?powered"],
+	[35,"Searchbox","/?searchbox"]
 ];
 var mn_forums=[
 	[0,"Общие темы WoW"],

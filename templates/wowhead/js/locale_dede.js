@@ -861,7 +861,8 @@ var mn_tools=[
 	]]*/
 	[32,"Developers Github","https://github.com/darki73"],
 	[33,"Developers Website","http://freedomcore.ru"],
-	[34,"Tooltips","/?powered"]
+	[34,"Tooltips","/?powered"],
+	[35,"Searchbox","/?searchbox"]
 ];
 var mn_forums=[
 	[0,"WoW Allgemein"],
