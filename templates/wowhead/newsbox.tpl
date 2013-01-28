@@ -1,4 +1,5 @@
 {php}
+include("/configs/events.php");
 $holliday = date("m/d");
 $lunar = array("01/22","01/23","01/24","01/25","01/26","01/27","01/28","01/29","01/30","01/31","02/01","02/02","02/03","02/04","02/05","02/06","02/07","02/08","02/09","02/10","02/11");
 $love = array("02/05","02/06","02/07","02/08","02/09","02/10","02/11","02/12","02/13","02/14","02/15","02/16","02/17","02/18","02/19","02/20");
@@ -32,7 +33,7 @@ $this->assign('winterveil', $winterveil);
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-winterveil-{php} $number = rand(1,2); echo $number; $this->assign('winterveil_image_number', $number);{/php}.png)" id="home-featuredbox">
 {if $winterveil_image_number == 1}
 <div class="home-featuredbox-links">
-<a href="/?event=2" title="{#Winter_veil#}" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $winter_event; {/php}" title="{#Winter_veil#}" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="/quests" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -40,7 +41,7 @@ $this->assign('winterveil', $winterveil);
 {else}
 {* Тут вы можете указать ссылки на нужные вам квесты (ну что бы подходило к картинке) *}
 <div class="home-featuredbox-links">
-<a href="/?event=2" title="{#Winter_veil#}" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $winter_event; {/php}" title="{#Winter_veil#}" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="/giveaway" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -59,7 +60,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $lunar)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-lunarfestival.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $lunar_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -77,7 +78,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $love)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-loveisintheair.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $love_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -95,7 +96,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $noblegarden)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $noblegarden_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -113,7 +114,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $cweek)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $cweek_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -131,7 +132,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $midsummer)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $midsummer_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -149,7 +150,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $fireworks)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $fireworks_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -167,7 +168,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $pirates)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $pirates_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -185,7 +186,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $harvest)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $harvest_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -203,7 +204,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $brewfest)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $brewfest_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -221,7 +222,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $hallowsend)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $hallowsend_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -239,7 +240,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $dod)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $dod_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
@@ -257,7 +258,7 @@ $this->assign('winterveil', $winterveil);
 {elseif in_array($holliday, $bounty)}
 <div class="home-featuredbox home-featuredbox-extended" style="background-image: url(/images/home/featured/featurebox-.png)" id="home-featuredbox">
 <div class="home-featuredbox-links">
-<a href="" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
+<a href="{php} echo $bounty_event; {/php}" title="" style="left: 211px; top: 22px; width:190px; height: 158px"></a>
 <var style="left: 211px; top: 22px; width:190px; height: 158px"></var>
 <a href="" title="" style="left: 400px; top: 22px; width:110px; height: 158px"></a>
 <var style="left: 400px; top: 22px; width:110px; height: 158px"></var>
