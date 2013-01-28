@@ -136,6 +136,9 @@ switch($razdel)
 	case 'powered':
 		include 'powered.php';
 		break;
+	case 'searchbox':
+		include 'searchbox.php';
+		break;
 	case 'titles':
 		include 'titles.php';
 		break;
