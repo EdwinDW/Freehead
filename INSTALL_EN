@@ -19,3 +19,12 @@ Begin the installation:
 	d) news.sql   
 	e) screenshots.sql
 9) Installation completed
+
+-----------------------------------------------------
+Installation advises
+
+1) Better way to import SQL files is to use MySQL console
+2) The best performance and lagless connection and data retriving may be achieved by importing FreedomDB main sql (aowow_*.sql) into your world database
+3) If you are facing errors due to updating to latest revision, you may try to use next commands
+	a) git stash
+	b) git pull
