@@ -1,7 +1,7 @@
 <?php
 $revision_request = file_get_contents("http://freedomcore.ru/freehead/latest");
 $generator_request = file_get_contents("http://freedomcore.ru/freehead/generator");
-define('AOWOW_REVISION', '12.3.2');
+define('AOWOW_REVISION', '12.3.3');
 define('AOWOW_LATEST_REVISION', $revision_request);
 define('GENERATOR_TAG', $generator_request);
 require_once('configs/config.php');
@@ -12,6 +12,28 @@ session_start();
 $tableprefix = $AoWoWconf['mangos']['aowow'];
 $items_to_be_displayed = $AoWoWconf['limit'];
 
+// Делимся данными о сайте
+$share_state = $AoWoWconf['share'];
+if ($share_state == true)
+	{
+		$share_sitename = $_SERVER['HTTP_HOST'];
+		$share_version = AOWOW_REVISION;
+		if( $curl = curl_init() ) 
+		{
+			curl_setopt($curl, CURLOPT_URL, 'http://freedomcore.ru/freehead/receiver.php');
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
+			curl_setopt($curl, CURLOPT_POST, true);
+			curl_setopt($curl, CURLOPT_POSTFIELDS, "url=".$share_sitename."&version=".$share_version."");
+			$out = curl_exec($curl);
+			echo $out;
+			curl_close($curl);
+		}
+	}
+else
+	{
+		//Ничего не делаем, просто пропускаем данную функцию
+	}
+		
 $locales = array(
 	0 => 'enus',
 	6 => 'eses',

@@ -40,5 +40,6 @@ $AoWoWconf['debug'] = false;
 // 1 is default and highly recommended.
 // Do not use float values or values > 3.
 $AoWoWconf['map_grouping'] = 1;
-
+//Sharing
+$AoWoWconf['share'] = true;
 ?>
