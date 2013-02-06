@@ -579,8 +579,8 @@ THEEND
   $zip->close();
   
   echo "<br>Job done";
-  $addon_site = $_SERVER['HTTP_HOST'];
-  $addon_arhive = "GathererDB_FreedomHead.zip";
-  $addon_link = $addon_site.$addon_archive;
-  echo "<br><br> Download <a href='".$addon_link."'>GathererDB_FreedomHead.zip</a>";
+  $addon_site = $_SERVER['SERVER_NAME'];
+  $addon_archive = "GathererDB_FreedomHead.zip";
+  $addon_link = $addon_site."/".$addon_archive;
+  echo "<br><br> Download <a href='http://".$addon_link."'>GathererDB_FreedomHead.zip</a>";
 ?>
