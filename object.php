@@ -29,7 +29,7 @@ if(!$object = load_cache(OBJECT_PAGE, $cache_key))
 		FROM gameobject_questrelation q, quest_template o
 		WHERE
 			q.id = ?d
-			AND o.entry = q.quest
+			AND o.Id = q.quest
 		',
 		$quest_cols[2],
 		$id
