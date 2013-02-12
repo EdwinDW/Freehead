@@ -1,7 +1,17 @@
 <?php
-$revision_request = file_get_contents("http://freedomcore.ru/freehead/latest");
-$generator_request = file_get_contents("http://freedomcore.ru/freehead/generator");
-define('AOWOW_REVISION', '12.3.3');
+$check_for_updates = $AoWoWconf['updater'];
+if($check_for_updates == true)
+	{
+		$revision_request = file_get_contents("http://freedomcore.ru/freehead/latest");
+		$generator_request = file_get_contents("http://freedomcore.ru/freehead/generator");
+		define('AOWOW_REVISION', '12.4.0');
+	}
+else
+	{
+		$revision_request = "Archived";
+		$generator_request = "Freedom Head";
+		define('AOWOW_REVISION', 'Archived');
+	}
 define('AOWOW_LATEST_REVISION', $revision_request);
 define('GENERATOR_TAG', $generator_request);
 require_once('configs/config.php');

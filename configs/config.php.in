@@ -35,6 +35,10 @@ $AoWoWconf['expansion'] = 2;
 $AoWoWconf['limit'] = 300;
 // Disable cache, show smarty console panel
 $AoWoWconf['debug'] = false;
+// Sharing option (true | false)
+$AoWoWconf['share'] = true;
+// Updater option (true | false)
+$AoWoWconf['updater'] = true;
 // Map object grouping factor. Meters = 10^param.
 // 0 to disable.
 // 1 is default and highly recommended.
