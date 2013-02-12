@@ -109,7 +109,31 @@
 {else}
 				{#This_NPC_cant_be_found#}
 {/if}
-
+<br>
+{assign var=php_query value=$query}
+{php}
+							mysql_select_db("world");
+							$npc_query = $this->_tpl_vars['php_query'];
+							$npc = trim($npc_query, " npc=.");
+							$loc = $this->_tpl_vars['locale'];
+							$result2 = mysql_query("SELECT COUNT(*) FROM creature_text WHERE entry='$npc'");
+							$row2 = mysql_fetch_row($result2);
+							$quotes = $row2[0];
+							$this->assign('quotes_num', $quotes);
+{/php}
+<a id="show_id" onclick="document.getElementById('spoiler_id').style.display=''; document.getElementById('show_id').style.display='none';" class="link">&rArr; {#Quotes#} ({$quotes_num})</a><span id="spoiler_id" style="display: none"><a onclick="document.getElementById('spoiler_id').style.display='none'; document.getElementById('show_id').style.display='';" class="link">&dArr; {#Quotes#} ({$quotes_num})</a><br> <ul>
+{php} 
+							$npc_query = $this->_tpl_vars['php_query'];
+							$npc = trim($npc_query, " npc=.");
+							$loc = $this->_tpl_vars['locale'];
+							$result = mysql_query("SELECT * FROM creature_text WHERE entry='$npc'") or die("Error:".mysql_error());
+							while($row = mysql_fetch_array($result))
+							{
+								$text = $row['text'];;
+								echo "<li>";
+								echo $text;
+								echo "</li>";
+							}{/php}</ul></span>
 					<h3>{#Rewards#}</h3>
 {if isset($npc.reprewards)}
 {section name=j loop=$npc.reprewards}
