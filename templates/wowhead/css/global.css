@@ -15,7 +15,6 @@ body {
 
 textarea {
  resize: none;
- width: 99.4%;
 }
 
 form {
@@ -124,6 +123,12 @@ a.selected,a.selected:hover {
 .text {
 	color: #ccc;
 	line-height: 1.4em;
+	font-size: 13px;
+}
+
+.text td {
+	color: #ccc;
+	font-size: 13px;
 }
 
 .text ul.last,.text ol.last {

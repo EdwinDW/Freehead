@@ -133,6 +133,8 @@ function event_description($entry)
 	$result['npcs_guid'] = $DB->selectCol('SELECT guid FROM game_event_creature WHERE eventEntry=?d OR eventEntry=?d', $entry, -$entry);
 	$result['objects_guid'] = $DB->selectCol('SELECT guid FROM game_event_gameobject WHERE eventEntry=?d OR eventEntry=?d', $entry, -$entry);
 	$result['creatures_quests_id'] = $DB->select('SELECT id AS creature, quest FROM game_event_creature_quest WHERE eventEntry=?d OR eventEntry=?d GROUP BY quest', $entry, -$entry);
+	$result['exdesc'] = $DB->selectCell('SELECT name_loc?d FROM aowow_events WHERE id=?d', $_SESSION['locale'], $entry);
+	$result['exdescimg'] = $DB->selectCell('SELECT img FROM aowow_events WHERE id=?d', $entry);
 
 	return $result;
 }

@@ -27,24 +27,14 @@
 					{if $event.holiday>0}
 						<a href="http://www.wowhead.com/?event={$event.holiday}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
 					{/if}
-					<h1>{$event.name|escape:"html"}</h1>
-
-					{if isset($event.description)}
-						{$event.description}
-					{/if}
-
-					{#Last_start#}: {$event.starttime}<br>
-					{#Last_end#}: {$event.endtime}<br>
-					{#Next_start#}: {$event.nextstarttime}<br>
-					{#Next_end#}: {$event.nextendtime}<br>
-					{strip}
-						{#Period#}:
-							{if isset($event.period.d)} {$event.period.d} {#day#}{/if}
-							{if isset($event.period.h)} {$event.period.h} {#hr#}{/if}
-							{if isset($event.period.m)} {$event.period.m} {#min#}{/if}
-							{if isset($event.period.s)} {$event.period.s} {#sec#}{/if}
-						<br>
-					{/strip}
+					<h1><img src="/images/events/{$event.name|escape:"html"}.png" width="5%">{$event.name|escape:"html"}</h1>
+					
+					<table width="76%">
+					<tr>
+					<td width="35%">{$event.exdesc}</td>
+					<td width="41%"><img src="/images/events/{$event.exdescimg}"></td>
+					</tr>
+					</table>
 
 					<h2>{#Related#}</h2>
 				</div>

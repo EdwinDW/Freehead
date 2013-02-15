@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS `aowow_events` (
+  `id` int(6) NOT NULL,
+  `name_loc0` text NOT NULL,
+  `name_loc8` text NOT NULL,
+  `img` varchar(128) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `aowow_events` (`id`, `name_loc0`, `name_loc8`, `img`) VALUES
+(8, '<b>Love is in the Air</b> is an celebration of love and friendship during which players share gifts and candy, and the air is filled with perfume and cologne. This holiday is based on the real world customs of <a href="http://en.wikipedia.org/wiki/Valentine''''s_day" target="_blank">Valentine''''s Day.</a><br><br>Players can show their appreciation for their friends and faction leaders by collecting <a href="#" rel="item=49655"><font color="white">Lovely Charm</font></a> to create <a href="#" rel="item=49916"><font color="white">Lovely Charm Bracelet</font></a>, which can be turned in daily for rewards. The Crown Chemical Company has set up throughout the major cities of Azeroth, peddling perfumes, colognes, candy, and other seasonal goodies which can be purchased with <a href="#" rel="item=49927"><font color="white">Lovely Token</font></a> earned through completion of daily quests. But everything isn''''t exactly as it seems, and it''''s up to players to investigate these suspicious new goblins and their perfumed plague! <br><br>Completion of the twelve holiday achievements for <a href="#" rel="achievement=1693"><font color="gold">Fool For Love</font></a> will grant a player title - <font color="grey" face="cursive">Name</font> the Love Fool.', 'Русского описания для этого события пока нет, можете посмотреть пока на картинку справа =)', 'aryu.png');
