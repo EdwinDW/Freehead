@@ -76,6 +76,8 @@ if(!$npc = load_cache(NPC_PAGE, $cache_key))
 		// faction_A = faction_H
 		$npc['faction_num'] = $row['factionID'];
 		$npc['faction'] = $row['faction-name'];
+		$npc['quotes'] = $DB->select('SELECT * FROM creature_text WHERE entry=?d', $id);
+		$npc['quotes_count'] = $DB->selectCell('SELECT COUNT(*) FROM creature_text WHERE entry=?d', $id);
 		// Деньги
 		$money = ($row['mingold']+$row['maxgold']) / 2;
 		$npc = array_merge($npc, money2coins($money));
