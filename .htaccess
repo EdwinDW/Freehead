@@ -2,7 +2,7 @@ Order Deny,Allow
 <FilesMatch "\.(conf|php|tpl|in)$">
 	Deny from all
 </FilesMatch>
-<FilesMatch "^(index|ajax|opensearch|gathererdb).php$">
+<FilesMatch "^(index|ajax|opensearch|gathererdb|searchbox).php$">
 	Allow from all
 </FilesMatch>
 Options -Indexes

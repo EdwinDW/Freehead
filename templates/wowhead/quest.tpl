@@ -25,16 +25,7 @@
 						<ul>
 							{if $quest.Level>0}<li><div>{#Level#}: {$quest.Level}</div></li>{/if}
 							{if $quest.MinLevel>0}<li><div>{#Requires_level#}: {$quest.MinLevel}</div></li>{/if}
-							<li><div>{#Loremaster#}: <a href="/?zone={$quest.ZoneOrSort}">
-							{assign var=zone value=$quest.ZoneOrSort}
-							{php} 
-							mysql_select_db("world");
-							$zones = $this->_tpl_vars['zone'];
-							$loc = $this->_tpl_vars['locale'];
-							$result = mysql_query("SELECT name_loc$loc FROM aowow_zones WHERE areatableID='$zones'");
-							$row = mysql_fetch_row($result);
-							echo $row[0];
-							{/php}</a></li></div>
+							<li><div>{#Loremaster#}: <a href="/?zone={$quest.ZoneOrSort}">{$quest.ZoneName}</a></li></div>
 							{if $quest.typename}<li><div>{#Type#}: {$quest.typename}</div></li>{/if}
 							{if isset($quest.side)}<li><div>{#Side#}: <span class="{if ($quest.side.side==1)} alliance{elseif ($quest.side.side==2)}horde{else}both{/if}-icon">{$quest.side.name}</span></div></li>{/if}
 							{if $quest.RequiredClasses != 0}<li><div>{#Quest_classes#}: 
@@ -412,12 +403,7 @@
 {/if}
 
 <h3>{#Connected_zones#}</h3>
-{#Zone_desc#} <b>{php} 
-							$zones = $this->_tpl_vars['zone'];
-							$loc = $this->_tpl_vars['locale'];
-							$result = mysql_query("SELECT name_loc$loc FROM aowow_zones WHERE areatableID='$zones'");
-							$row = mysql_fetch_row($result);
-							echo $row[0];{/php}</b>
+{#Zone_desc#} <b>{$quest.ZoneName}</b>
 							
 {if $quest.Details}
 						<h3>{#Description#}</h3>

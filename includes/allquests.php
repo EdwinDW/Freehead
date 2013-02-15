@@ -497,6 +497,7 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
             }
         // Категория 1
         $data['category'] = $data['ZoneOrSort'];
+		$data['ZoneName'] = $DB->selectCell('SELECT name_loc?d FROM  aowow_zones WHERE areatableID=?d', $_SESSION['locale'], $data['ZoneOrSort']);
         // Категория 2 ???
         $data['category2'] = $data['Flags'];
         // Требуемое пати
