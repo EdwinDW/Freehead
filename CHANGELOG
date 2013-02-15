@@ -1,3 +1,27 @@
+----------------- Changelog from 15.02.2013 ----------------- 
+Date: 21.12.2012 - 15.02.2013
+FDB Version: 12.1.0 - 12.4.0
+Commit HASH: 9a1d4fcb11f30e58a4959255dff5cc56ef9bc599
+Changes: 
+		+ 3D Viewer full support for flash viewer
+		+ Fixed forum links
+		+ Spanish translations
+		+ Separation of equipement
+		+ Itemsets now both in English and Russian (full list)
+		+ Search box implementation
+		+ Updated installation guides
+		+ Data generator for Gatherer DB addon
+		+ Sharing option and Updater option
+		+ NPC Quotes implementation
+		+ French locales (serjevane 12.02.2013)
+		+ French maps (serjevane 12.02.2013)
+		+ French phrases (serjevane 12.02.2013)
+		+ Many fixes from angelShlesser (15.02.2013)
+-------------------------------------------------------------
+
+
+
+
 ----------------- Changelog from 21.12.2012 ----------------- 
 Date: 21.12.2012
 FDB Version: 12.1.0
