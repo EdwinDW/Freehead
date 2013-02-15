@@ -130,10 +130,6 @@ body.skin .home-oneliner {
 	background-color: transparent;
 }
 
-.home-featuredbox-extended {
-	width: 515px;
-}
-
 .home-featuredbox-links a,
 .home-featuredbox-links var {
 	position: absolute;
@@ -171,10 +167,6 @@ body.skin .home-oneliner {
 /********/
 /* MISC */
 /********/
-
-body, html { /* Fix for Chrome */
-	height: 100%;
-}
 
 .home-footer { width:500px;margin:0 auto; text-align:center;font-size:11px;margin-top:40px; }
 
