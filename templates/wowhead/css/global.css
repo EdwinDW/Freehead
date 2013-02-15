@@ -15,6 +15,7 @@ body {
 
 textarea {
  resize: none;
+ width: 99.4%;
 }
 
 form {
