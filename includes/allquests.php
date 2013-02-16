@@ -259,9 +259,9 @@ function GetQuestReq($id, $count, $type)
                     SELECT name
                         {, l.name_loc?d AS name_loc}
                     FROM creature_template c
-                        { LEFT JOIN (locales_creature l) ON l.Id=c.Id AND ? }
+                        { LEFT JOIN (locales_creature l) ON l.entry=c.entry AND ? }
                     WHERE
-                        c.Id = ?d
+                        c.entry = ?d
                     LIMIT 1
                 ',
                 ($_SESSION['locale']>0)? $_SESSION['locale']: DBSIMPLE_SKIP,
@@ -276,9 +276,9 @@ function GetQuestReq($id, $count, $type)
                     SELECT name
                         {, l.name_loc?d AS name_loc}
                     FROM item_template c
-                        { LEFT JOIN (locales_item l) ON l.Id=c.Id AND ? }
+                        { LEFT JOIN (locales_item l) ON l.entry=c.entry AND ? }
                     WHERE
-                        c.Id = ?d
+                        c.entry = ?d
                     LIMIT 1
                 ',
                 ($_SESSION['locale']>0)? $_SESSION['locale']: DBSIMPLE_SKIP,
@@ -355,7 +355,7 @@ function GetQuestDBLocale($quest)
                 ObjectiveText3_loc?d AS ObjectiveText3_loc,
                 ObjectiveText4_loc?d AS ObjectiveText4_loc
             FROM locales_quest
-            WHERE Id = ?d
+            WHERE entry = ?d
             LIMIT 1
         ',
         $loc, $loc, $loc, $loc, $loc, $loc, $loc, $loc, $loc, $loc,
@@ -395,7 +395,7 @@ function GetDBQuestInfo($id, $dataflag = QUEST_DATAFLAG_MINIMUM)
 /*
  * &$data - ссылка на массив с данными
  * $dataflag - флаг уровень:
- * QUEST_DATAFLAG_MINIMUN    - Id, Title
+ * QUEST_DATAFLAG_MINIMUN    - entry, Title
  * QUEST_DATAFLAG_STRINGS    - Objectives, Details, RequestItemsText, OfferRewardText, EndText, ObjectiveText1, ObjectiveText2, ObjectiveText3, ObjectiveText4
  * QUEST_DATAFLAG_SERIES    - PrevQuestID, NextQuestIdChain, ExclusiveGroup, NextQuestID
  * QUEST_DATAFLAG_PROPS        - Daily, Type, side, etc.
@@ -411,8 +411,8 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
                 SELECT
                     1
                     {, ?# } {, ?# } {, ?# } {, ?# } {, ?# }
-                FROM quest_template
-                WHERE Id=?d
+                FROM v_quest_template
+                WHERE entry=?d
                 LIMIT 1
             ',
             ($dataflag & QUEST_DATAFLAG_MINIMUM)?$questcols[QUEST_DATAFLAG_MINIMUM]:DBSIMPLE_SKIP,
@@ -420,7 +420,7 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
             ($dataflag & QUEST_DATAFLAG_SERIES) ?$questcols[QUEST_DATAFLAG_SERIES] :DBSIMPLE_SKIP,
             ($dataflag & QUEST_DATAFLAG_PROPS)  ?$questcols[QUEST_DATAFLAG_PROPS]  :DBSIMPLE_SKIP,
             ($dataflag & QUEST_DATAFLAG_REWARDS)?$questcols[QUEST_DATAFLAG_REWARDS]:DBSIMPLE_SKIP,
-            $data['Id']
+            $data['entry']
         );
     }
     if(!$data)
@@ -449,7 +449,7 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
                 LIMIT 1
             ',
             $loc, $loc, $loc, $loc, $loc, $loc, $loc, $loc, $loc, $loc,
-            $data['Id']
+            $data['entry']
         );
 
         if($row)
@@ -457,7 +457,7 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
     }
     // Минимальные данные
     // ID квеста
-    $data['Id'] = $data['Id'];
+    $data['entry'] = $data['entry'];
     // Имя квеста
     $data['Title'] = GetQuestTitle($data);
 
@@ -497,7 +497,6 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
             }
         // Категория 1
         $data['category'] = $data['ZoneOrSort'];
-		$data['ZoneName'] = $DB->selectCell('SELECT name_loc?d FROM  aowow_zones WHERE areatableID=?d', $_SESSION['locale'], $data['ZoneOrSort']);
         // Категория 2 ???
         $data['category2'] = $data['Flags'];
         // Требуемое пати
