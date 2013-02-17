@@ -10,7 +10,7 @@
 			<br>
 			<ul>
 			<ol><li>{#Tooltips_opt_1#}<br>
-			<div id="powered" class="listview"><textarea cols="154" rows="1" readonly="readonly"><script type="text/javascript" src="http://{php}$addr = $_SERVER['SERVER_NAME']; echo $addr;{/php}/templates/wowhead/js/power.js"></script></textarea></div></li><br>
+			<div id="powered" class="listview"><textarea cols="100" rows="1" readonly="readonly"><script type="text/javascript" src="http://{php}$addr = $_SERVER['SERVER_NAME']; echo $addr;{/php}/templates/wowhead/js/power.js"></script></textarea></div></li><br>
 			<li>{#Tooltips_opt_2#}</li></ol>
 			</ul>
 			<br>
@@ -20,7 +20,7 @@
 			<ul>
 				<li><b>{#Tooltips_howto_1#}</b></br>
 				{#Tooltips_howto_2#}<br>
-				<div id="powered" class="listview"><textarea cols="160" rows="1" readonly="readonly"><a href="#" rel="item=2828">hai</a></textarea></div><br>
+				<div id="powered" class="listview"><textarea cols="100" rows="1" readonly="readonly"><a href="#" rel="item=2828">hai</a></textarea></div><br>
 				{#Tooltips_howto_3#}</li>
 			</ul>
 			<br><br><hr>
