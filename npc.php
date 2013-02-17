@@ -1,5 +1,5 @@
 <?php
-
+require_once('includes/allreputation.php');
 require_once('includes/allspells.php');
 require_once('includes/allquests.php');
 require_once('includes/allnpcs.php');
@@ -439,6 +439,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 1,
 	'typeid' => $npc['entry'],
+	'username' => $_SESSION['username'],
 	'path' => path(0, 4, $npc['type'])
 );
 
@@ -455,7 +456,7 @@ $smarty->assign('npc', $npc);
 
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
-
+$smarty->assign('reputation', getreputation($page['username']));
 // Запускаем шаблонизатор
 $smarty->display('npc.tpl');
 

@@ -5,7 +5,7 @@ require_once('includes/allscreenshots.php');
 require_once('includes/allnpcs.php');
 require_once('includes/allobjects.php');
 require_once('includes/allquests.php');
-
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'event');
 
 $id = intval($podrazdel);
@@ -51,6 +51,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 11,
 	'typeid' => $event['id'],
+	'username' => $_SESSION['username'],
 	'path' => path(0, 11)
 );
 $smarty->assign('page', $page);
@@ -60,6 +61,7 @@ $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
 $smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 // Статистика выполнения mysql запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 $smarty->assign('event', $event);
 // Загружаем страницу
 $smarty->display('event.tpl');

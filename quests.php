@@ -2,7 +2,7 @@
 
 // Необходима функция questinfo
 require_once('includes/allquests.php');
-
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'quest');
 
 // Разделяем из запроса класс и подкласс квестов
@@ -80,6 +80,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 0,
 	'typeid' => 0,
+	'username' => $_SESSION['username'],
 	'path' => path(0, 3, $Type, $ZoneOrSort) // TODO
 );
 
@@ -89,6 +90,7 @@ $smarty->assign('quests',$quests);
 $smarty->assign('quests_tot',(is_array($quests_tot) ? $quests_tot[0]['quest_tot'] : $quests_tot));
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 // Загружаем страницу
 $smarty->display('quests.tpl');
 

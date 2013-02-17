@@ -4,6 +4,7 @@ require_once('includes/allutil.php');
 require_once('includes/allitems.php');
 require_once('includes/allcomments.php');
 require_once('includes/allscreenshots.php');
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'zone');
 
 // номер объекта;
@@ -180,6 +181,7 @@ $page = array(
 	'tab' => 1,
 	'type' => 7,
 	'typeid' => $zone['areatableID'],
+	'username' => $_SESSION['username'],
 	'path' => path(1, 1, $zone['areatableID']) //path(0, 6, $zone['map'])
 );
 
@@ -188,7 +190,7 @@ $smarty->assign('page', $page);
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
 $smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
-
+$smarty->assign('reputation', getreputation($page['username']));
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
 $smarty->assign('zone', $zone);

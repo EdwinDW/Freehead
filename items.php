@@ -2,6 +2,7 @@
 
 // Необходима функция iteminfo
 require_once('includes/allitems.php');
+require_once('includes/allreputation.php');
 
 $smarty->config_load($conf_file, 'item');
 
@@ -142,12 +143,14 @@ $page = array(
 	'tab' => 0,
 	'type' => 0,
 	'typeid' => 0,
+	'username' => $_SESSION['username'],
 	'path' => path(0, 0, $class, $subclass, $type)
 );
 $smarty->assign('page', $page);
 
 // Статистика выполнения mysql запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 $smarty->assign('items', $items);
 $smarty->assign('item_tot',(is_array($item_tot) ? $item_tot[0]['item_tot'] : $item_tot));
 // Загружаем страницу

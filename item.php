@@ -9,6 +9,7 @@ require_once('includes/allobjects.php');
 require_once('includes/allcomments.php');
 require_once('includes/allachievements.php');
 require_once('includes/allscreenshots.php');
+require_once('includes/allreputation.php');
 // Загружаем файл перевода для smarty
 $smarty->config_load($conf_file, 'item');
 
@@ -727,6 +728,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 3,
 	'typeid' => $item['entry'],
+	'username' => $_SESSION['username'],
 	'path' => path(0, 0, $item['classs'], $item['subclass'], $item['type'])
 );
 $smarty->assign('page', $page);
@@ -739,6 +741,7 @@ $smarty->assign('screenshot_error', $smarty->get_config_vars('Error2'));
 };
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 $smarty->assign('item', $item);
 $smarty->display('item.tpl');
 ?>

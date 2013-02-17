@@ -8,7 +8,7 @@ function event_find($conditions = NULL)
 	global $DB;
 	if (is_null($conditions))
 	{
-		return $DB->select('SELECT eventEntry FROM game_event');
+		return $DB->select('SELECT eventEntry, cat FROM game_event WHERE eventEntry IN (2,7,8,9,10,11,12,26,32,40,41,18,19,20,21,42,30)');
 	}
 	elseif (is_array($conditions) && count($conditions)==1 && isset($conditions["holiday"]))
 	{
@@ -33,6 +33,7 @@ function event_find($conditions = NULL)
 		if ($rows)
 			foreach ($rows as $row)
 			{
+				$cat = $row['cat'];
 				$entry = $row['eventEntry'];
 				if (!isset($result[$entry]))
 					$result[$entry] = array('eventEntry' => $entry);
@@ -88,11 +89,11 @@ function event_infoline($events)
 		return array();
 
 	$entries = array_select_key($events, 'eventEntry');
-
+	
 	$rows = $DB->select('
 		SELECT
 			eventEntry, UNIX_TIMESTAMP(start_time) AS gen_start, UNIX_TIMESTAMP(end_time) AS gen_end,
-			occurence, length, holiday, description AS name
+			occurence, length, holiday, cat, description AS name
 		FROM game_event
 		WHERE eventEntry IN (?a)',
 		$entries
@@ -135,7 +136,6 @@ function event_description($entry)
 	$result['creatures_quests_id'] = $DB->select('SELECT id AS creature, quest FROM game_event_creature_quest WHERE eventEntry=?d OR eventEntry=?d GROUP BY quest', $entry, -$entry);
 	$result['exdesc'] = $DB->selectCell('SELECT name_loc?d FROM aowow_events WHERE id=?d', $_SESSION['locale'], $entry);
 	$result['exdescimg'] = $DB->selectCell('SELECT img FROM aowow_events WHERE id=?d', $entry);
-
 	return $result;
 }
 

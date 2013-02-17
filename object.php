@@ -1,5 +1,5 @@
 <?php
-
+require_once('includes/allreputation.php');
 require_once('includes/allobjects.php');
 require_once('includes/allitems.php');
 require_once('includes/allcomments.php');
@@ -115,6 +115,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 2,
 	'typeid' => $object['entry'],
+	'username' => $_SESSION['username'],
 	'path' => path(0, 5, $object['type'])
 );
 
@@ -126,7 +127,7 @@ $smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
-
+$smarty->assign('reputation', getreputation($page['username']));
 $smarty->assign('object', $object);
 $smarty->display('object.tpl');
 

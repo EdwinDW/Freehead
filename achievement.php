@@ -4,6 +4,7 @@ require_once('includes/allachievements.php');
 require_once('includes/allitems.php');
 require_once('includes/allcomments.php');
 require_once('includes/allscreenshots.php');
+require_once('includes/allreputation.php');
 
 $smarty->config_load($conf_file, 'achievement');
 
@@ -315,6 +316,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 9,
 	'typeid' => $achievement['id'],
+	'username' => $_SESSION['username'],
 	'path' => path(0, 9, $achievement['category2'], $achievement['category1'])
 );
 $smarty->assign('page', $page);
@@ -325,6 +327,7 @@ $smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 
 // Статистика выполнения mysql запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 $smarty->assign('achievement', $achievement);
 // Загружаем страницу
 $smarty->display('achievement.tpl');

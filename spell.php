@@ -6,7 +6,7 @@ require_once('includes/allquests.php');
 require_once('includes/allcomments.php');
 require_once('includes/allscreenshots.php');
 require_once('includes/allachievements.php');
-
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'spell');
 
 // номер спелла;
@@ -577,6 +577,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 6,
 	'typeid' => $spell['entry'],
+	'username' => $_SESSION['username'],
 	'path' => path(0, 1)
 );
 $smarty->assign('page', $page);
@@ -587,7 +588,7 @@ $smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
-
+$smarty->assign('reputation', getreputation($page['username']));
 $smarty->assign('spell', $spell);
 $smarty->display('spell.tpl');
 

@@ -2,7 +2,7 @@
 
 // Необходима функция creatureinfo
 require_once('includes/allnpcs.php');
-
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'npc');
 
 @list($type) = extract_values($podrazdel);
@@ -62,6 +62,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 0,
 	'typeid' => 0,
+	'username' => $_SESSION['username'],
 	'path' => path(0, 4, $type)
 );
 $smarty->assign('page', $page);
@@ -70,6 +71,7 @@ $smarty->assign('npcs', $npcs);
 $smarty->assign('npc_tot',(is_array($npc_tot) ? $npc_tot[0]['npc_tot'] : $npc_tot));
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 // Загружаем страницу
 $smarty->display('npcs.tpl');
 

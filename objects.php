@@ -1,5 +1,5 @@
 <?php
-
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'object');
 
 @list($type) = extract_values($podrazdel);
@@ -91,6 +91,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 0,
 	'typeid' => 0,
+	'username' => $_SESSION['username'],
 	'path' => path(0, 5, $type)
 );
 $smarty->assign('page', $page);
@@ -100,7 +101,7 @@ $smarty->assign('data', $data);
 $smarty->assign('objects_tot',(is_array($object_tot) ? $object_tot[0]['num_objects'] : $object_tot));
 // Статистика выполнения mysql запросов
 $smarty->assign('mysql', $DB->getStatistics());
-
+$smarty->assign('reputation', getreputation($page['username']));
 $smarty->display('objects.tpl');
 
 ?>

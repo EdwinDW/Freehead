@@ -361,7 +361,7 @@ local function setupGui(gui)
 		GathererDB.guiId = id
 	end
 
-	local version = GetAddOnMetadata("GathererDB_FreedomHead, "Version")
+	local version = GetAddOnMetadata("GathererDB_FreedomHead", "Version")
 	gui:AddControl(id, "Subhead",    0,    "Perform import of FreedomHead "..version.." DB:")
 
 	local buttonFrame = CreateFrame("Frame", nil, gui.tabs[id][3])

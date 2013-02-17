@@ -1,7 +1,7 @@
 <?php
 
 require_once('includes/allitemsets.php');
-
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'itemset');
 
 $cache_key = cache_key();
@@ -35,6 +35,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 0,
 	'typeid' => 0,
+	'username' => $_SESSION['username'],
 	'path' => '[0, 2]'
 );
 $smarty->assign('page', $page);
@@ -42,6 +43,7 @@ $smarty->assign('page', $page);
 // --Передаем данные шаблонизатору--
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 // Запускаем шаблонизатор
 $smarty->display('itemsets.tpl');
 

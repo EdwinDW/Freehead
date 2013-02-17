@@ -1,4 +1,5 @@
 <?php
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'factions');
 
 @list($c1, $c2) = extract_values($podrazdel);
@@ -57,6 +58,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 0,
 	'typeid' => 0,
+	'username' => $_SESSION['username'],
 	'path' => path(0, 7, $c1, $c2)
 );
 $smarty->assign('page', $page);
@@ -64,6 +66,7 @@ $smarty->assign('page', $page);
 $smarty->assign('factions', $factions);
 // Статистика выполнения mysql запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 // Загружаем страницу
 $smarty->display('factions.tpl');
 ?>

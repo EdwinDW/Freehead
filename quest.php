@@ -8,6 +8,7 @@ require_once('includes/allcomments.php');
 require_once('includes/allachievements.php');
 require_once('includes/allevents.php');
 require_once('includes/allscreenshots.php');
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'quest');
 
 // Номер квеста
@@ -575,6 +576,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 5,
 	'typeid' => $quest['Id'],
+	'username' => $_SESSION['username'],
 	'path' => path(0, 5) // TODO
 );
 $smarty->assign('page', $page);
@@ -582,7 +584,7 @@ $smarty->assign('page', $page);
 // Комментарии
 $smarty->assign('comments', getcomments($page['type'], $page['typeid']));
 $smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
-
+$smarty->assign('reputation', getreputation($page['username']));
 // Данные о квесте
 $smarty->assign('quest', $quest);
 // Количество MySQL запросов

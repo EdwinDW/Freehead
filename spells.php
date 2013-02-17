@@ -1,7 +1,7 @@
 <?php
 
 require_once('includes/allspells.php');
-
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'spell');
 
 @list($s1, $s2, $s3) = extract_values($podrazdel);
@@ -205,6 +205,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 6,
 	'typeid' => 0,
+	'username' => $_SESSION['username'],
 	'path' => path(0, 1, $s1, $s2, $s3),
 	'sort' => isset($spells['sort'])?$spells['sort']:"'level','name'"
 );
@@ -212,6 +213,7 @@ $smarty->assign('page', $page);
 
 // Статистика выполнения mysql запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 $smarty->assign('spells', $spells['data']);
 // Загружаем страницу
 $smarty->display('spells.tpl');

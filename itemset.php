@@ -3,7 +3,7 @@ require_once('includes/allitems.php');
 require_once('includes/allspells.php');
 require_once('includes/allcomments.php');
 require_once('includes/allscreenshots.php');
-
+require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'itemset');
 
 $id = intval($podrazdel);
@@ -73,6 +73,7 @@ $page = array(
 	'tab' => 0,
 	'type' => 4,
 	'typeid' => $itemset['entry'],
+	'username' => $_SESSION['username'],
 	'path' => '[0, 2]'
 );
 $smarty->assign('page', $page);
@@ -84,6 +85,7 @@ $smarty->assign('screenshots', getscreenshots($page['type'], $page['typeid']));
 // --Передаем данные шаблонизатору--
 // Количество MySQL запросов
 $smarty->assign('mysql', $DB->getStatistics());
+$smarty->assign('reputation', getreputation($page['username']));
 // Запускаем шаблонизатор
 $smarty->display('itemset.tpl');
 ?>
