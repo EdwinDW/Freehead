@@ -1,0 +1,20 @@
+ALTER TABLE `game_event` ADD `cat` INT NOT NULL;
+
+UPDATE game_event SET cat = '1' WHERE eventEntry = '1';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '2';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '7';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '8';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '9';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '10';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '11';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '12';
+UPDATE game_event SET cat = '3' WHERE eventEntry = '18';
+UPDATE game_event SET cat = '3' WHERE eventEntry = '19';
+UPDATE game_event SET cat = '3' WHERE eventEntry = '20';
+UPDATE game_event SET cat = '3' WHERE eventEntry = '21';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '26';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '32';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '40';
+UPDATE game_event SET cat = '1' WHERE eventEntry = '41';
+UPDATE game_event SET cat = '3' WHERE eventEntry = '42';
+UPDATE game_event SET cat = '3' WHERE eventEntry = '30';
