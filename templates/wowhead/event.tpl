@@ -27,14 +27,18 @@
 					{if $event.holiday>0}
 						<a href="http://www.wowhead.com/?event={$event.holiday}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
 					{/if}
-					<h1><img src="/images/events/{$event.name|escape:"html"}.png" width="5%">{$event.name|escape:"html"}</h1>
+					<div class="h1-icon">
+<div class="iconmedium">
+<ins style='background-image: url("/images/events/{$event.name|escape:'html'}.png");'></ins>
+<del></del>
+</div>
+</div>
+					<h1>{$event.name|escape:"html"}</h1>
 					
-					<table width="76%">
-					<tr>
-					<td width="35%">{$event.exdesc}</td>
-					<td width="41%"><img src="/images/events/{$event.exdescimg}"></td>
-					</tr>
-					</table>
+					<div id="efhjkdsoicjx" class="left">
+					<img alt="" style="float: right; margin: 0 0 10px 10px" src="/images/events/{$event.exdescimg}">
+					{$event.exdesc}
+					</div>
 
 					<h2>{#Related#}</h2>
 				</div>
