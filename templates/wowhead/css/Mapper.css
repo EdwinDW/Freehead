@@ -21,24 +21,24 @@ width:11px;
 height:11px;
 left:-5px;
 top:-5px;
-background:url(../images/map-pin-yellow.png) no-repeat;
+background:url(/images/map-pin-yellow.png) no-repeat;
 display:block;
 }
 
 .mapper .pin-1 a {
-background-image:url(../images/map-pin-green.png);
+background-image:url(/images/map-pin-green.png);
 }
 
 .mapper .pin-2 a {
-background-image:url(../images/map-pin-red.png);
+background-image:url(/images/map-pin-red.png);
 }
 
 .mapper .pin-3 a {
-background-image:url(../images/map-pin-blue.png);
+background-image:url(/images/map-pin-blue.png);
 }
 
 .mapper .pin-4 a {
-background-image:url(../images/map-pin-purple.png);
+background-image:url(/images/map-pin-purple.png);
 }
 
 .mapper .glow {

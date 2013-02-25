@@ -30,7 +30,7 @@ filter:alpha(opacity=80);
 }
 
 div.screenshotviewer-screen a {
-background:url(../images/pixel.gif) no-repeat;
+background:url(/images/pixel.gif) no-repeat;
 }
 
 .dragged {

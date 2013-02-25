@@ -1,6 +1,6 @@
 #topbar-right input.search-database
 {
-	background:white url(../images/enus/searchdatabase.gif) .2em center no-repeat;
+	background:white url(/images/enus/searchdatabase.gif) .2em center no-repeat;
 }
 
 div.modelviewer-quality div
@@ -9,7 +9,7 @@ div.modelviewer-quality div
 	width:61px;
 	height:22px;
 	margin-right:10px;
-	background:url(../images/enus/modelviewer-picshures.gif) left center no-repeat;
+	background:url(/images/enus/modelviewer-picshures.gif) left center no-repeat;
 }
 
 div.modelviewer-model div
@@ -19,7 +19,7 @@ div.modelviewer-model div
 	float:left;
 	width:50px;
 	height:22px;
-	background:url(../images/enus/modelviewer-picshures.gif) -506px center no-repeat;
+	background:url(/images/enus/modelviewer-picshures.gif) -506px center no-repeat;
 }
 
 a.modelviewer-help span
@@ -27,7 +27,7 @@ a.modelviewer-help span
 	display:block;
 	width:52px;
 	height:22px;
-	background:url(../images/enus/modelviewer-picshures.gif) -100px center no-repeat;
+	background:url(/images/enus/modelviewer-picshures.gif) -100px center no-repeat;
 }
 
 a:hover.modelviewer-help span
@@ -40,7 +40,7 @@ a.modelviewer-close span
 	display:block;
 	width:66px;
 	height:22px;
-	background:url(../images/enus/modelviewer-picshures.gif) -300px center no-repeat;
+	background:url(/images/enus/modelviewer-picshures.gif) -300px center no-repeat;
 }
 
 a:hover.modelviewer-close span
@@ -53,7 +53,7 @@ a.screenshotviewer-prev b
 	display:block;
 	width:88px;
 	height:22px;
-	background:url(../images/enus/screenshotviewer-picshures.gif?2) -200px center no-repeat;
+	background:url(/images/enus/screenshotviewer-picshures.gif?2) -200px center no-repeat;
 }
 
 a.screenshotviewer-next b
@@ -61,7 +61,7 @@ a.screenshotviewer-next b
 	display:block;
 	width:53px;
 	height:22px;
-	background:url(../images/enus/screenshotviewer-picshures.gif?2) -300px center no-repeat;
+	background:url(/images/enus/screenshotviewer-picshures.gif?2) -300px center no-repeat;
 }
 
 a.screenshotviewer-cover span
@@ -75,7 +75,7 @@ a.screenshotviewer-cover b
 	display:block;
 	width:66px;
 	height:22px;
-	background:url(../images/enus/screenshotviewer-picshures.gif?2) -100px center no-repeat;
+	background:url(/images/enus/screenshotviewer-picshures.gif?2) -100px center no-repeat;
 }
 
 a.screenshotviewer-original span
@@ -83,7 +83,7 @@ a.screenshotviewer-original span
 	display:block;
 	width:93px;
 	height:22px;
-	background:url(../images/enus/screenshotviewer-picshures.gif?2) -400px center no-repeat;
+	background:url(/images/enus/screenshotviewer-picshures.gif?2) -400px center no-repeat;
 }
 
 a:hover.screenshotviewer-original span
@@ -96,7 +96,7 @@ a.screenshotviewer-close span
 	display:block;
 	width:66px;
 	height:22px;
-	background:url(../images/enus/screenshotviewer-picshures.gif?2) 0 center no-repeat;
+	background:url(/images/enus/screenshotviewer-picshures.gif?2) 0 center no-repeat;
 }
 
 a:hover.screenshotviewer-close span
