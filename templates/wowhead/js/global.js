@@ -2,8 +2,8 @@
  global.js version 278 (09.07.2009)
  Differences from origin:
  1. Change:
-   - http://static.wowhead.com/images/icons/	->	images/icons/
-   - http://static.wowhead.com/images/	->	templates/wowhead/images/
+   - http://static.wowhead.com//images/icons/	->	/images/icons/
+   - http://static.wowhead.com//images/	->	/images/
  2. In function M(aa, W) of class $WowheadPower:
    - commented locale definition from host
    - chaned Y calculation to use locale.id
@@ -1490,7 +1490,7 @@ function ss_appendSticky() {
             return rf2(a)
         };
         var f = ce("img"), e = Math.min(150 / c.width, 150 / c.height);
-        f.src = "images/screenshots/thumb/" + c.body.replace("gif","jpg").replace("png","jpg");
+        f.src = "//images/screenshots/thumb/" + c.body.replace("gif","jpg").replace("png","jpg");
         f.className = "border";
         ae(l, f);
         ae(m, l);
@@ -1788,7 +1788,7 @@ var Menu = {iframes: [],divs: [],selection: [],show: function() {
                     U.target = "_blank"
                 }
                 if (Q.tinyIcon) {
-                    S.style.background = "url(images/icons/tiny/" + Q.tinyIcon.toLowerCase() + ".gif) left center no-repeat"
+                    S.style.background = "url(/images/icons/tiny/" + Q.tinyIcon.toLowerCase() + ".gif) left center no-repeat"
                 } else {
                     if (Q.socketColor) {
                         S.className += " socket-" + g_file_gems[Q.socketColor]
@@ -1796,8 +1796,8 @@ var Menu = {iframes: [],divs: [],selection: [],show: function() {
                         if (Q.smallIcon) {
                             U.style.padding = 0;
                             S.style.padding = "4px 18px 4px 28px";
-                            S.style.background = "url(templates/wowhead/images/icon_border_small.png) left center no-repeat transparent";
-                            G.style.background = "url(images/icons/small/" + Q.smallIcon.toLowerCase() + ".jpg) 4px 3px no-repeat transparent"
+                            S.style.background = "url(/images/icon_border_small.png) left center no-repeat transparent";
+                            G.style.background = "url(/images/icons/small/" + Q.smallIcon.toLowerCase() + ".jpg) 4px 3px no-repeat transparent"
                         }
                     }
                 }
@@ -2295,7 +2295,7 @@ var Icon = {sizes: ["small", "medium", "large"],sizes2: [18, 36, 56],create: fun
         if (b.indexOf("cache") != -1) {
             a.backgroundImage = "url(" + b + ")"
         } else {
-            a.backgroundImage = "url(images/icons/" + Icon.sizes[c] + "/" + b.toLowerCase() + ".jpg)"
+            a.backgroundImage = "url(/images/icons/" + Icon.sizes[c] + "/" + b.toLowerCase() + ".jpg)"
         }
         Icon.moveTexture(d, c, 0, 0)
     },moveTexture: function(d, c, a, e) {
@@ -2585,7 +2585,7 @@ var Tooltip = {create: function(h) {
     },setIcon: function(a) {
         Tooltip.prepare();
         if (a) {
-            Tooltip.icon.style.backgroundImage = "url(images/icons/medium/" + a.toLowerCase() + ".jpg)";
+            Tooltip.icon.style.backgroundImage = "url(/images/icons/medium/" + a.toLowerCase() + ".jpg)";
             Tooltip.icon.style.visibility = "visible"
         } else {
             Tooltip.icon.style.backgroundImage = "none";
@@ -4479,7 +4479,7 @@ Listview.funcBox = {createSimpleCol: function(c, d, a, b) {
             } else {
                 n.onclick = g_insertTag.bind(0, g, k.pre, k.post, k.rep)
             }
-            w.src = "templates/wowhead/images/pixel.gif";
+            w.src = "/images/pixel.gif";
             w.className = "toolbar-" + k.id;
             ae(n, w);
             ae(e, n)
@@ -4765,7 +4765,7 @@ Listview.funcBox = {createSimpleCol: function(c, d, a, b) {
                 k = ce("a");
                 k.href = "?item=" + n;
                 k.className = "moneyitem";
-                k.style.backgroundImage = "url(images/icons/tiny/" + g_items.getIcon(n).toLowerCase() + ".gif)";
+                k.style.backgroundImage = "url(/images/icons/tiny/" + g_items.getIcon(n).toLowerCase() + ".gif)";
                 ae(k, ct(e));
                 ae(g, k)
             }
@@ -6139,7 +6139,7 @@ Listview.templates = {faction: {sort: [1],nItemsPerPage: -1,searchable: 1,filtra
             q.href = "#screenshots:id=" + k.id;
             q.onclick = rf2;
             var v = ce("img"), t = Math.min(150 / k.width, 150 / k.height);
-            v.src = "images/screenshots/thumb/" + k.body.replace("gif","jpg").replace("png","jpg");
+            v.src = "/images/screenshots/thumb/" + k.body.replace("gif","jpg").replace("png","jpg");
             ae(q, v);
             ae(e, q);
             var p = ce("div");
@@ -7300,7 +7300,7 @@ function() {
             }
             if ((type == 3 || type == 6 || type == 9 || type == 10) && param1) {
                 div.className += " live-search-icon";
-                div.style.backgroundImage = "url(images/icons/small/" + param1.toLowerCase() + ".jpg)"
+                div.style.backgroundImage = "url(/images/icons/small/" + param1.toLowerCase() + ".jpg)"
             } else {
                 if (type == 5 && param1 >= 1 && param1 <= 2) {
                     div.className += " live-search-icon-quest-" + (param1 == 1 ? "alliance" : "horde")
@@ -8029,7 +8029,7 @@ function() {
         b.style.visibility = "hidden";
         var C = z[k], I = (C.width > 772 || C.height > 618);
         g(0);
-        var E = (C.url ? C.url : "images/screenshots/" + (I ? "normal/" : "normal/") + C.body);
+        var E = (C.url ? C.url : "/images/screenshots/" + (I ? "normal/" : "normal/") + C.body);
         var J = '<img src="' + E + '" width="' + e + '" height="' + y + '"';
         if (Browser.ie6) {
             J += ' galleryimg="no"'
@@ -8040,7 +8040,7 @@ function() {
             if (C.url) {
                 h.href = E
             } else {
-                h.href = "images/screenshots/normal/" + C.body;
+                h.href = "/images/screenshots/normal/" + C.body;
             }
             if (!C.user && typeof g_pageInfo == "object") {
                 C.user = g_pageInfo.username
