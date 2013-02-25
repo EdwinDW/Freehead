@@ -497,6 +497,8 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
             }
         // Категория 1
         $data['category'] = $data['ZoneOrSort'];
+		$category = $data['category'];
+		$data['zone'] = $DB->SelectCell('SELECT name_loc?d FROM aowow_zones WHERE areatableID = ?d', $_SESSION['locale'], $category);
         // Категория 2 ???
         $data['category2'] = $data['Flags'];
         // Требуемое пати
@@ -542,6 +544,7 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
                 if (!$value && isset($quest_faction_reward[$id]))
                     $value=$quest_faction_reward[$id];
                 if ($value)
+					$id = $data['RewardFactionId'.$j];
                     $data['reprewards'][] = @array_merge(factioninfo($data['RewardFactionId'.$j]), array('value' => $quest_faction_reward[$value]));
             }
         // Вознаграждение деньгами
