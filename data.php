@@ -136,7 +136,7 @@ switch($_GET['data'])
 					'description'	=> (string)spell_desc($glyph['spellid']),
 					'icon'			=> (string)$glyph['iconname'],
 					'type'			=> (int)($glyph['typeflags']&1 ? 2 : 1),	// 1 - Большой символ, 2 - Малый символ
-					'class'		=> (int)$glyph['subclass'],
+					'classs'		=> (int)$glyph['subclass'],
 					'skill'			=> (int)2  // Skill???
 				);
 			}
