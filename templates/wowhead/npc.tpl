@@ -135,7 +135,16 @@
 						<li><div>{$npc.reprewards[j].value} {#reputationwith#} <a href="?faction={$npc.reprewards[j].entry}">{$npc.reprewards[j].name}</a></div></li>
 {/section}
 {/if}	
-
+{if isset($npc.onkillrep)}
+{#Onkill_rep#}
+{foreach from=$npc.killrep item=onkill}
+{if $onkill.value < 0}
+<li><div><font color="red"><strong>{$onkill.value}</strong></font> {#reputationwith#} <a href="?faction={$onkill.entry}">{$onkill.name}</a></div></li>
+{elseif $onkill.value > 0}
+<li><div><font color="green"><strong>+{$onkill.value}</strong></font>  {#reputationwith#} <a href="?faction={$onkill.entry}">{$onkill.name}</a></div></li>
+{/if}
+{/foreach}
+{/if}
 				<h2>{#Related#}</h2>
 
 			</div>

@@ -127,6 +127,23 @@ if(!$npc = load_cache(NPC_PAGE, $cache_key))
 		$npc['faction'] = $row['faction-name'];
 		$npc['quotes'] = $DB->select('SELECT * FROM creature_text WHERE entry=?d', $id);
 		$npc['quotes_count'] = $DB->selectCell('SELECT COUNT(*) FROM creature_text WHERE entry=?d', $id);
+		$repdata = $DB->selectRow('
+					SELECT *
+					FROM creature_onkill_reputation
+					WHERE creature_id=?d
+					LIMIT 1
+					',
+					$id
+		);
+		for($j=1;$j<=2;$j++)
+			if($repdata['RewOnKillRepValue'.$j] !=0)
+				{
+					$id = $repdata['RewOnKillRepFaction'.$j];
+					$value = $repdata['RewOnKillRepValue'.$j];
+					if($value)
+						$npc['onkillrep'] = factioninfo($id);
+						$npc['killrep'][] = @array_merge(factioninfo($repdata['RewOnKillRepFaction'.$j]), array('value' => $value));
+				}
 		// Деньги
 		$money = ($row['mingold']+$row['maxgold']) / 2;
 		$npc = array_merge($npc, money2coins($money));
