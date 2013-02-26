@@ -17,7 +17,7 @@
 				<tr><td><div class="infobox-spacer"></div>
 					<ul>
 						<li><div>{#Level#}: {if $npc.minlevel<>$npc.maxlevel}{$npc.minlevel} - {/if}{$npc.maxlevel}</div></li>
-						<li><div>{#Classification#}: {$npc.rank}</div></li>
+						<li><div>{#Classification#}: {if $npc.dtype == 3}<img src="/images/boss_icon.png"> {$npc.rank}{else}{$npc.rank}{/if}</div></li>
 						<li><div>{#React#}: <span class="q{if $npc.A==-1}10{elseif $npc.A==1}2{else}{/if}">A</span> <span class="q{if $npc.H==-1}10{elseif $npc.H==1}2{else}{/if}">H</span></div></li>
 						<li><div>{#Faction#}: <a href="?faction={$npc.faction_num}">{$npc.faction}</a></div></li>
 						<li><div>{#Health#}: 
@@ -121,9 +121,9 @@
 				{#This_NPC_cant_be_found#}
 {/if}
 <br>
-
+{if $npc.quotes_count > 0}
 <a id="show_id" onclick="document.getElementById('spoiler_id').style.display=''; document.getElementById('show_id').style.display='none';" class="link">&rArr; {#Quotes#} ({$npc.quotes_count})</a><span id="spoiler_id" style="display: none"><a onclick="document.getElementById('spoiler_id').style.display='none'; document.getElementById('show_id').style.display='';" class="link">&dArr; {#Quotes#} ({$npc.quotes_count})</a><br> 
-
+{/if}
 {foreach from=$npc.quotes item="row"}
    <ul><font color='red'>{$npc.name}{$npc.subname} yells: {$row.text}<br/> </font></ul>
 {/foreach}
