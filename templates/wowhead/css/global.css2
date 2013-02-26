@@ -3,7 +3,7 @@
  Differences from origin:
  1. Change:
    - http://static.wowhead.com/images/icons/	->	images/icons/
-   - http://static.wowhead.com/images/	->	templates/wowhead/images/
+   - http://static.wowhead.com/images/	->	/images/
  2. In function M(aa, W) of class $WowheadPower:
    - commented locale definition from host
    - chaned Y calculation to use locale.id
@@ -1935,7 +1935,7 @@ var Menu = {
 					U.target = "_blank"
 				}
 				if (Q.tinyIcon) {
-					S.style.background = "url(images/icons/tiny/" + Q.tinyIcon.toLowerCase() + ".gif) left center no-repeat"
+					S.style.background = "url(/images/icons/tiny/" + Q.tinyIcon.toLowerCase() + ".gif) left center no-repeat"
 				} else {
 					if (Q.socketColor) {
 						S.className += " socket-" + g_file_gems[Q.socketColor]
@@ -1943,8 +1943,8 @@ var Menu = {
 						if (Q.smallIcon) {
 							U.style.padding = 0;
 							S.style.padding = "4px 18px 4px 28px";
-							S.style.background = "url(templates/wowhead/images/icon_border_small.png) left center no-repeat transparent";
-							G.style.background = "url(images/icons/small/" + Q.smallIcon.toLowerCase() + ".jpg) 4px 3px no-repeat transparent"
+							S.style.background = "url(/images/icon_border_small.png) left center no-repeat transparent";
+							G.style.background = "url(/images/icons/small/" + Q.smallIcon.toLowerCase() + ".jpg) 4px 3px no-repeat transparent"
 						}
 					}
 				}
@@ -2483,7 +2483,7 @@ var Icon = {
 		if (b.indexOf("?") != -1) {
 			a.backgroundImage = "url(" + b + ")"
 		} else {
-			a.backgroundImage = "url(images/icons/" + Icon.sizes[c] + "/" + b.toLowerCase() + ".jpg)"
+			a.backgroundImage = "url(/images/icons/" + Icon.sizes[c] + "/" + b.toLowerCase() + ".jpg)"
 		}
 		Icon.moveTexture(d, c, 0, 0)
 	},
@@ -2830,7 +2830,7 @@ var Tooltip = {
 	setIcon: function (a) {
 		Tooltip.prepare();
 		if (a) {
-			Tooltip.icon.style.backgroundImage = "url(images/icons/medium/" + a.toLowerCase() + ".jpg)";
+			Tooltip.icon.style.backgroundImage = "url(/images/icons/medium/" + a.toLowerCase() + ".jpg)";
 			Tooltip.icon.style.visibility = "visible"
 		} else {
 			Tooltip.icon.style.backgroundImage = "none";
@@ -4973,7 +4973,7 @@ Listview.funcBox = {
 			} else {
 				n.onclick = g_insertTag.bind(0, g, k.pre, k.post, k.rep)
 			}
-			w.src = "templates/wowhead/images/pixel.gif";
+			w.src = "/images/pixel.gif";
 			w.className = "toolbar-" + k.id;
 			ae(n, w);
 			ae(e, n)
@@ -5300,7 +5300,7 @@ Listview.funcBox = {
 				k = ce("a");
 				k.href = "?item=" + n;
 				k.className = "moneyitem";
-				k.style.backgroundImage = "url(images/icons/tiny/" + g_items.getIcon(n).toLowerCase() + ".gif)";
+				k.style.backgroundImage = "url(/images/icons/tiny/" + g_items.getIcon(n).toLowerCase() + ".gif)";
 				ae(k, ct(e));
 				ae(g, k)
 			}
@@ -8857,7 +8857,7 @@ function () {
 			}
 			if ((type == 3 || type == 6 || type == 9 || type == 10) && param1) {
 				div.className += " live-search-icon";
-				div.style.backgroundImage = "url(images/icons/small/" + param1.toLowerCase() + ".jpg)"
+				div.style.backgroundImage = "url(/images/icons/small/" + param1.toLowerCase() + ".jpg)"
 			} else {
 				if (type == 5 && param1 >= 1 && param1 <= 2) {
 					div.className += " live-search-icon-quest-" + (param1 == 1 ? "alliance": "horde")

@@ -138,13 +138,39 @@
 {if isset($npc.onkillrep)}
 {#Onkill_rep#}
 {foreach from=$npc.killrep item=onkill}
-{if $onkill.value < 0}
-<li><div><font color="red"><strong>{$onkill.value}</strong></font> {#reputationwith#} <a href="?faction={$onkill.entry}">{$onkill.name}</a></div></li>
+{if $npc.dtype == 3}
+<ul>
+	<li>
+		<span class="rep-difficulty">Normal</span>
+	</li>
+<ul>
+	<li>
+		<div>
+			<span>{$onkill.value}</span> {#reputationwith#} <a href="/faction={$onkill.entry}">{$onkill.name}</a>
+		</div>
+	</li>
+</ul>
+</ul>
+<ul>
+	<li>
+		<span class="rep-difficulty">Heroic</span>
+	</li>
+<ul>
+	<li>
+		<div>
+			<span>{$onkill.value*2}</span> {#reputationwith#} <a href="/faction={$onkill.entry}">{$onkill.name}</a>
+		</div>
+	</li>
+</ul>
+</ul>
+{elseif $onkill.value < 0}
+<li><div><font color="red"><strong>{$onkill.value}</strong></font> {#reputationwith#} <a href="?faction={$onkill.entry}" rel="faction={$onkill.entry}">{$onkill.name}</a></div></li>
 {elseif $onkill.value > 0}
-<li><div><font color="green"><strong>+{$onkill.value}</strong></font>  {#reputationwith#} <a href="?faction={$onkill.entry}">{$onkill.name}</a></div></li>
+<li><div><font color="green"><strong>+{$onkill.value}</strong></font>  {#reputationwith#} <a href="?faction={$onkill.entry}" rel="faction={$onkill.entry}">{$onkill.name}</a></div></li>
 {/if}
 {/foreach}
 {/if}
+
 				<h2>{#Related#}</h2>
 
 			</div>

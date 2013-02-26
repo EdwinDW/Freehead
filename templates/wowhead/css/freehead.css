@@ -199,3 +199,10 @@ div.announcement-inner {
 	padding-right: 13px;
 	background: url(//wowimg.zamimg.com/images/Menu/arrow-down-ffcd55.gif) right center no-repeat;
 }
+
+.text span.rep-difficulty {
+	font-weight: bold;
+	text-shadow: 0px 0px 6px gray;
+	color: lightgrey;
+	filter: dropshadow(color=gray, offx=0, offy=0);
+}

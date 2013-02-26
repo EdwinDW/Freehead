@@ -2,8 +2,8 @@
  global.js version 278 (09.07.2009)
  Differences from origin:
  1. Change:
-   - http://static.wowhead.com//images/icons/	->	/images/icons/
-   - http://static.wowhead.com//images/	->	/images/
+   - http://static.wowhead.com/images/icons/	->	/images/icons/
+   - http://static.wowhead.com/images/	->	/images/
  2. In function M(aa, W) of class $WowheadPower:
    - commented locale definition from host
    - chaned Y calculation to use locale.id
@@ -1490,7 +1490,7 @@ function ss_appendSticky() {
             return rf2(a)
         };
         var f = ce("img"), e = Math.min(150 / c.width, 150 / c.height);
-        f.src = "//images/screenshots/thumb/" + c.body.replace("gif","jpg").replace("png","jpg");
+        f.src = "/images/screenshots/thumb/" + c.body.replace("gif","jpg").replace("png","jpg");
         f.className = "border";
         ae(l, f);
         ae(m, l);

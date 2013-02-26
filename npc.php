@@ -63,6 +63,7 @@ if(!$npc = load_cache(NPC_PAGE, $cache_key))
 		{
 			$npc['minlevel'] = '??';
 			$npc['maxlevel'] = '??';
+			$npc['dtype'] = '3';
 		}
 		$npc['mindmg'] = round(($row['mindmg'] + $row['attackpower']) * $row['dmg_multiplier']);
 		$npc['maxdmg'] = round(($row['maxdmg'] + $row['attackpower']) * $row['dmg_multiplier']);
