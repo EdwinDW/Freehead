@@ -20,7 +20,18 @@
 						<li><div>{#Classification#}: {$npc.rank}</div></li>
 						<li><div>{#React#}: <span class="q{if $npc.A==-1}10{elseif $npc.A==1}2{else}{/if}">A</span> <span class="q{if $npc.H==-1}10{elseif $npc.H==1}2{else}{/if}">H</span></div></li>
 						<li><div>{#Faction#}: <a href="?faction={$npc.faction_num}">{$npc.faction}</a></div></li>
-						<li><div>{#Health#}: {if $npc.minhealth<>$npc.maxhealth}{$npc.minhealth} - {/if}{$npc.maxhealth}</div></li>
+						<li><div>{#Health#}: 
+						{if $npc.heroic.type == 1}
+						<span class="tip" id="infobox-details"
+							onmouseover="Tooltip.showAtCursor(event, 'Heroic 10ppl:  {$npc.10pplh}<br>Heroic 25ppl: {$npc.25pplh}', 0, 0, 0)"
+							onmousemove="Tooltip.cursorUpdate(event)"
+							onmouseout="Tooltip.hide()">{$npc.minhealth}</span></div></li>
+						{else}
+						<span class="tip" id="infobox-details"
+							onmouseover="Tooltip.showAtCursor(event, 'Normal 10ppl:  {$npc.minhealth}<br>Normal 25ppl: {$npc.25ppln}', 0, 0, 0)"
+							onmousemove="Tooltip.cursorUpdate(event)"
+							onmouseout="Tooltip.hide()">{$npc.minhealth}</span></div></li>
+						{/if}
 {if ($npc.minmana or $npc.maxmana)}
 						<li><div>{#Mana#}: {if $npc.minmana<>$npc.maxmana}{$npc.minmana} - {/if}{$npc.maxmana}</div></li>
 {/if}

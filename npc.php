@@ -66,12 +66,61 @@ if(!$npc = load_cache(NPC_PAGE, $cache_key))
 		}
 		$npc['mindmg'] = round(($row['mindmg'] + $row['attackpower']) * $row['dmg_multiplier']);
 		$npc['maxdmg'] = round(($row['maxdmg'] + $row['attackpower']) * $row['dmg_multiplier']);
-
+		
+		
 		$toDiv = array('minhealth', 'maxmana', 'minmana', 'maxhealth', 'armor', 'mindmg', 'maxdmg');
 		// Разделяем на тысячи (ххххххххх => ххх,ххх,ххх)
 		foreach($toDiv as $e)
 			$npc[$e] = number_format($npc[$e]);
 
+		// HP Normal 25 ppl
+		if($npc['difficulty_entry_1'] != 0)
+		{
+			$n25ppl = $DB->selectRow('
+						SELECT
+						((CASE exp WHEN 0 THEN maxcls.basehp0 WHEN 1 THEN maxcls.basehp1 WHEN 2 THEN maxcls.basehp2 END)*Health_mod) AS maxhealth
+						FROM creature_template
+						LEFT JOIN creature_classlevelstats maxcls ON maxcls.level=maxlevel AND maxcls.class=unit_class
+						WHERE
+							entry = ?d',
+						$npc['difficulty_entry_1']
+			);
+			$n25ppl = $n25ppl['maxhealth'];
+			$npc['25ppln'] = number_format($n25ppl);
+		}
+		
+		// HP Heroic 10 ppl
+		if($npc['difficulty_entry_2'] != 0)
+		{
+			$h10ppl = $DB->selectRow('
+						SELECT
+						((CASE exp WHEN 0 THEN maxcls.basehp0 WHEN 1 THEN maxcls.basehp1 WHEN 2 THEN maxcls.basehp2 END)*Health_mod) AS maxhealth
+						FROM creature_template
+						LEFT JOIN creature_classlevelstats maxcls ON maxcls.level=maxlevel AND maxcls.class=unit_class
+						WHERE
+							entry = ?d',
+						$npc['difficulty_entry_2']
+			);
+			$h10ppl = $h10ppl['maxhealth'];
+			$npc['10pplh'] = number_format($h10ppl);
+		}
+				
+		// HP Heroic 25 ppl
+		if($npc['difficulty_entry_3'] != 0)
+		{
+			$h25ppl = $DB->selectRow('
+						SELECT
+						((CASE exp WHEN 0 THEN maxcls.basehp0 WHEN 1 THEN maxcls.basehp1 WHEN 2 THEN maxcls.basehp2 END)*Health_mod) AS maxhealth
+						FROM creature_template
+						LEFT JOIN creature_classlevelstats maxcls ON maxcls.level=maxlevel AND maxcls.class=unit_class
+						WHERE
+							entry = ?d',
+						$npc['difficulty_entry_3']
+			);
+			$h25ppl = $h25ppl['maxhealth'];
+			$npc['25pplh'] = number_format($h25ppl);
+		}			
+			
 		$npc['rank'] = $smarty->get_config_vars('rank'.$npc['rank']);
 		// faction_A = faction_H
 		$npc['faction_num'] = $row['factionID'];
