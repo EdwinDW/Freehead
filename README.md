@@ -1,4 +1,7 @@
 ![Job Finder](https://raw.github.com/darki73/Freehead/master/images/wow/jobfinder.png)
+
+
+If you want to donate, you can use this link - https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7N6T35XYX3F46
 ---------------Russian Description----------------
 
 TrinityCore database World of Warcraft 3.3.5 (build 12340)
