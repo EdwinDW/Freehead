@@ -23,7 +23,13 @@ print_r(array_random($titlephrases));
 	<meta name="copyright" content="FreedomHead 2012 <http://freedomcore.ru>">
 	<meta name="generator" content="{$GENERATOR_TAG}">
 	<link rel="SHORTCUT ICON" href="templates/wowhead/images/favicon.ico" >
-	<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" >
+	{php}
+	$u_agent = $_SERVER['HTTP_USER_AGENT'];
+	if(preg_match('/Opera/i',$u_agent))
+	{	echo'<link rel="apple-touch-icon" href="/images/operalogo.png">';	}
+	else
+	{ 	echo'<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />';	}
+	{/php}
 	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/global.css?{$AOWOW_REVISION}" >
 	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/locale_{$language}.css?{$AOWOW_REVISION}" >
 	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/home.css?{$AOWOW_REVISION}" >
