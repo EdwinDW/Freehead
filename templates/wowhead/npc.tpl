@@ -58,7 +58,9 @@
 
 			<div class="text">
 				<a href="http://www.wowhead.com/?{$query}" class="button-red"><em><b><i>Wowhead</i></b><span>Wowhead</span></em></a>
+				<a href="javascript:;" id="dsgndslgn464d" class="button-red" onclick="this.blur(); ModelViewer.show({ldelim} type: {$page.type}, typeId: {$npc.entry}, displayId: {$npc.model}{rdelim})"><em><b><i>{#Viewer_3D#}</i></b><span>{#Viewer_3D#}</span></em></a>
 				<h1>{$npc.name}{if $npc.subname} &lt;{$npc.subname}&gt;{/if}</h1>
+			
 
 {if $npc.heroic}
 				<div>{if $npc.heroic.type == 1}{#This_is_heroic_NPC#}{else}{#This_is_normal_NPC#}{/if} <a href="?npc={$npc.heroic.entry}">{$npc.heroic.name}</a>.</div>

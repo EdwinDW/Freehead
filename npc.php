@@ -59,6 +59,7 @@ if(!$npc = load_cache(NPC_PAGE, $cache_key))
 		$npc = $row;
 		$npc['name'] = localizedName($row);
 		$npc['subname'] = localizedName($row, 'subname');
+		
 		if($npc['rank'] == 3)
 		{
 			$npc['minlevel'] = '??';
@@ -127,6 +128,7 @@ if(!$npc = load_cache(NPC_PAGE, $cache_key))
 		$npc['faction_num'] = $row['factionID'];
 		$npc['faction'] = $row['faction-name'];
 		$npc['quotes'] = $DB->select('SELECT * FROM creature_text WHERE entry=?d', $id);
+		$npc['model'] = $DB->selectCell('SELECT modelid1 FROM creature_template WHERE entry=?d', $id);
 		$npc['quotes_count'] = $DB->selectCell('SELECT COUNT(*) FROM creature_text WHERE entry=?d', $id);
 		$repdata = $DB->selectRow('
 					SELECT *
