@@ -422,6 +422,11 @@ a#toptabs-menu-language {
 	background: url(/images/language.gif) left center no-repeat;
 }
 
+a#toplinks-feedback {
+	padding-left: 21px;
+	background: url(/images/letter.png) left center no-repeat;
+}
+
 #topbar-expand {
 	float: right;
 	position: relative;
