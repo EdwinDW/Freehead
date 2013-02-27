@@ -1,9 +1,9 @@
 	<title>{if $page.Title}{$page.Title|escape:"html"} - {/if}{$app_name}</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<meta name="copyright" content="FreedomHead 2012 <http://freedomcore.ru>">
+	<meta name="copyright" content="FreedomHead 2013 <http://freedomcore.ru>">
 	<meta name="generator" content="{$GENERATOR_TAG}">
-	<link rel="SHORTCUT ICON" href="templates/wowhead/images/favicon.ico">
+	<link rel="SHORTCUT ICON" href="/images/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
 	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/global.css?{$AOWOW_REVISION}" />
 	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/locale_{$language}.css?{$AOWOW_REVISION}" />

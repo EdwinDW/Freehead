@@ -20,9 +20,9 @@ print_r(array_random($titlephrases));
  {/php}</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf8">
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<meta name="copyright" content="FreedomHead 2012 <http://freedomcore.ru>">
+	<meta name="copyright" content="FreedomHead 2013 <http://freedomcore.ru>">
 	<meta name="generator" content="{$GENERATOR_TAG}">
-	<link rel="SHORTCUT ICON" href="templates/wowhead/images/favicon.ico" >
+	<link rel="SHORTCUT ICON" href="/images/favicon.ico" >
 	{php}
 	$u_agent = $_SERVER['HTTP_USER_AGENT'];
 	if(preg_match('/Opera/i',$u_agent))

@@ -51,7 +51,7 @@
 						<li><div>{#Armor#}: {$npc.armor}</div></li>
 {/if} 
 <tr><th id="infobox-">{#Screenshots_tab#}</th></tr>
-<tr><td><div class="infobox-spacer"></div><div id="infobox-sticky-ss"></div></td></tr>
+<tr><td><div class="infobox-spacer"></div><div id="infobox-sticky-ss"><center><img src="{$npc.sscreen}"></center></div></td></tr>
 					</ul>
 				</td></tr>
 			</table>
