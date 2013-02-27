@@ -130,8 +130,7 @@ if(!$npc = load_cache(NPC_PAGE, $cache_key))
 		$npc['quotes'] = $DB->select('SELECT * FROM creature_text WHERE entry=?d', $id);
 		$npc['model'] = $DB->selectCell('SELECT modelid1 FROM creature_template WHERE entry=?d', $id);
 		$npc['quotes_count'] = $DB->selectCell('SELECT COUNT(*) FROM creature_text WHERE entry=?d', $id);
-		$npcss = $DB->selectCell('SELECT body FROM aowow_screenshots WHERE typeid=?d', $id);
-		$npc['sscreen'] = "/images/screenshots/thumb/".$npcss;
+		$npc['sscren'] = $DB->selectCell('SELECT body FROM aowow_screenshots WHERE typeid=?d', $id);
 		$repdata = $DB->selectRow('
 					SELECT *
 					FROM creature_onkill_reputation

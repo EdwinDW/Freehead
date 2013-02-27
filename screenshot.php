@@ -48,8 +48,8 @@ switch($_REQUEST['screenshot'])
 		}
 
 		$image_name=time().''.$_SESSION["userid"];
-		$newname="images/screenshots/normal/".$image_name.'.'.$extension;
-		$newnamethumb="images/screenshots/thumb/".$image_name.".jpg";
+		$newname="images/screenshots/normal/".$image_name.".".$extension;
+		$newnamethumb="images/screenshots/thumb/".$image_name.".".$extension;
 
 		$ancho = imagesx($original);
 		$alto = imagesy($original);
