@@ -18,18 +18,18 @@ elseif ($locale == 0)
 
 print_r(array_random($titlephrases));
  {/php}</title>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8">
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<meta name="copyright" content="FreedomHead 2012 <http://freedomcore.ru>">
 	<meta name="generator" content="{$GENERATOR_TAG}">
-	<link rel="SHORTCUT ICON" href="templates/wowhead/images/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
-	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/global.css?{$AOWOW_REVISION}" />
-	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/locale_{$language}.css?{$AOWOW_REVISION}" />
-	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/home.css?{$AOWOW_REVISION}" />
-	<!--[if IE]><link rel="stylesheet" type="text/css" href="templates/wowhead/css/global_ie.css?{$AOWOW_REVISION}" /><![endif]-->
-	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="templates/wowhead/css/global_ie6.css?{$AOWOW_REVISION}" /><![endif]-->
-	<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="templates/wowhead/css/global_ie67.css?{$AOWOW_REVISION}" /><![endif]-->
+	<link rel="SHORTCUT ICON" href="templates/wowhead/images/favicon.ico" >
+	<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" >
+	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/global.css?{$AOWOW_REVISION}" >
+	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/locale_{$language}.css?{$AOWOW_REVISION}" >
+	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/home.css?{$AOWOW_REVISION}" >
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="templates/wowhead/css/global_ie.css?{$AOWOW_REVISION}" ><![endif]-->
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="templates/wowhead/css/global_ie6.css?{$AOWOW_REVISION}" ><![endif]-->
+	<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="templates/wowhead/css/global_ie67.css?{$AOWOW_REVISION}" ><![endif]-->
 {if $page.Book}
 	<link rel="stylesheet" type="text/css" href="templates/wowhead/css/Book.css?{$AOWOW_REVISION}">
 {/if}

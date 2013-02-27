@@ -1,6 +1,6 @@
 	<div id="footer">
 	</div>
-	<noscript><div id="noscript-bg"></div><div id="noscript-text"><b>{#js_err#}</div></noscript>
+	<noscript><div id="noscript-bg"></div><div id="noscript-text">{#js_err#}</div></noscript>
 	<script type="text/javascript">DomContentLoaded.now()</script>
 	
 	<center>{if $AOWOW_REVISION != $AOWOW_LATEST_REVISION}{#Update_availible#} {$AOWOW_LATEST_REVISION}<br>

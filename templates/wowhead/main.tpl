@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
 <head>
 	{include file='head_main.tpl'}
 	<style type="text/css">
 {literal}
         .top { margin-left: auto; margin-right: auto; max-width: 1240px; min-width: 998px; }
 		.menu-buttons a { border-color: black }
-		.news { position: relative; text-align: left; width: 415px; height: 191px; margin: 30px auto 0 auto; background: url(templates/wowhead/images/{/literal}{$language}{literal}/mainpage-bg-news.png) no-repeat }
+		.news { position: relative; text-align: left; width: 415px; height: 191px; margin: 30px auto 0 auto; background: url(/images/{/literal}{$language}{literal}/mainpage-bg-news.png) no-repeat }
 		.news-list { padding: 26px 0 0 26px; margin: 0 }
 		.news-list li { line-height: 2em }
 		.news-img1 { position: absolute; left: 60px; top: 155px; width: 172px; height: 17px }
@@ -33,7 +34,7 @@
 <br>
 		<div class="home-search" id="home-search">
 		<form name="searchform" method="get" action="." onsubmit="if(trim(this.elements[0].value) == '') return false">
-			<input name="search" type="text" id="kghjklvhj43v6" />
+			<input name="search" type="text" id="kghjklvhj43v6" >
 		<a href="javascript:;" onclick="document.searchform.submit();"></a></form>
 		</div>
 		
