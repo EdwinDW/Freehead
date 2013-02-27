@@ -122,10 +122,31 @@
 {/if}
 <br>
 {if $npc.quotes_count > 0}
-<a id="show_id" onclick="document.getElementById('spoiler_id').style.display=''; document.getElementById('show_id').style.display='none';" class="link">&rArr; {#Quotes#} ({$npc.quotes_count})</a><span id="spoiler_id" style="display: none"><a onclick="document.getElementById('spoiler_id').style.display='none'; document.getElementById('show_id').style.display='';" class="link">&dArr; {#Quotes#} ({$npc.quotes_count})</a><br> 
+<a class="disclosure-off" id="show_id" onclick="document.getElementById('spoiler_id').style.display=''; document.getElementById('show_id').style.display='none';" class="link">
+{#Quotes#} ({$npc.quotes_count})</a>
+<span id="spoiler_id" style="display: none">
+<a class="disclosure-on" id="show_id" onclick="document.getElementById('spoiler_id').style.display='none'; document.getElementById('show_id').style.display='';" class="link">
+{#Quotes#} ({$npc.quotes_count})</a><br>
 {/if}
 {foreach from=$npc.quotes item="row"}
-   <ul><font color='red'>{$npc.name}{$npc.subname} yells: {$row.text}<br/> </font></ul>
+{if $row.type == 12}
+<ul><li><font color='white'>{$npc.name}{$npc.subname} say: {$row.text}<br/> </font></li></ul>
+{/if}
+{if $row.type == 14}
+<ul><li><font color='red'>{$npc.name}{$npc.subname} yells: {$row.text}<br/> </font></li></ul>
+{/if}
+{if $row.type == 15}
+<ul><li><font color='#FFB2EB'>{$npc.name}{$npc.subname} whispers: {$row.text}<br/></font></li></ul>
+{/if}
+{if $row.type == 16}
+<ul><li><font color='white'>{$npc.name}{$npc.subname} yells: {$row.text}<br/> </font></li></ul>
+{/if}
+{if $row.type == 41}
+<ul><li><font color='yellow'>{$npc.name}{$npc.subname} {$row.text}<br/> </font></li></ul>
+{/if}
+{if $row.type == 42}
+<ul><li><font color='red'>{$npc.name}{$npc.subname} say: {$row.text}<br/> </font></li></ul>
+{/if}
 {/foreach}
 </span>
 

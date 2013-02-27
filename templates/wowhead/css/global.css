@@ -2350,6 +2350,7 @@ img.toolbar-li {
 .disclosure-on,.disclosure-off {
 	background: url(/images/disclosure_arrow.gif) no-repeat left center;
 	padding-left: 15px;
+	font-size: 15px;
 }
 
 .disclosure-off {
