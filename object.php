@@ -60,7 +60,7 @@ if(!$object = load_cache(OBJECT_PAGE, $cache_key))
 			$object['ends'][] = GetQuestInfo($row, 0xFFFFFF);
 	}
 	unset($rows_qe);
-
+	$obj['sscreen'] = $DB->selectCell('SELECT body FROM aowow_screenshots WHERE typeid=?d', $id);
 	// Цель критерии
 	$rows = $DB->select('
 			SELECT a.id, a.faction, a.name_loc?d AS name, a.description_loc?d AS description, a.category, a.points, s.iconname, z.areatableID

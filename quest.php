@@ -255,7 +255,7 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 
 	// Спеллы не требуют локализации, их инфа берется из базы
 	// Хранить в базе все локализации - задачка на будующее
-
+	$quest['sscreen'] = $DB->selectCell('SELECT body FROM aowow_screenshots WHERE typeid=?d', $id);
 	// Спелл, кастуемый на игрока в начале квеста
 	if($quest['SrcSpell'])
 	{

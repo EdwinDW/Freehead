@@ -244,6 +244,7 @@
 							onmouseout="Tooltip.hide()">{#Related#}</span>
 					</td></tr>
 {/if}
+<tr><td><div class="infobox-spacer"></div><div id="infobox-sticky-ss"><center><img src="/images/screenshots/thumb/{if $quest.sscreen == NULL}noscreen{$locale}.png{else}{$quest.sscreen}{/if}"></center></div></td></tr>
 				</table>
 
 				<div class="text">

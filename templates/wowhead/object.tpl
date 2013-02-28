@@ -23,6 +23,7 @@
 					{if isset($object.herbalism)}<li><div>{#Herb#} (<span class="tip" onmouseover="Tooltip.showAtCursor(event, '{#Required_herb_skill#}', 0, 0, 'q')" onmousemove="Tooltip.cursorUpdate(event)" onmouseout="Tooltip.hide()">{$object.herbalism}</span>)</div></li>{/if}
 				</ul>
 				</td></tr>
+				<tr><td><div class="infobox-spacer"></div><div id="infobox-sticky-ss"><center><img src="/images/screenshots/thumb/{if $obj.sscreen == NULL}noscreen{$locale}.png{else}{$obj.sscreen}{/if}"></center></div></td></tr>
 			</table>
 {/if}
 
