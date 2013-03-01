@@ -145,6 +145,9 @@ switch($razdel)
 	case 'reputation':
 		include 'reputation.php';
 		break;
+	case 'gdb':
+		include 'gathererdb.php';
+		break;
 	default:
 		include 'main.php';
 		break;
