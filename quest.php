@@ -257,27 +257,27 @@ if(!$quest = load_cache(QUEST_PAGE, $cache_key))
 	// Хранить в базе все локализации - задачка на будующее
 	$quest['sscreen'] = $DB->selectCell('SELECT body FROM aowow_screenshots WHERE typeid=?d', $id);
 	// Спелл, кастуемый на игрока в начале квеста
-	if($quest['SrcSpell'])
-	{
-		$tmp = $DB->selectRow('
-			SELECT ?#, s.spellname_loc'.$_SESSION['locale'].'
-			FROM ?_spell s, ?_spellicons si
-			WHERE
-				s.spellID=?d
-				AND si.id=s.spellicon
-			LIMIT 1',
-			$spell_cols[0],
-			$quest['SourceSpell']
-		);
-		if($tmp)
-		{
-			$quest['SourceSpell'] = array(
-				'name' => $tmp['spellname_loc'.$_SESSION['locale']],
-				'entry' => $tmp['spellID']);
-			allspellsinfo2($tmp);
-		}
-		unset($tmp);
-	}
+    if($quest['SourceSpellId'])
+    {
+        $tmp = $DB->selectRow('
+            SELECT ?#, s.spellname_loc'.$_SESSION['locale'].'
+            FROM ?_spell s, ?_spellicons si
+            WHERE
+                s.spellID=?d
+                AND si.id=s.spellicon
+            LIMIT 1',
+            $spell_cols[0],
+            $quest['SourceSpellId']
+        );
+        if($tmp)
+        {
+            $quest['SourceSpellId'] = array(
+                'name' => $tmp['spellname_loc'.$_SESSION['locale']],
+                'entry' => $tmp['spellID']);
+            allspellsinfo2($tmp);
+        }
+        unset($tmp);
+    }
 
 	// Итем, выдаваемый игроку в начале квеста
 	if($quest['SourceItemId'])

@@ -440,28 +440,28 @@
 {/if}
 
 {if isset($quest.itemrewards)}
-						<div class="pad"></div>
-						{#You_will_receive#}:
-						<div class="pad"></div>
-						<table class="icontab">
-						<tr>{strip}
+                        <div class="pad"></div>
+                        {#You_will_receive#}:
+                        <div class="pad"></div>
+                        <table class="icontab2">
+                        <tr>{strip}
 {section name=j loop=$quest.itemrewards}
-								<th id="icontab-icon{$smarty.section.j.index+1}"></th>
-								<td>
-									<span class="q{$quest.itemrewards[j].quality}">
-										<a href="?item={$quest.itemrewards[j].entry}">
-											{$quest.itemrewards[j].name}
-										</a>
-									</span>
-								</td>
+                                <th id="icontab2-icon{$smarty.section.j.index+1}"></th>
+                                <td>
+                                    <span class="q{$quest.itemrewards[j].quality}">
+                                        <a href="?item={$quest.itemrewards[j].entry}">
+                                            {$quest.itemrewards[j].name}
+                                        </a>
+                                    </span>
+                                </td>
 {/section}
-						</tr>{/strip}
-						</table>
-						<script type="text/javascript">
-						{section name=j loop=$quest.itemrewards}
-							ge('icontab-icon{$smarty.section.j.index+1}').appendChild(g_items.createIcon({$quest.itemrewards[j].entry}, 1, {$quest.itemrewards[j].count}));
-						{/section}
-						</script>
+                        </tr>{/strip}
+                        </table>    
+                        <script type="text/javascript">
+                        {section name=j loop=$quest.itemrewards}
+                            ge('icontab2-icon{$smarty.section.j.index+1}').appendChild(g_items.createIcon({$quest.itemrewards[j].entry}, 1, {$quest.itemrewards[j].count}));
+                        {/section}
+                        </script>
 {/if}
 
 {if isset($quest.spellreward)}
