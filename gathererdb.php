@@ -1,8 +1,23 @@
 <?php
-  require('includes/kernel.php');
+
   require('includes/game.php');
   set_time_limit(0);
-
+$filename = "GathererDB_FreedomHead.zip";
+$queryx = $_SERVER['QUERY_STRING'];
+list($str, $trash) = explode('&', $queryx, 2);
+list($razdel, $podrazdel) = explode('=', $str, 2);
+ switch($podrazdel)
+	{
+		case 'renew';
+			
+		break;
+		default;
+			echo "<b>File:</b> $filename</br>
+			<b>Last modified:  </b>" . date ("d F Y H:i:s.", filemtime($filename));
+			echo"<br><b>Today is:  </b>".date("d F Y H:i:s.")."<br><a href='/?gdb=renew'>Renew Addon Data</a>";
+			die;
+		break;
+	}
   $gatherer_objects = array(
     // MINE
     324, 1610, 1731, 1732, 1733, 1734, 1735, 2040, 2047, 2653, 19903, 73940,

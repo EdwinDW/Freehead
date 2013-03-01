@@ -48,7 +48,7 @@
 
 <br><br><br>
 <center>{#Tooltips_mainpage#}  <a href="/?powered">{#Tooltips_mainpage_more#}</a></center><br>
-<center>{#Gatherer_desk#} <a href="gathererdb.php" target="_blank" onClick="popupWin = window.open(this.href, 'Gatherer_FreedomHead', 'location,width=400,height=300,top=0'); popupWin.focus(); return false;">{#Gatherer_generate#}</a></center>
+<center>{#Gatherer_desk#} <a href="/?gdb" target="_blank" onClick="popupWin = window.open(this.href, 'Gatherer_FreedomHead', 'location,width=400,height=300,top=0'); popupWin.focus(); return false;">{#Gatherer_generate#}</a></center>
 
 {include file="newsbox.tpl"}		
 
