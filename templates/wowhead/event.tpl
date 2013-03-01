@@ -29,14 +29,14 @@
 					{/if}
 					<div class="h1-icon">
 <div class="iconmedium">
-<ins style='background-image: url("/images/events/{$event.name|escape:'html'}.png");'></ins>
+<ins style='background-image: url("{$event.icon}");'></ins>
 <del></del>
 </div>
 </div>
 					<h1>{$event.name|escape:"html"}</h1>
 					
 					<div id="efhjkdsoicjx" class="left">
-					<img alt="" style="float: right; margin: 0 0 10px 10px" src="/images/events/{$event.exdescimg}">
+					{if $event.exdescimg == NULL}{else}<img alt="" style="float: right; margin: 0 0 10px 10px" src="/images/events/{$event.exdescimg}" width="35%">{/if}
 					{$event.exdesc}
 					</div>
 

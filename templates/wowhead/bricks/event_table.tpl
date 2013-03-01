@@ -14,7 +14,8 @@
 		data:[
 			{foreach name=event from=$data item=curr}
 				{ldelim}
-					id:{$curr.id},
+					id: {$curr.id},
+					icon:'{$curr.icon|escape:"javascript"}',
 					name:'{$curr.name|escape:"javascript"}',
 					category:'{$curr.cat}',
 					{if $curr.today}

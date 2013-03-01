@@ -8,7 +8,6 @@
 			</script>
 
 			<div id="lv-events" class="listview"></div>
-
 			<script type="text/javascript">
 				{include file='bricks/event_table.tpl' data=$events.data id='events'}
 			</script>

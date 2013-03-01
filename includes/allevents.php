@@ -93,12 +93,13 @@ function event_infoline($events)
 	$rows = $DB->select('
 		SELECT
 			eventEntry, UNIX_TIMESTAMP(start_time) AS gen_start, UNIX_TIMESTAMP(end_time) AS gen_end,
-			occurence, length, holiday, cat, description AS name
+			occurence, length, holiday, cat, description AS name, ae.icon as icon, ae.id as id
 		FROM game_event
+		LEFT JOIN aowow_events ae ON ae.id=eventEntry
 		WHERE eventEntry IN (?a)',
 		$entries
 		);
-
+	
 	// Merge original array with new information
 	$result = array();
 	foreach ($events as $event)
@@ -136,6 +137,8 @@ function event_description($entry)
 	$result['creatures_quests_id'] = $DB->select('SELECT id AS creature, quest FROM game_event_creature_quest WHERE eventEntry=?d OR eventEntry=?d GROUP BY quest', $entry, -$entry);
 	$result['exdesc'] = $DB->selectCell('SELECT name_loc?d FROM aowow_events WHERE id=?d', $_SESSION['locale'], $entry);
 	$result['exdescimg'] = $DB->selectCell('SELECT img FROM aowow_events WHERE id=?d', $entry);
+	$icon = $DB->selectCell('SELECT icon FROM aowow_events WHERE id=?d', $entry);
+	$result['icon'] = '/images/events/'.$icon;
 	return $result;
 }
 
