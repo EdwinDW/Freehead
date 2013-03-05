@@ -25,7 +25,7 @@
 						<ul>
 							{if $quest.Level>0}<li><div>{#Level#}: {$quest.Level}</div></li>{/if}
 							{if $quest.MinLevel>0}<li><div>{#Requires_level#}: {$quest.MinLevel}</div></li>{/if}
-							{if isset($quest.zone)}<li><div>{#Loremaster#}: <a href="/?zone={$quest.ZoneOrSort}">{$quest.zone}</a></li></div>{/if}
+							{if isset($quest.zone)}<li><div>{#Loremaster#}: <a href="/?maps={$quest.ZoneOrSort}">{$quest.zone}</a></li></div>{/if}
 							{if $quest.typename}<li><div>{#Type#}: {$quest.typename}</div></li>{/if}
 							{if isset($quest.side)}<li><div>{#Side#}: <span class="{if ($quest.side.side==1)} alliance{elseif ($quest.side.side==2)}horde{else}both{/if}-icon">{$quest.side.name}</span></div></li>{/if}
 							{if $quest.RequiredClasses != 0}<li><div>{#Quest_classes#}: 
@@ -404,8 +404,8 @@
 {/if}
 
 <h3>{#Connected_zones#}</h3>
-{#Zone_desc#} <b>{$quest.ZoneName}</b>
-							
+{#Zone_desc#} <b>{$quest.zone}</b>
+<br />							
 {if $quest.Details}
 						<h3>{#Description#}</h3>
 						{$quest.Details}
