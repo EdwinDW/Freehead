@@ -409,6 +409,19 @@
 {if $quest.Details}
 						<h3>{#Description#}</h3>
 						{$quest.Details}
+<br />
+{/if}
+
+
+{if $quest.OfferRewardText}
+<br />
+<a class="disclosure-off" id="show_id" onclick="document.getElementById('spoiler_id').style.display=''; document.getElementById('show_id').style.display='none';" class="link">						{#Completion#}</a>
+<span id="spoiler_id" style="display: none">
+<a class="disclosure-on" id="show_id" onclick="document.getElementById('spoiler_id').style.display='none'; document.getElementById('show_id').style.display='';" class="link">
+{#Completion#}</a>
+<br /><br />
+						{$quest.OfferRewardText}
+						</span>
 {/if}
 
 {if (isset($quest.itemchoices) or isset($quest.itemrewards) or isset($quest.money) or isset($quest.spellreward)) or isset($quest.BonusTalents) and $quest.BonusTalents}
@@ -437,31 +450,30 @@
 							ge('icontab-icon{$smarty.section.j.index+1}').appendChild(g_items.createIcon({$quest.itemchoices[j].entry}, 1, {$quest.itemchoices[j].count}));
 						{/section}
 						</script>
-{/if}
-
+{/if}				</script>
 {if isset($quest.itemrewards)}
-                        <div class="pad"></div>
-                        {#You_will_receive#}:
-                        <div class="pad"></div>
-                        <table class="icontab2">
-                        <tr>{strip}
+						<div class="pad"></div>
+						{#You_will_receive#}:
+						<div class="pad"></div>
+						<table class="icontab">
+						<tr>{strip}
 {section name=j loop=$quest.itemrewards}
-                                <th id="icontab2-icon{$smarty.section.j.index+1}"></th>
-                                <td>
-                                    <span class="q{$quest.itemrewards[j].quality}">
-                                        <a href="?item={$quest.itemrewards[j].entry}">
-                                            {$quest.itemrewards[j].name}
-                                        </a>
-                                    </span>
-                                </td>
+								<th id="icontab-icon{$smarty.section.j.index+1}"></th>
+								<td>
+									<span class="q{$quest.itemrewards[j].quality}">
+										<a href="?item={$quest.itemrewards[j].entry}">
+											{$quest.itemrewards[j].name}
+										</a>
+									</span>
+								</td>
 {/section}
-                        </tr>{/strip}
-                        </table>    
-                        <script type="text/javascript">
-                        {section name=j loop=$quest.itemrewards}
-                            ge('icontab2-icon{$smarty.section.j.index+1}').appendChild(g_items.createIcon({$quest.itemrewards[j].entry}, 1, {$quest.itemrewards[j].count}));
-                        {/section}
-                        </script>
+						</tr>{/strip}
+						</table>
+						<script type="text/javascript">
+						{section name=j loop=$quest.itemrewards}
+							ge('icontab-icon{$smarty.section.j.index+1}').appendChild(g_items.createIcon({$quest.itemrewards[j].entry}, 1, {$quest.itemrewards[j].count}));
+						{/section}
+						</script>
 {/if}
 
 {if isset($quest.spellreward)}
@@ -492,21 +504,17 @@
 						{if isset($quest.money.moneycopper)} <span class="moneycopper">{$quest.money.moneycopper}</span>{/if}
 						{/strip}
 {/if}
+{if isset($quest.moneymaxlevel)} (
+								{if isset($quest.moneymaxlevel.moneygold)}<span class="moneygold">{$quest.moneymaxlevel.moneygold}</span> {/if}
+								{if isset($quest.moneymaxlevel.moneysilver)}<span class="moneysilver">{$quest.moneymaxlevel.moneysilver}</span> {/if}
+								{if isset($quest.moneymaxlevel.moneycopper)}<span class="moneycopper">{$quest.moneymaxlevel.moneycopper}</span> {/if}
+							{#at_max_level#}){/if}
 {if isset($quest.BonusTalents) and $quest.BonusTalents}
 						<div class="pad"></div>
 						<div>{#Bonus_Talents#}: {$quest.BonusTalents}</div>
 {/if}
 {/if}
 
-{if ($quest.RequestItemsText and $quest.Objectives)}
-						<h3>{#Progress#}</h3>
-						{$quest.RequestItemsText}
-{/if}
-
-{if $quest.OfferRewardText}
-						<h3>{#Completion#}</h3>
-						{$quest.OfferRewardText}
-{/if}
 
 {if isset($quest.xp) and $quest.xp or isset($quest.reprewards) or isset($quest.titlereward) or isset($quest.mailrewards) or isset($quest.RewHonorAddition) and $quest.RewHonorAddition}
 					<h3>{#Gains#}</h3>
@@ -514,12 +522,10 @@
 					<ul>{strip}
 {if isset($quest.xp) and $quest.xp}
 						<li><div>{$quest.xp} {#experience#}
-							{if isset($quest.moneymaxlevel)} (
-								{if isset($quest.moneymaxlevel.moneygold)}<span class="moneygold">{$quest.moneymaxlevel.moneygold}</span> {/if}
-								{if isset($quest.moneymaxlevel.moneysilver)}<span class="moneysilver">{$quest.moneymaxlevel.moneysilver}</span> {/if}
-								{if isset($quest.moneymaxlevel.moneycopper)}<span class="moneycopper">{$quest.moneymaxlevel.moneycopper}</span> {/if}
-							{#at_max_level#}){/if}
 						</div></li>
+{/if}
+{if $quest.honorreward > 0}
+<li><div>{section loop=$quest.start name=i}{if $quest.start[i].side} <span class="{$quest.start[i].side}-icon">{/if}{/section}{$quest.honorreward} {#Honor_reward#}</div></li>
 {/if}
 {if isset($quest.reprewards)}
 {section name=j loop=$quest.reprewards}

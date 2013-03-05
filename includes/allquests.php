@@ -97,7 +97,7 @@ define('QUEST_DATAFLAG_AJAXTOOLTIP', (QUEST_DATAFLAG_LISTINGS | QUEST_DATAFLAG_S
 
 $questcols[QUEST_DATAFLAG_MINIMUM]    = array('Id', 'Title', 'WDBVerified');
 $questcols[QUEST_DATAFLAG_STRINGS]    = array('Objectives', 'Details', 'RequestItemsText', 'OfferRewardText', 'EndText', 'ObjectiveText1', 'ObjectiveText2', 'ObjectiveText3', 'ObjectiveText4');
-$questcols[QUEST_DATAFLAG_REWARDS]    = array('RewardChoiceItemId1', 'RewardChoiceItemId2', 'RewardChoiceItemId3', 'RewardChoiceItemId4', 'RewardChoiceItemId5', 'RewardChoiceItemId6', 'RewardChoiceItemCount1', 'RewardChoiceItemCount2', 'RewardChoiceItemCount3', 'RewardChoiceItemCount4', 'RewardChoiceItemCount5', 'RewardChoiceItemCount6', 'RewardItemId1', 'RewardItemId2', 'RewardItemId3', 'RewardItemId4', 'RewardItemCount1', 'RewardItemCount2', 'RewardItemCount3', 'RewardItemCount4', 'RewardMoneyMaxLevel', 'RewardOrRequiredMoney', 'RequiredSpellCast1', 'RequiredSpellCast2', 'RequiredSpellCast3', 'RequiredSpellCast4', 'RequiredNpcOrGo1', 'RequiredNpcOrGo2', 'RequiredNpcOrGo3', 'RequiredNpcOrGo4', 'RequiredItemId1', 'RequiredItemId2', 'RequiredItemId3', 'RequiredItemId4', 'RequiredItemCount1', 'RequiredItemCount2', 'RequiredItemCount3', 'RequiredItemCount4', 'SuggestedPlayers', 'RequiredNpcOrGoCount1', 'RequiredNpcOrGoCount2', 'RequiredNpcOrGoCount3', 'RequiredNpcOrGoCount4', 'RewardSpell', 'RewardSpellCast', 'RewardFactionValueId1', 'RewardFactionValueId2', 'RewardFactionValueId3', 'RewardFactionValueId4', 'RewardFactionValueId5', 'RewardFactionId1', 'RewardFactionId2', 'RewardFactionId3', 'RewardFactionId4', 'RewardFactionId5', 'RewardFactionValueId1', 'RewardFactionValueId2', 'RewardFactionValueId3', 'RewardFactionValueId4', 'RewardFactionValueId5', 'SourceItemId', 'SourceItemCount', 'SourceSpellId', 'RequiredFactionId1', 'RequiredFactionValue1', 'RequiredMinRepFaction', 'RequiredMinRepValue', 'RequiredMaxRepFaction', 'RequiredMaxRepValue', 'RequiredPlayerKills', 'RewardTalents', 'RequiredSourceItemId1', 'RequiredSourceItemCount1', 'RequiredSourceItemId2', 'RequiredSourceItemCount2', 'RequiredSourceItemId3', 'RequiredSourceItemCount3', 'RequiredSourceItemId4', 'RequiredSourceItemCount4', 'RewardHonor', 'RewardMailTemplateId', 'RewardMailDelay', 'PointX', 'PointY');
+$questcols[QUEST_DATAFLAG_REWARDS]    = array('RewardChoiceItemId1', 'RewardChoiceItemId2', 'RewardChoiceItemId3', 'RewardChoiceItemId4', 'RewardChoiceItemId5', 'RewardChoiceItemId6', 'RewardChoiceItemCount1', 'RewardChoiceItemCount2', 'RewardChoiceItemCount3', 'RewardChoiceItemCount4', 'RewardChoiceItemCount5', 'RewardChoiceItemCount6', 'RewardItemId1', 'RewardItemId2', 'RewardItemId3', 'RewardItemId4', 'RewardItemCount1', 'RewardItemCount2', 'RewardItemCount3', 'RewardItemCount4', 'RewardMoneyMaxLevel', 'RewardOrRequiredMoney', 'RequiredSpellCast1', 'RequiredSpellCast2', 'RequiredSpellCast3', 'RequiredSpellCast4', 'RequiredNpcOrGo1', 'RequiredNpcOrGo2', 'RequiredNpcOrGo3', 'RequiredNpcOrGo4', 'RequiredItemId1', 'RequiredItemId2', 'RequiredItemId3', 'RequiredItemId4', 'RequiredItemCount1', 'RequiredItemCount2', 'RequiredItemCount3', 'RequiredItemCount4', 'SuggestedPlayers', 'RequiredNpcOrGoCount1', 'RequiredNpcOrGoCount2', 'RequiredNpcOrGoCount3', 'RequiredNpcOrGoCount4', 'RewardSpell', 'RewardSpellCast', 'RewardFactionValueId1', 'RewardFactionValueId2', 'RewardFactionValueId3', 'RewardFactionValueId4', 'RewardFactionValueId5', 'RewardFactionId1', 'RewardFactionId2', 'RewardFactionId3', 'RewardFactionId4', 'RewardFactionId5', 'RewardFactionValueId1', 'RewardFactionValueId2', 'RewardFactionValueId3', 'RewardFactionValueId4', 'RewardFactionValueId5', 'SourceItemId', 'SourceItemCount', 'SourceSpellId', 'RequiredFactionId1', 'RequiredFactionValue1', 'RequiredMinRepFaction', 'RequiredMinRepValue', 'RequiredMaxRepFaction', 'RequiredMaxRepValue', 'RequiredPlayerKills', 'RewardTalents', 'RequiredSourceItemId1', 'RequiredSourceItemCount1', 'RequiredSourceItemId2', 'RequiredSourceItemCount2', 'RequiredSourceItemId3', 'RequiredSourceItemCount3', 'RequiredSourceItemId4', 'RequiredSourceItemCount4', 'RewardHonor', 'RewardHonorMultiplier', 'RewardMailTemplateId', 'RewardMailDelay', 'PointX', 'PointY');
 $questcols[QUEST_DATAFLAG_PROPS]    = array('Type', 'RequiredClasses', 'ZoneOrSort', 'Flags', 'Level', 'MinLevel', 'RequiredRaces', 'RequiredSkillPoints', 'RequiredSkillId', 'LimitTime', 'SpecialFlags', 'RewardTitleId');
 $questcols[QUEST_DATAFLAG_SERIES]    = array('PrevQuestId', 'NextQuestIdChain', 'ExclusiveGroup', 'NextQuestId');
 
@@ -227,6 +227,29 @@ function GetQuestXpOrMoney($data)
     else
         return ($fullxp * 0.1);
 }
+
+function GetQuestHonor($data)
+{
+	$l80h = 124;
+	$RewardHonor = $data['RewardHonor'];
+	$RewardMultiplier = $data['RewardHonorMultiplier'];
+	if($RewardHonor == 0)
+		{
+			$reward = $RewardMultiplier * $l80h;
+			return $reward;
+		}
+	elseif($RewardMultiplier == 0)
+		{
+			return $RewardHonor;
+		}
+	else
+		{
+			$reward = $RewardHonor * $RewardMultiplier;
+			if ($reward == 0)
+			return $reward;
+		}
+}
+
 
 // ????
 function GetQuestTitle(&$data)
@@ -522,6 +545,7 @@ function GetQuestInfo(&$data, $dataflag = QUEST_DATAFLAG_MINIMUM)
     {
         // Опыт/деньги@70
         $data['xp'] = GetQuestXpOrMoney($data);
+		$data['honorreward'] = GetQuestHonor($data);
         // Награды вещей
         for($j=0;$j<=6;++$j)
             if(($data['RewardChoiceItemId'.$j]!=0) and ($data['RewardChoiceItemCount'.$j]!=0))
