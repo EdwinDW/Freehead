@@ -1,8 +1,9 @@
 <?php
-
-  require('includes/game.php');
-  set_time_limit(0);
+require('includes/game.php');
+set_time_limit(0);
 $filename = "GathererDB_FreedomHead.zip";
+$addon_site = $_SERVER['SERVER_NAME'];
+$addon_link = $addon_site."/".$filename;
 $queryx = $_SERVER['QUERY_STRING'];
 list($str, $trash) = explode('&', $queryx, 2);
 list($razdel, $podrazdel) = explode('=', $str, 2);
@@ -12,9 +13,9 @@ list($razdel, $podrazdel) = explode('=', $str, 2);
 			
 		break;
 		default;
-			echo "<b>File:</b> $filename</br>
-			<b>Last modified:  </b>" . date ("d F Y H:i:s.", filemtime($filename));
-			echo"<br><b>Today is:  </b>".date("d F Y H:i:s.")."<br><a href='/?gdb=renew'>Renew Addon Data</a>";
+			echo "<b>File:</b> $filename</br><b>Last modified:  </b>" . date ("d F Y H:i:s.", filemtime($filename));
+			echo"<br><b>Today is:  </b>".date("d F Y H:i:s.")."<br><a href='/?gdb=renew'>Renew Addon Data</a><br />";
+			echo "<br><br> Download <a href='http://".$addon_link."'>GathererDB_FreedomHead.zip</a>";
 			die;
 		break;
 	}
@@ -594,8 +595,5 @@ THEEND
   $zip->close();
   
   echo "<br>Job done";
-  $addon_site = $_SERVER['SERVER_NAME'];
-  $addon_archive = "GathererDB_FreedomHead.zip";
-  $addon_link = $addon_site."/".$addon_archive;
   echo "<br><br> Download <a href='http://".$addon_link."'>GathererDB_FreedomHead.zip</a>";
 ?>
