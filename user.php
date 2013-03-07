@@ -8,7 +8,7 @@ foreach ($rows as $row)
 	{
 		$user['joined'] = $row['joindate'];
 		$user['llogin'] = $row['last_login'];
-		$user['username'] = $row['username'];
+		$user['profilename'] = $row['username'];
 	}
 
 $user['reputation'] = $rDB->select('SELECT * FROM account_reputation WHERE username=? ORDER BY id', $uquery);
