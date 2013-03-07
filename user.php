@@ -3,11 +3,12 @@ require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'user');
 $userquery = $_SERVER['QUERY_STRING'];
 $uquery = trim($userquery, " user=.");
-$rows = $rDB->select('SELECT joindate, last_login FROM account WHERE username=?', $uquery);
+$rows = $rDB->select('SELECT username, joindate, last_login FROM account WHERE username=?', $uquery);
 foreach ($rows as $row)
 	{
 		$user['joined'] = $row['joindate'];
 		$user['llogin'] = $row['last_login'];
+		$user['username'] = $row['username'];
 	}
 
 $user['reputation'] = $rDB->select('SELECT * FROM account_reputation WHERE username=? ORDER BY id', $uquery);
