@@ -1,16 +1,17 @@
 <?php
 require_once('includes/allreputation.php');
 $smarty->config_load($conf_file, 'user');
-
-$rows = $rDB->select('SELECT joindate, last_login FROM account WHERE username=?', $_SESSION['username']);
+$userquery = $_SERVER['QUERY_STRING'];
+$uquery = trim($userquery, " user=.");
+$rows = $rDB->select('SELECT joindate, last_login FROM account WHERE username=?', $uquery);
 foreach ($rows as $row)
 	{
 		$user['joined'] = $row['joindate'];
 		$user['llogin'] = $row['last_login'];
 	}
 
-$user['reputation'] = $rDB->select('SELECT * FROM account_reputation WHERE username=? ORDER BY id', $_SESSION['username']);
-$user['id'] = $rDB->selectCell('SELECT id FROM account WHERE username=?',$_SESSION['username']);
+$user['reputation'] = $rDB->select('SELECT * FROM account_reputation WHERE username=? ORDER BY id', $uquery);
+$user['id'] = $rDB->selectCell('SELECT id FROM account WHERE username=?',$uquery);
 $user['characters'] = $cDB->select('SELECT name, level, guid, class, race, latency, online FROM characters WHERE account=?d ORDER BY guid', $user['id']);
 global $page;
 $page = array(

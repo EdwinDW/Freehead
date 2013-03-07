@@ -4,7 +4,7 @@ if($check_for_updates == true)
 	{
 		$revision_request = file_get_contents("http://freedomcore.ru/freehead/latest");
 		$generator_request = file_get_contents("http://freedomcore.ru/freehead/generator");
-		define('AOWOW_REVISION', '12.5.0');
+		define('AOWOW_REVISION', '12.7.0');
 	}
 else
 	{
