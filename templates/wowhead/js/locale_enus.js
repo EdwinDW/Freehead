@@ -2589,6 +2589,7 @@ var LANG={
 	tab_uncategorizedspells:"Uncategorized spells",
 	tab_unlocks:"Unlocks",
 	tab_reputation:"Reputation History",
+	tab_characters:"Characters",
 	tab_usedby:"Used by",
 	tab_zones:"Zones",
 	menu_browse:"Browse",

@@ -26,6 +26,13 @@ function getreputation($username)
 			',
 			$username
 		);
+		$reputation['actions'] = $rDB->selectCell('
+				SELECT COUNT(*) 
+				FROM account_reputation 
+				WHERE username=?
+			',
+			$username
+		);
 	}
 	
 	return $reputation;

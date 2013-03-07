@@ -2596,6 +2596,8 @@ var LANG={
 	tab_triggeredby: "Accionado por",
     tab_uncategorizedspells: "Hechizo sin categoría",
 	tab_unlocks: "Abre",
+	tab_reputation:"Reputación",
+	tab_characters:"Personajes",
     tab_usedby: "Usado por",
 	tab_zones:"Zonas",
 	menu_browse: "Consultar",

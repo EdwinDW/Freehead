@@ -2577,6 +2577,7 @@ var LANG={
 	tab_uncategorizedspells:"Без категории",
 	tab_unlocks:"Открывает",
 	tab_reputation:"История репутации",
+	tab_characters:"Персонажи",
 	tab_usedby:"Используется",
 	tab_zones:"Местности",
 	menu_browse:"Просмотр",

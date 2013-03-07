@@ -2564,6 +2564,8 @@ var LANG={
 	tab_triggeredby:"Ausgelöst durch",
 	tab_uncategorizedspells:"Nicht kategorisierte Zauber",
 	tab_unlocks:"Öffnet",
+	tab_reputation:"Reputation Geschichte",
+	tab_characters:"Characters",
 	tab_usedby:"Verwendet von",
 	tab_zones:"Gebiete",
 	menu_browse:"Durchsuchen",

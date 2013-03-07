@@ -2563,6 +2563,8 @@ var LANG={
 	tab_triggeredby:"Déclenché par",
 	tab_uncategorizedspells:"Sorts non classés",
 	tab_unlocks:"Déverouille",
+	tab_reputation:"Reputation History",
+	tab_characters:"Characters",
 	tab_usedby:"Utilisé par",
 	tab_zones:"Zones",
 	menu_browse:"Consulter",

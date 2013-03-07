@@ -36,43 +36,12 @@
 				<br />
 				<table width="100%" border="1px">
 				<tr>
-				<th>Reputation Action</th>
-				<th>Amount</th>
-				<th>Date</th>
-				{assign var=username value=$user.name}
-				{php}
-				$username = $this->_tpl_vars['username'];
-				$query = "
-				SELECT * 
-				FROM account_reputation 
-				WHERE 
-					username LIKE '$username' 
-					ORDER BY id
-				";
-				$gh = mysql_query($query) or die(mysql_error());
-				while($gethistory = mysql_fetch_array($gh))
-				{
-				$action = $gethistory['reason'];
-				echo '<tr><td width="33%"><center>';
-				if ($action == 1) { echo 'Registering an account'; }
-				elseif ($action == 2) { echo 'Daily visit'; }
-				elseif ($action == 3) { echo 'Posting a comment'; }
-				elseif ($action == 4) { echo 'Your comment was voted up (each upvote)'; }
-				elseif ($action == 5) { echo 'Submitting a screenshot'; }
-				elseif ($action == 6) { echo 'Submitting a guide (approved)'; }
-				elseif ($action == 7) { echo 'Earning a <font color="brown">Copper</font> <a href="/?website-achievements">website achievement</a>'; }
-				elseif ($action == 8) { echo 'Earning a Silver <a href="/?website-achievements">website achievement</a>'; }
-				elseif ($action == 9) { echo 'Earning a <font color="gold">Gold</font> <a href="/?website-achievements">website achievement</a>'; }
-				else { echo 'Achievement not found'; }
-				echo '</center></td><td width="33%">';
-				echo "<center><font color='green'>+";
-				echo $gethistory['reputation'];
-				echo '</font></center></td><td width="33%"><center>';
-				echo $gethistory['date'];
-				echo '</center></td></tr>';
-				}
-				echo '</table>';
-				{/php}
+				<th>{#Reputation_action#}</th>
+				<th>{#Reputation_amount#}</th>
+				<th>{#Reputation_date#}</th>
+				<tr><td>This section is under developement</td></tr>
+				</table>
+	
 				</div>
 
 			</div>

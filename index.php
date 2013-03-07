@@ -148,6 +148,9 @@ switch($razdel)
 	case 'gdb':
 		include 'gathererdb.php';
 		break;
+	case 'user':
+		include 'user.php';
+		break;
 	default:
 		include 'main.php';
 		break;

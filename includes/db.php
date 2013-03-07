@@ -20,6 +20,13 @@ if($AoWoWconf['realmd'])
 	$rDB->setErrorHandler('databaseErrorHandler');
 	$rDB->query('SET NAMES ?', 'utf8');
 }
+// Подключение к базе characters
+if($AoWoWconf['characters'])
+{
+	$cDB = DbSimple_Generic::connect("mysql://".$AoWoWconf['characters']['user'].":".$AoWoWconf['characters']['pass']."@".$AoWoWconf['characters']['host']."/".$AoWoWconf['characters']['db']);
+	$cDB->setErrorHandler('databaseErrorHandler');
+	$cDB->query('SET NAMES ?', 'utf8');
+}
 // Код обработчика ошибок SQL.
 function databaseErrorHandler($message, $info)
 {
