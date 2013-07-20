@@ -1275,7 +1275,7 @@ function g_getIngameLink(a, c, b) {
 }
 function g_getBBCodeLink(a, c, b) {    
 	var g = "";
-	g='[url='+DOMAIN+'/?item=' + c +'][color=' + a + ']' + b +' [/color][/url]';
+	g='[url='+DOMAIN+'/?item=' + c +'][color=' + a + ']' + b + '[/color][/url]';
 	prompt(LANG.prompt_bbcodelink, g)
 }
 function g_isEmailValid(a) {
